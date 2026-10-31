@@ -74,7 +74,7 @@ such as the match score or plan hours, is computed by the actual application log
 | `MAX_DOCUMENT_CHARS` | `30000` | Long documents are cut to this length before being sent to the LLM |
 | `URL_FETCH_ENABLED` | `true` | Optional job-posting URL fetching |
 | `RATE_LIMIT_ENABLED`, `AUTH_RATE_LIMIT_PER_MINUTE`, `AI_RATE_LIMIT_PER_MINUTE` | `true`, `20`, `30` | In-memory rate limits |
-| `CORS_ORIGINS` | localhost:3000, 5173 | JSON list |
+| `CORS_ORIGINS` | localhost and 127.0.0.1 on ports 3000 and 5173 | JSON list |
 
 **External dependencies:** PostgreSQL (required), plus an OpenAI or Gemini API key (optional).
 Redis and pgvector are **not** required (see section 6).

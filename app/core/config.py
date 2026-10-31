@@ -51,7 +51,14 @@ class Settings(BaseSettings):
     auth_rate_limit_per_minute: int = 20
     ai_rate_limit_per_minute: int = 30
 
-    cors_origins: list[str] = Field(default_factory=lambda: ["http://localhost:3000", "http://localhost:5173"])
+    cors_origins: list[str] = Field(
+        default_factory=lambda: [
+            "http://localhost:3000",
+            "http://127.0.0.1:3000",
+            "http://localhost:5173",
+            "http://127.0.0.1:5173",
+        ]
+    )
 
     @property
     def max_resume_bytes(self) -> int:
