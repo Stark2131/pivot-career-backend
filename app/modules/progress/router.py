@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends, Query, status
 
 from app.core.deps import LLM, CurrentUser, DbSession
 from app.core.rate_limit import ai_rate_limit
-from app.modules.progress import service
+from app.modules.progress import adaptation, service
 from app.modules.progress.schemas import (
     AssessmentCreate,
     AssessmentOut,
@@ -21,8 +21,11 @@ async def get_progress(user: CurrentUser, db: DbSession, llm: LLM,
 
 
 @router.post("/assessments", response_model=AssessmentOut, status_code=status.HTTP_201_CREATED)
-async def create_assessment(body: AssessmentCreate, user: CurrentUser, db: DbSession):
-    return await service.record_assessment(db, user, body)
+async def create_assessment(body: AssessmentCreate, user: CurrentUser, db: DbSession, llm: LLM):
+    record = await service.record_assessment(db, user, body)
+    out = AssessmentOut.model_validate(record)
+    out.adaptation = await adaptation.adapt(db, llm, user, trigger="assessment", changed_skills={record.skill_name})
+    return out
 
 
 @router.get("/assessments", response_model=list[AssessmentOut])

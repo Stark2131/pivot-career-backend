@@ -13,6 +13,7 @@ from app.core.config import get_settings
 from app.core.errors import register_exception_handlers
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
+logging.getLogger("httpx").setLevel(logging.WARNING)  # request URLs can contain API keys
 
 
 def create_app() -> FastAPI:

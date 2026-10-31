@@ -1,0 +1,1809 @@
+{
+ "_comment": "Skill taxonomy: canonical name -> {cat, aliases (normalise to the name), related (transferable => partial match only), hours (to working proficiency)}. Structured like O*NET technology-skill rows; extend freely.",
+ "skills": {
+  "Python": {
+   "cat": "programming_language",
+   "aliases": [
+    "python3",
+    "py"
+   ],
+   "related": [
+    "R"
+   ],
+   "hours": 30
+  },
+  "JavaScript": {
+   "cat": "programming_language",
+   "aliases": [
+    "js",
+    "ecmascript",
+    "es6"
+   ],
+   "related": [
+    "TypeScript"
+   ],
+   "hours": 30
+  },
+  "TypeScript": {
+   "cat": "programming_language",
+   "aliases": [
+    "ts"
+   ],
+   "related": [
+    "JavaScript"
+   ],
+   "hours": 15
+  },
+  "Java": {
+   "cat": "programming_language",
+   "aliases": [
+    "java 8",
+    "java 17"
+   ],
+   "related": [
+    "Kotlin",
+    "C#"
+   ],
+   "hours": 35
+  },
+  "Kotlin": {
+   "cat": "programming_language",
+   "aliases": [],
+   "related": [
+    "Java"
+   ],
+   "hours": 25
+  },
+  "C#": {
+   "cat": "programming_language",
+   "aliases": [
+    "c sharp",
+    "csharp"
+   ],
+   "related": [
+    "Java",
+    ".NET"
+   ],
+   "hours": 35
+  },
+  "C++": {
+   "cat": "programming_language",
+   "aliases": [
+    "cpp"
+   ],
+   "related": [
+    "C"
+   ],
+   "hours": 45
+  },
+  "C": {
+   "cat": "programming_language",
+   "aliases": [
+    "ansi c"
+   ],
+   "related": [
+    "C++"
+   ],
+   "hours": 35
+  },
+  "Go": {
+   "cat": "programming_language",
+   "aliases": [
+    "golang"
+   ],
+   "related": [],
+   "hours": 25
+  },
+  "Rust": {
+   "cat": "programming_language",
+   "aliases": [],
+   "related": [
+    "C++"
+   ],
+   "hours": 45
+  },
+  "Ruby": {
+   "cat": "programming_language",
+   "aliases": [],
+   "related": [
+    "Ruby on Rails"
+   ],
+   "hours": 25
+  },
+  "PHP": {
+   "cat": "programming_language",
+   "aliases": [],
+   "related": [],
+   "hours": 25
+  },
+  "Scala": {
+   "cat": "programming_language",
+   "aliases": [],
+   "related": [
+    "Java",
+    "Apache Spark"
+   ],
+   "hours": 35
+  },
+  "R": {
+   "cat": "programming_language",
+   "aliases": [
+    "r programming",
+    "rstudio"
+   ],
+   "related": [
+    "Python"
+   ],
+   "hours": 25
+  },
+  "Swift": {
+   "cat": "programming_language",
+   "aliases": [],
+   "related": [
+    "iOS Development"
+   ],
+   "hours": 30
+  },
+  "SQL": {
+   "cat": "database",
+   "aliases": [
+    "t-sql",
+    "pl/sql",
+    "ansi sql",
+    "sql queries"
+   ],
+   "related": [
+    "PostgreSQL",
+    "MySQL"
+   ],
+   "hours": 20
+  },
+  "Bash": {
+   "cat": "tools",
+   "aliases": [
+    "shell scripting",
+    "bash scripting",
+    "shell"
+   ],
+   "related": [
+    "Linux"
+   ],
+   "hours": 10
+  },
+  "FastAPI": {
+   "cat": "backend",
+   "aliases": [
+    "fast api"
+   ],
+   "related": [
+    "Flask",
+    "Django"
+   ],
+   "hours": 12
+  },
+  "Django": {
+   "cat": "backend",
+   "aliases": [
+    "django rest framework",
+    "drf"
+   ],
+   "related": [
+    "Flask",
+    "FastAPI"
+   ],
+   "hours": 20
+  },
+  "Flask": {
+   "cat": "backend",
+   "aliases": [],
+   "related": [
+    "FastAPI",
+    "Django"
+   ],
+   "hours": 12
+  },
+  "Node.js": {
+   "cat": "backend",
+   "aliases": [
+    "nodejs",
+    "node"
+   ],
+   "related": [
+    "Express.js"
+   ],
+   "hours": 20
+  },
+  "Express.js": {
+   "cat": "backend",
+   "aliases": [
+    "express",
+    "expressjs"
+   ],
+   "related": [
+    "Node.js"
+   ],
+   "hours": 10
+  },
+  "Spring Boot": {
+   "cat": "backend",
+   "aliases": [
+    "spring",
+    "spring framework"
+   ],
+   "related": [
+    "Java"
+   ],
+   "hours": 30
+  },
+  ".NET": {
+   "cat": "backend",
+   "aliases": [
+    "dotnet",
+    "asp.net",
+    ".net core",
+    "asp.net core"
+   ],
+   "related": [
+    "C#"
+   ],
+   "hours": 30
+  },
+  "Ruby on Rails": {
+   "cat": "backend",
+   "aliases": [
+    "rails",
+    "ror"
+   ],
+   "related": [
+    "Ruby"
+   ],
+   "hours": 25
+  },
+  "REST APIs": {
+   "cat": "backend",
+   "aliases": [
+    "rest",
+    "restful",
+    "restful apis",
+    "rest api",
+    "api design"
+   ],
+   "related": [
+    "GraphQL"
+   ],
+   "hours": 12
+  },
+  "GraphQL": {
+   "cat": "backend",
+   "aliases": [],
+   "related": [
+    "REST APIs"
+   ],
+   "hours": 12
+  },
+  "gRPC": {
+   "cat": "backend",
+   "aliases": [],
+   "related": [
+    "REST APIs"
+   ],
+   "hours": 10
+  },
+  "Microservices": {
+   "cat": "architecture",
+   "aliases": [
+    "microservice architecture",
+    "micro-services"
+   ],
+   "related": [
+    "System Design"
+   ],
+   "hours": 25
+  },
+  "System Design": {
+   "cat": "architecture",
+   "aliases": [
+    "distributed systems",
+    "software architecture",
+    "scalable systems"
+   ],
+   "related": [
+    "Microservices"
+   ],
+   "hours": 40
+  },
+  "Message Queues": {
+   "cat": "backend",
+   "aliases": [
+    "rabbitmq",
+    "message broker",
+    "celery"
+   ],
+   "related": [
+    "Apache Kafka"
+   ],
+   "hours": 12
+  },
+  "Apache Kafka": {
+   "cat": "data",
+   "aliases": [
+    "kafka"
+   ],
+   "related": [
+    "Message Queues"
+   ],
+   "hours": 20
+  },
+  "React": {
+   "cat": "frontend",
+   "aliases": [
+    "react.js",
+    "reactjs"
+   ],
+   "related": [
+    "Vue.js",
+    "Angular",
+    "Next.js"
+   ],
+   "hours": 30
+  },
+  "Next.js": {
+   "cat": "frontend",
+   "aliases": [
+    "nextjs"
+   ],
+   "related": [
+    "React"
+   ],
+   "hours": 15
+  },
+  "Vue.js": {
+   "cat": "frontend",
+   "aliases": [
+    "vue",
+    "vuejs"
+   ],
+   "related": [
+    "React",
+    "Angular"
+   ],
+   "hours": 25
+  },
+  "Angular": {
+   "cat": "frontend",
+   "aliases": [
+    "angularjs"
+   ],
+   "related": [
+    "React",
+    "Vue.js"
+   ],
+   "hours": 30
+  },
+  "HTML": {
+   "cat": "frontend",
+   "aliases": [
+    "html5"
+   ],
+   "related": [
+    "CSS"
+   ],
+   "hours": 8
+  },
+  "CSS": {
+   "cat": "frontend",
+   "aliases": [
+    "css3",
+    "sass",
+    "scss",
+    "tailwind",
+    "tailwind css"
+   ],
+   "related": [
+    "HTML"
+   ],
+   "hours": 12
+  },
+  "Redux": {
+   "cat": "frontend",
+   "aliases": [],
+   "related": [
+    "React"
+   ],
+   "hours": 8
+  },
+  "iOS Development": {
+   "cat": "mobile",
+   "aliases": [
+    "ios",
+    "swiftui"
+   ],
+   "related": [
+    "Swift"
+   ],
+   "hours": 40
+  },
+  "Android Development": {
+   "cat": "mobile",
+   "aliases": [
+    "android"
+   ],
+   "related": [
+    "Kotlin"
+   ],
+   "hours": 40
+  },
+  "React Native": {
+   "cat": "mobile",
+   "aliases": [],
+   "related": [
+    "React"
+   ],
+   "hours": 25
+  },
+  "Flutter": {
+   "cat": "mobile",
+   "aliases": [
+    "dart"
+   ],
+   "related": [],
+   "hours": 30
+  },
+  "PostgreSQL": {
+   "cat": "database",
+   "aliases": [
+    "postgres",
+    "psql",
+    "postgre"
+   ],
+   "related": [
+    "MySQL",
+    "SQL"
+   ],
+   "hours": 15
+  },
+  "MySQL": {
+   "cat": "database",
+   "aliases": [
+    "mariadb"
+   ],
+   "related": [
+    "PostgreSQL",
+    "SQL"
+   ],
+   "hours": 12
+  },
+  "MongoDB": {
+   "cat": "database",
+   "aliases": [
+    "mongo"
+   ],
+   "related": [
+    "NoSQL"
+   ],
+   "hours": 12
+  },
+  "Redis": {
+   "cat": "database",
+   "aliases": [],
+   "related": [
+    "NoSQL"
+   ],
+   "hours": 8
+  },
+  "NoSQL": {
+   "cat": "database",
+   "aliases": [
+    "dynamodb",
+    "cassandra",
+    "nosql databases"
+   ],
+   "related": [
+    "MongoDB"
+   ],
+   "hours": 12
+  },
+  "Elasticsearch": {
+   "cat": "database",
+   "aliases": [
+    "elastic search",
+    "opensearch"
+   ],
+   "related": [],
+   "hours": 12
+  },
+  "Data Modeling": {
+   "cat": "data",
+   "aliases": [
+    "database design",
+    "schema design",
+    "dimensional modeling"
+   ],
+   "related": [
+    "SQL"
+   ],
+   "hours": 15
+  },
+  "SQLAlchemy": {
+   "cat": "backend",
+   "aliases": [],
+   "related": [
+    "SQL",
+    "Python"
+   ],
+   "hours": 8
+  },
+  "Vector Databases": {
+   "cat": "ml_ai",
+   "aliases": [
+    "pgvector",
+    "pinecone",
+    "weaviate",
+    "faiss",
+    "chroma",
+    "vector database",
+    "vector search"
+   ],
+   "related": [
+    "Embeddings"
+   ],
+   "hours": 8
+  },
+  "Pandas": {
+   "cat": "data",
+   "aliases": [],
+   "related": [
+    "NumPy",
+    "Python"
+   ],
+   "hours": 15
+  },
+  "NumPy": {
+   "cat": "data",
+   "aliases": [
+    "numpy"
+   ],
+   "related": [
+    "Pandas"
+   ],
+   "hours": 10
+  },
+  "Data Analysis": {
+   "cat": "data",
+   "aliases": [
+    "data analytics",
+    "exploratory data analysis",
+    "eda"
+   ],
+   "related": [
+    "Statistics",
+    "Pandas"
+   ],
+   "hours": 25
+  },
+  "Data Visualization": {
+   "cat": "data",
+   "aliases": [
+    "matplotlib",
+    "seaborn",
+    "plotly",
+    "data viz"
+   ],
+   "related": [
+    "Tableau",
+    "Power BI"
+   ],
+   "hours": 12
+  },
+  "Tableau": {
+   "cat": "data",
+   "aliases": [],
+   "related": [
+    "Power BI",
+    "Data Visualization"
+   ],
+   "hours": 15
+  },
+  "Power BI": {
+   "cat": "data",
+   "aliases": [
+    "powerbi"
+   ],
+   "related": [
+    "Tableau",
+    "Data Visualization"
+   ],
+   "hours": 15
+  },
+  "Excel": {
+   "cat": "data",
+   "aliases": [
+    "microsoft excel",
+    "spreadsheets",
+    "ms excel"
+   ],
+   "related": [
+    "Data Analysis"
+   ],
+   "hours": 10
+  },
+  "Statistics": {
+   "cat": "data",
+   "aliases": [
+    "statistical analysis",
+    "hypothesis testing",
+    "a/b testing",
+    "probability"
+   ],
+   "related": [
+    "Data Analysis"
+   ],
+   "hours": 30
+  },
+  "ETL": {
+   "cat": "data",
+   "aliases": [
+    "data pipelines",
+    "elt",
+    "data pipeline"
+   ],
+   "related": [
+    "Apache Airflow",
+    "Data Modeling"
+   ],
+   "hours": 20
+  },
+  "Apache Airflow": {
+   "cat": "data",
+   "aliases": [
+    "airflow"
+   ],
+   "related": [
+    "ETL"
+   ],
+   "hours": 12
+  },
+  "Apache Spark": {
+   "cat": "data",
+   "aliases": [
+    "spark",
+    "pyspark"
+   ],
+   "related": [
+    "ETL",
+    "Scala"
+   ],
+   "hours": 25
+  },
+  "dbt": {
+   "cat": "data",
+   "aliases": [
+    "data build tool"
+   ],
+   "related": [
+    "SQL",
+    "ETL"
+   ],
+   "hours": 10
+  },
+  "Data Warehousing": {
+   "cat": "data",
+   "aliases": [
+    "snowflake",
+    "bigquery",
+    "redshift",
+    "data warehouse"
+   ],
+   "related": [
+    "Data Modeling",
+    "SQL"
+   ],
+   "hours": 20
+  },
+  "Machine Learning": {
+   "cat": "ml_ai",
+   "aliases": [
+    "ml",
+    "machine-learning",
+    "predictive modeling"
+   ],
+   "related": [
+    "Statistics",
+    "Deep Learning"
+   ],
+   "hours": 60
+  },
+  "Deep Learning": {
+   "cat": "ml_ai",
+   "aliases": [
+    "neural networks",
+    "dl"
+   ],
+   "related": [
+    "Machine Learning",
+    "PyTorch"
+   ],
+   "hours": 50
+  },
+  "scikit-learn": {
+   "cat": "ml_ai",
+   "aliases": [
+    "sklearn",
+    "scikit learn"
+   ],
+   "related": [
+    "Machine Learning"
+   ],
+   "hours": 15
+  },
+  "PyTorch": {
+   "cat": "ml_ai",
+   "aliases": [
+    "torch"
+   ],
+   "related": [
+    "TensorFlow",
+    "Deep Learning"
+   ],
+   "hours": 30
+  },
+  "TensorFlow": {
+   "cat": "ml_ai",
+   "aliases": [
+    "keras",
+    "tf"
+   ],
+   "related": [
+    "PyTorch",
+    "Deep Learning"
+   ],
+   "hours": 30
+  },
+  "NLP": {
+   "cat": "ml_ai",
+   "aliases": [
+    "natural language processing",
+    "text mining"
+   ],
+   "related": [
+    "Machine Learning",
+    "LLMs"
+   ],
+   "hours": 35
+  },
+  "Computer Vision": {
+   "cat": "ml_ai",
+   "aliases": [
+    "opencv",
+    "image processing"
+   ],
+   "related": [
+    "Deep Learning"
+   ],
+   "hours": 35
+  },
+  "LLMs": {
+   "cat": "ml_ai",
+   "aliases": [
+    "large language models",
+    "llm",
+    "generative ai",
+    "genai",
+    "gpt",
+    "openai api",
+    "gemini api"
+   ],
+   "related": [
+    "Prompt Engineering",
+    "NLP"
+   ],
+   "hours": 20
+  },
+  "Prompt Engineering": {
+   "cat": "ml_ai",
+   "aliases": [
+    "prompting",
+    "prompt design"
+   ],
+   "related": [
+    "LLMs"
+   ],
+   "hours": 8
+  },
+  "RAG": {
+   "cat": "ml_ai",
+   "aliases": [
+    "retrieval augmented generation",
+    "retrieval-augmented generation"
+   ],
+   "related": [
+    "LLMs",
+    "Vector Databases",
+    "Embeddings"
+   ],
+   "hours": 15
+  },
+  "Embeddings": {
+   "cat": "ml_ai",
+   "aliases": [
+    "text embeddings",
+    "semantic search"
+   ],
+   "related": [
+    "Vector Databases",
+    "NLP"
+   ],
+   "hours": 8
+  },
+  "LangChain": {
+   "cat": "ml_ai",
+   "aliases": [
+    "llamaindex",
+    "llama index"
+   ],
+   "related": [
+    "LLMs",
+    "RAG"
+   ],
+   "hours": 10
+  },
+  "MLOps": {
+   "cat": "ml_ai",
+   "aliases": [
+    "mlflow",
+    "model deployment",
+    "kubeflow",
+    "model serving"
+   ],
+   "related": [
+    "Machine Learning",
+    "Docker"
+   ],
+   "hours": 30
+  },
+  "Feature Engineering": {
+   "cat": "ml_ai",
+   "aliases": [],
+   "related": [
+    "Machine Learning",
+    "Pandas"
+   ],
+   "hours": 15
+  },
+  "AWS": {
+   "cat": "cloud",
+   "aliases": [
+    "amazon web services",
+    "ec2",
+    "s3",
+    "aws lambda",
+    "lambda"
+   ],
+   "related": [
+    "GCP",
+    "Azure"
+   ],
+   "hours": 35
+  },
+  "GCP": {
+   "cat": "cloud",
+   "aliases": [
+    "google cloud",
+    "google cloud platform"
+   ],
+   "related": [
+    "AWS",
+    "Azure"
+   ],
+   "hours": 35
+  },
+  "Azure": {
+   "cat": "cloud",
+   "aliases": [
+    "microsoft azure"
+   ],
+   "related": [
+    "AWS",
+    "GCP"
+   ],
+   "hours": 35
+  },
+  "Docker": {
+   "cat": "devops",
+   "aliases": [
+    "containers",
+    "containerization",
+    "dockerfile"
+   ],
+   "related": [
+    "Kubernetes"
+   ],
+   "hours": 12
+  },
+  "Kubernetes": {
+   "cat": "devops",
+   "aliases": [
+    "k8s",
+    "helm",
+    "eks",
+    "gke",
+    "aks"
+   ],
+   "related": [
+    "Docker"
+   ],
+   "hours": 30
+  },
+  "Terraform": {
+   "cat": "devops",
+   "aliases": [
+    "infrastructure as code",
+    "iac",
+    "cloudformation",
+    "pulumi"
+   ],
+   "related": [
+    "AWS"
+   ],
+   "hours": 15
+  },
+  "CI/CD": {
+   "cat": "devops",
+   "aliases": [
+    "ci cd",
+    "continuous integration",
+    "continuous deployment",
+    "github actions",
+    "jenkins",
+    "gitlab ci"
+   ],
+   "related": [
+    "Git",
+    "Docker"
+   ],
+   "hours": 12
+  },
+  "Linux": {
+   "cat": "devops",
+   "aliases": [
+    "unix",
+    "ubuntu"
+   ],
+   "related": [
+    "Bash"
+   ],
+   "hours": 15
+  },
+  "Monitoring": {
+   "cat": "devops",
+   "aliases": [
+    "observability",
+    "prometheus",
+    "grafana",
+    "datadog",
+    "logging"
+   ],
+   "related": [],
+   "hours": 12
+  },
+  "Serverless": {
+   "cat": "cloud",
+   "aliases": [
+    "serverless architecture",
+    "cloud functions"
+   ],
+   "related": [
+    "AWS"
+   ],
+   "hours": 10
+  },
+  "Git": {
+   "cat": "tools",
+   "aliases": [
+    "github",
+    "gitlab",
+    "version control",
+    "bitbucket"
+   ],
+   "related": [],
+   "hours": 6
+  },
+  "Unit Testing": {
+   "cat": "testing",
+   "aliases": [
+    "pytest",
+    "jest",
+    "junit",
+    "testing",
+    "automated testing",
+    "tdd",
+    "test-driven development"
+   ],
+   "related": [],
+   "hours": 10
+  },
+  "Agile": {
+   "cat": "practice",
+   "aliases": [
+    "scrum",
+    "kanban",
+    "agile methodologies"
+   ],
+   "related": [],
+   "hours": 6
+  },
+  "Jira": {
+   "cat": "tools",
+   "aliases": [],
+   "related": [
+    "Agile"
+   ],
+   "hours": 3
+  },
+  "Data Structures & Algorithms": {
+   "cat": "fundamentals",
+   "aliases": [
+    "data structures",
+    "algorithms",
+    "dsa",
+    "data structures and algorithms"
+   ],
+   "related": [],
+   "hours": 50
+  },
+  "Object-Oriented Programming": {
+   "cat": "fundamentals",
+   "aliases": [
+    "oop",
+    "object oriented programming",
+    "design patterns"
+   ],
+   "related": [],
+   "hours": 15
+  },
+  "Web Security": {
+   "cat": "security",
+   "aliases": [
+    "owasp",
+    "application security",
+    "appsec",
+    "authentication",
+    "oauth",
+    "jwt"
+   ],
+   "related": [],
+   "hours": 15
+  },
+  "Product Management": {
+   "cat": "product",
+   "aliases": [
+    "product roadmap",
+    "roadmapping",
+    "product strategy"
+   ],
+   "related": [
+    "Agile"
+   ],
+   "hours": 30
+  },
+  "User Research": {
+   "cat": "product",
+   "aliases": [
+    "ux research",
+    "user interviews",
+    "usability testing"
+   ],
+   "related": [
+    "Figma"
+   ],
+   "hours": 20
+  },
+  "Figma": {
+   "cat": "design",
+   "aliases": [
+    "wireframing",
+    "prototyping"
+   ],
+   "related": [
+    "User Research"
+   ],
+   "hours": 12
+  },
+  "Google Analytics": {
+   "cat": "data",
+   "aliases": [
+    "ga4",
+    "web analytics",
+    "mixpanel",
+    "amplitude",
+    "product analytics"
+   ],
+   "related": [
+    "Data Analysis"
+   ],
+   "hours": 8
+  },
+  "Communication": {
+   "cat": "soft_skill",
+   "aliases": [
+    "written communication",
+    "verbal communication",
+    "presentation skills",
+    "communication skills"
+   ],
+   "related": [],
+   "hours": 10
+  },
+  "Leadership": {
+   "cat": "soft_skill",
+   "aliases": [
+    "team leadership",
+    "people management",
+    "mentoring",
+    "mentorship"
+   ],
+   "related": [],
+   "hours": 15
+  },
+  "Stakeholder Management": {
+   "cat": "soft_skill",
+   "aliases": [
+    "stakeholder communication",
+    "cross-functional collaboration"
+   ],
+   "related": [
+    "Communication"
+   ],
+   "hours": 10
+  },
+  "Problem Solving": {
+   "cat": "soft_skill",
+   "aliases": [
+    "analytical thinking",
+    "critical thinking",
+    "problem-solving"
+   ],
+   "related": [],
+   "hours": 10
+  },
+  "Teamwork": {
+   "cat": "soft_skill",
+   "aliases": [
+    "collaboration",
+    "team player"
+   ],
+   "related": [],
+   "hours": 5
+  },
+  "Project Management": {
+   "cat": "soft_skill",
+   "aliases": [
+    "project planning",
+    "pmp"
+   ],
+   "related": [
+    "Agile"
+   ],
+   "hours": 15
+  },
+  "A/B Testing": {
+   "cat": "data",
+   "aliases": [
+    "ab testing",
+    "a/b tests",
+    "split testing",
+    "controlled experiments"
+   ],
+   "related": [
+    "Statistics",
+    "Hypothesis Testing"
+   ],
+   "hours": 15
+  },
+  "Hypothesis Testing": {
+   "cat": "data",
+   "aliases": [
+    "statistical testing",
+    "significance testing"
+   ],
+   "related": [
+    "Statistics",
+    "A/B Testing"
+   ],
+   "hours": 12
+  },
+  "Regression Analysis": {
+   "cat": "data",
+   "aliases": [
+    "linear regression",
+    "logistic regression",
+    "regression modeling"
+   ],
+   "related": [
+    "Statistics",
+    "Machine Learning"
+   ],
+   "hours": 15
+  },
+  "Time Series Forecasting": {
+   "cat": "ml_ai",
+   "aliases": [
+    "time series analysis",
+    "time-series forecasting",
+    "demand forecasting"
+   ],
+   "related": [
+    "Statistics",
+    "Machine Learning"
+   ],
+   "hours": 25
+  },
+  "Data Cleaning": {
+   "cat": "data",
+   "aliases": [
+    "data wrangling",
+    "data preparation",
+    "data cleansing",
+    "data munging"
+   ],
+   "related": [
+    "Pandas",
+    "SQL"
+   ],
+   "hours": 12
+  },
+  "Business Intelligence": {
+   "cat": "data",
+   "aliases": [
+    "bi tools",
+    "bi reporting"
+   ],
+   "related": [
+    "Tableau",
+    "Power BI",
+    "Data Visualization"
+   ],
+   "hours": 20
+  },
+  "Looker": {
+   "cat": "data",
+   "aliases": [
+    "looker studio",
+    "google data studio"
+   ],
+   "related": [
+    "Tableau",
+    "Power BI"
+   ],
+   "hours": 12
+  },
+  "Google Sheets": {
+   "cat": "tools",
+   "aliases": [
+    "google spreadsheets"
+   ],
+   "related": [
+    "Excel"
+   ],
+   "hours": 6
+  },
+  "VBA": {
+   "cat": "programming_language",
+   "aliases": [
+    "excel vba",
+    "excel macros"
+   ],
+   "related": [
+    "Excel"
+   ],
+   "hours": 15
+  },
+  "Power Query": {
+   "cat": "data",
+   "aliases": [
+    "power pivot"
+   ],
+   "related": [
+    "Excel",
+    "Power BI"
+   ],
+   "hours": 8
+  },
+  "Snowflake": {
+   "cat": "database",
+   "aliases": [],
+   "related": [
+    "Data Warehousing",
+    "SQL"
+   ],
+   "hours": 15
+  },
+  "BigQuery": {
+   "cat": "database",
+   "aliases": [
+    "google bigquery"
+   ],
+   "related": [
+    "Data Warehousing",
+    "SQL",
+    "GCP"
+   ],
+   "hours": 12
+  },
+  "Databricks": {
+   "cat": "data",
+   "aliases": [],
+   "related": [
+    "Apache Spark"
+   ],
+   "hours": 20
+  },
+  "SAS": {
+   "cat": "programming_language",
+   "aliases": [
+    "sas programming"
+   ],
+   "related": [
+    "R",
+    "SQL"
+   ],
+   "hours": 25
+  },
+  "SPSS": {
+   "cat": "tools",
+   "aliases": [
+    "ibm spss"
+   ],
+   "related": [
+    "Statistics"
+   ],
+   "hours": 12
+  },
+  "Jupyter": {
+   "cat": "tools",
+   "aliases": [
+    "jupyter notebooks",
+    "jupyter notebook",
+    "jupyterlab"
+   ],
+   "related": [
+    "Python"
+   ],
+   "hours": 5
+  },
+  "Data Pipelines": {
+   "cat": "data",
+   "aliases": [
+    "data pipeline",
+    "data engineering pipelines"
+   ],
+   "related": [
+    "ETL",
+    "Apache Airflow"
+   ],
+   "hours": 25
+  },
+  "KPI Analysis": {
+   "cat": "data",
+   "aliases": [
+    "kpi reporting",
+    "metrics analysis",
+    "kpis and metrics",
+    "performance metrics"
+   ],
+   "related": [
+    "Data Analysis"
+   ],
+   "hours": 10
+  },
+  "Data Storytelling": {
+   "cat": "soft_skill",
+   "aliases": [
+    "storytelling with data",
+    "data narrative",
+    "presenting insights"
+   ],
+   "related": [
+    "Data Visualization",
+    "Communication"
+   ],
+   "hours": 10
+  },
+  "Data Governance": {
+   "cat": "data",
+   "aliases": [
+    "data stewardship",
+    "data governance"
+   ],
+   "related": [
+    "Data Warehousing"
+   ],
+   "hours": 12
+  },
+  "Marketing Analytics": {
+   "cat": "data",
+   "aliases": [
+    "campaign analytics",
+    "web analytics"
+   ],
+   "related": [
+    "Google Analytics",
+    "Data Analysis"
+   ],
+   "hours": 12
+  },
+  "Product Roadmapping": {
+   "cat": "product",
+   "aliases": [
+    "roadmapping",
+    "product roadmap",
+    "roadmap planning"
+   ],
+   "related": [
+    "Product Management",
+    "Product Strategy"
+   ],
+   "hours": 12
+  },
+  "Product Strategy": {
+   "cat": "product",
+   "aliases": [
+    "product vision",
+    "business strategy"
+   ],
+   "related": [
+    "Product Roadmapping"
+   ],
+   "hours": 20
+  },
+  "Product Discovery": {
+   "cat": "product",
+   "aliases": [
+    "customer discovery",
+    "opportunity assessment",
+    "continuous discovery"
+   ],
+   "related": [
+    "User Research"
+   ],
+   "hours": 15
+  },
+  "Prioritization Frameworks": {
+   "cat": "product",
+   "aliases": [
+    "rice scoring",
+    "moscow prioritization",
+    "backlog prioritization",
+    "feature prioritization",
+    "backlog grooming"
+   ],
+   "related": [
+    "Product Roadmapping"
+   ],
+   "hours": 8
+  },
+  "Market Research": {
+   "cat": "product",
+   "aliases": [
+    "customer research",
+    "market analysis",
+    "competitive analysis",
+    "competitor analysis"
+   ],
+   "related": [
+    "User Research"
+   ],
+   "hours": 12
+  },
+  "Go-to-Market": {
+   "cat": "product",
+   "aliases": [
+    "go to market",
+    "gtm strategy",
+    "product launch",
+    "product launches"
+   ],
+   "related": [
+    "Product Strategy"
+   ],
+   "hours": 15
+  },
+  "OKRs": {
+   "cat": "product",
+   "aliases": [
+    "okr",
+    "objectives and key results",
+    "goal setting"
+   ],
+   "related": [
+    "Product Strategy"
+   ],
+   "hours": 5
+  },
+  "Scrum": {
+   "cat": "process",
+   "aliases": [
+    "scrum master",
+    "sprint planning"
+   ],
+   "related": [
+    "Agile",
+    "Kanban"
+   ],
+   "hours": 8
+  },
+  "Kanban": {
+   "cat": "process",
+   "aliases": [
+    "kanban boards"
+   ],
+   "related": [
+    "Agile",
+    "Scrum"
+   ],
+   "hours": 4
+  },
+  "User Stories": {
+   "cat": "product",
+   "aliases": [
+    "user story",
+    "acceptance criteria",
+    "product requirements",
+    "prd",
+    "requirements gathering"
+   ],
+   "related": [
+    "Agile",
+    "Product Management"
+   ],
+   "hours": 8
+  },
+  "Wireframing": {
+   "cat": "design",
+   "aliases": [
+    "wireframes",
+    "low-fidelity mockups"
+   ],
+   "related": [
+    "Figma",
+    "Prototyping"
+   ],
+   "hours": 8
+  },
+  "Prototyping": {
+   "cat": "design",
+   "aliases": [
+    "prototypes",
+    "interactive prototypes"
+   ],
+   "related": [
+    "Figma",
+    "Wireframing"
+   ],
+   "hours": 10
+  },
+  "Product Analytics": {
+   "cat": "product",
+   "aliases": [
+    "mixpanel",
+    "amplitude",
+    "funnel analysis",
+    "cohort analysis",
+    "retention analysis",
+    "user behavior analytics"
+   ],
+   "related": [
+    "Google Analytics",
+    "SQL"
+   ],
+   "hours": 12
+  },
+  "Pricing Strategy": {
+   "cat": "product",
+   "aliases": [
+    "pricing and packaging",
+    "monetization strategy"
+   ],
+   "related": [
+    "Product Strategy"
+   ],
+   "hours": 10
+  },
+  "Customer Interviews": {
+   "cat": "product",
+   "aliases": [
+    "user interviews",
+    "customer feedback analysis"
+   ],
+   "related": [
+    "User Research"
+   ],
+   "hours": 6
+  },
+  "Presentation Skills": {
+   "cat": "soft_skill",
+   "aliases": [
+    "executive presentations",
+    "public speaking",
+    "presenting to stakeholders"
+   ],
+   "related": [
+    "Communication"
+   ],
+   "hours": 8
+  },
+  "Negotiation": {
+   "cat": "soft_skill",
+   "aliases": [
+    "vendor negotiation",
+    "influencing without authority"
+   ],
+   "related": [
+    "Stakeholder Management"
+   ],
+   "hours": 8
+  },
+  "Confluence": {
+   "cat": "tools",
+   "aliases": [],
+   "related": [
+    "Jira"
+   ],
+   "hours": 3
+  },
+  "Model Deployment": {
+   "cat": "ml_ai",
+   "aliases": [
+    "model serving",
+    "deploying models",
+    "model productionization",
+    "productionizing models",
+    "deploy machine learning models"
+   ],
+   "related": [
+    "MLOps",
+    "Docker"
+   ],
+   "hours": 20
+  },
+  "Model Evaluation": {
+   "cat": "ml_ai",
+   "aliases": [
+    "model validation",
+    "evaluation metrics",
+    "cross-validation"
+   ],
+   "related": [
+    "Machine Learning",
+    "Statistics"
+   ],
+   "hours": 12
+  },
+  "Hyperparameter Tuning": {
+   "cat": "ml_ai",
+   "aliases": [
+    "hyperparameter optimization",
+    "model tuning"
+   ],
+   "related": [
+    "Machine Learning"
+   ],
+   "hours": 8
+  },
+  "XGBoost": {
+   "cat": "ml_ai",
+   "aliases": [
+    "gradient boosting",
+    "lightgbm",
+    "gradient boosted trees"
+   ],
+   "related": [
+    "scikit-learn",
+    "Machine Learning"
+   ],
+   "hours": 10
+  },
+  "Hugging Face": {
+   "cat": "ml_ai",
+   "aliases": [
+    "huggingface",
+    "transformers library"
+   ],
+   "related": [
+    "NLP",
+    "PyTorch"
+   ],
+   "hours": 12
+  },
+  "MLflow": {
+   "cat": "ml_ai",
+   "aliases": [
+    "experiment tracking",
+    "weights & biases",
+    "wandb"
+   ],
+   "related": [
+    "MLOps"
+   ],
+   "hours": 8
+  },
+  "SageMaker": {
+   "cat": "cloud",
+   "aliases": [
+    "amazon sagemaker",
+    "aws sagemaker"
+   ],
+   "related": [
+    "AWS",
+    "MLOps"
+   ],
+   "hours": 12
+  },
+  "Recommender Systems": {
+   "cat": "ml_ai",
+   "aliases": [
+    "recommendation systems",
+    "recommendation engines",
+    "collaborative filtering"
+   ],
+   "related": [
+    "Machine Learning"
+   ],
+   "hours": 25
+  },
+  "Reinforcement Learning": {
+   "cat": "ml_ai",
+   "aliases": [],
+   "related": [
+    "Deep Learning"
+   ],
+   "hours": 35
+  },
+  "Feature Stores": {
+   "cat": "ml_ai",
+   "aliases": [
+    "feature store",
+    "feast"
+   ],
+   "related": [
+    "Feature Engineering",
+    "MLOps"
+   ],
+   "hours": 8
+  },
+  "Distributed Training": {
+   "cat": "ml_ai",
+   "aliases": [
+    "gpu training",
+    "distributed machine learning"
+   ],
+   "related": [
+    "Deep Learning"
+   ],
+   "hours": 20
+  },
+  "Pytest": {
+   "cat": "tools",
+   "aliases": [
+    "unit tests with pytest"
+   ],
+   "related": [
+    "Unit Testing",
+    "Python"
+   ],
+   "hours": 5
+  },
+  "Observability": {
+   "cat": "devops",
+   "aliases": [
+    "grafana",
+    "prometheus",
+    "datadog"
+   ],
+   "related": [
+    "Monitoring"
+   ],
+   "hours": 10
+  }
+ }
+}

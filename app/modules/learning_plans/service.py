@@ -49,7 +49,7 @@ async def _next_version(db: AsyncSession, user: User) -> int:
 def _tasks_to_rows(tasks: list[ScheduledTask]) -> list[WeeklyTask]:
     return [
         WeeklyTask(week_number=t.week_number, skill_name=t.skill_name, title=t.title[:255], topics=t.topics,
-                   activities=t.activities, exercises=t.exercises, estimated_hours=t.hours,
+                   activities=t.activities, exercises=t.exercises, resources=t.resources, estimated_hours=t.hours,
                    expected_outcome=t.expected_outcome, status="pending")
         for t in tasks
     ]
@@ -127,11 +127,16 @@ async def _supersede_pending(db: AsyncSession, user: User) -> None:
 
 
 async def propose_adjustment(
-    db: AsyncSession, llm: LLMClient, user: User, plan: LearningPlan, *, reason: str,
+    db: AsyncSession, llm: LLMClient, user: User, plan: LearningPlan, *, reason: str | None,
     struggling: set[str], focus: list[str], weekly_hours: int | None = None, max_weeks: int | None = None,
-    extra_change_info: dict | None = None,
+    extra_change_info: dict | None = None, drop: set[str] | None = None,
+    skill_reasons: dict[str, str] | None = None,
 ) -> LearningPlan:
-    """Create a proposed new version of `plan` that carries over remaining work."""
+    """Create a proposed new version of `plan` that carries over remaining work.
+
+    `drop` removes skills (e.g. mastered); `skill_reasons` maps a skill to the evidence behind its change and is
+    used to write the human-readable `change_summary["reasons"]`. If `reason` is None it is built from those.
+    """
     if plan.status not in {"active", "proposed"}:
         raise ConflictError(f"Cannot adjust a plan with status '{plan.status}'.")
     profile = await _profile(db, user)
@@ -147,9 +152,10 @@ async def propose_adjustment(
             remaining[t.skill_name] = round(remaining.get(t.skill_name, 0) + t.estimated_hours, 1)
     focus_norm = [n.name for n in (normalize_skill(f) for f in focus) if n]
     struggling_norm = {n.name for n in (normalize_skill(s) for s in struggling) if n}
+    drop_norm = {n.name for n in (normalize_skill(s) for s in (drop or set())) if n}
 
     needs, changes = orchestrator.adjust_plan_needs(
-        remaining, order, struggling=struggling_norm, focus=focus_norm, experience_level=level
+        remaining, order, struggling=struggling_norm, focus=focus_norm, experience_level=level, drop=drop_norm
     )
     if not needs:
         raise ValidationFailed("All tasks in this plan are completed - generate a new plan from a fresh analysis instead.")
@@ -160,7 +166,23 @@ async def propose_adjustment(
         experience_level=level, known_skills=known,
     )
     change_summary = _diff(plan, tasks, changes)
+    first_week: dict[str, int] = {}
+    for t in tasks:
+        first_week.setdefault(t.skill_name, t.week_number)
+    why_by_skill = {n.name: v for k, v in (skill_reasons or {}).items() if (n := normalize_skill(k))}
+    reasons: list[str] = []
+    for skill, (old, new) in changes.items():
+        why = why_by_skill.get(skill) or ("flagged as struggling" if skill in struggling_norm else "requested focus")
+        if new == 0:
+            reasons.append(f"{skill}: {why} -> removed ({old}h freed)")
+        elif old == 0:
+            reasons.append(f"{skill}: {why} -> added {new}h, starting week {first_week.get(skill, '?')}")
+        else:
+            reasons.append(f"{skill}: {why} -> +{round(new - old, 1)}h ({old}h to {new}h), starts week {first_week.get(skill, '?')}")
+    change_summary["reasons"] = reasons
+    reason = reason or ("; ".join(reasons) if reasons else "Adjusting plan based on recent progress")
     change_summary["struggling_skills"] = sorted(struggling_norm)
+    change_summary["dropped_skills"] = sorted(drop_norm)
     change_summary["focus_skills"] = focus_norm
     change_summary["deferred"] = deferred
     change_summary.update(extra_change_info or {})

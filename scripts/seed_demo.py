@@ -1,9 +1,18 @@
-"""Seed a DEMO account by driving the real API in-process (same validation & logic as production).
+"""Seed the DEMO account: Maya, a maths teacher moving into data analysis. Everything here is fictional.
 
-    python -m scripts.seed_demo            # uses DATABASE_URL / LLM settings from .env
-    python -m scripts.seed_demo --reset    # delete the demo user first
+    python -m scripts.seed_demo            # create the demo user + all demo data
+    python -m scripts.seed_demo --reset    # delete the demo user (and all their data) first, then recreate
 
-Everything created is fictional and labelled DEMO.
+It drives the real API in-process, so every number you see (match score, plan hours, interview scores, the
+tracker's insights) is computed by the actual application logic. In order it:
+
+    1. registers the demo user and uploads a resume (rule-based parsing, or your LLM if configured)
+    2. confirms the profile: target role Data Analyst, a few skills with honest levels
+    3. imports the 20 sample Data Analyst postings and runs the skill-gap analysis ("based on 20 job postings")
+    4. generates the learning plan (started two weeks ago, some tasks done) and recommends projects
+    5. records one past mock interview and one self-assessment
+    6. adds 50 synthetic applications with built-in patterns, so the tracker has something to say
+    7. clears any plan proposal the seeding itself triggered, so the live demo starts from a clean slate
 """
 import argparse
 import asyncio
@@ -15,7 +24,20 @@ from sqlalchemy import delete
 from app.core.database import SessionLocal
 from app.main import app
 from app.models import User
-from scripts.demo_data import DEMO_APPLICATIONS, DEMO_JOBS, DEMO_RESUME, DEMO_USER, make_pdf
+from scripts.demo_data import DEMO_RESUME, DEMO_USER, make_pdf
+from scripts.seed_applications import seed as seed_applications
+from scripts.seed_jds import import_roles
+
+# Honest starting levels for a teacher with a data-flavoured side hustle. SQL is deliberately weak: it is the
+# skill the demo's "bad interview" will hit, and a weak-but-present skill is what makes the plan adapt.
+LEVELS = {"Excel": 4, "Statistics": 3, "Communication": 4, "Leadership": 3, "Tableau": 2, "SQL": 2, "Problem Solving": 4}
+
+PAST_ANSWER = (
+    "Excel pivot tables let me summarise a large table by dropping fields into rows, columns and values. First I "
+    "clean the data and check for blanks, then build the pivot, because a wrong header or a duplicate row changes "
+    "every total. For example, I used one to compare homework completion by class and week. The trade-off versus "
+    "a formula is speed against traceability, so I document the source range and check the totals with a test."
+)
 
 
 async def _reset() -> None:
@@ -27,8 +49,7 @@ async def _reset() -> None:
 async def main(reset: bool) -> None:
     if reset:
         await _reset()
-    transport = httpx.ASGITransport(app=app)
-    async with httpx.AsyncClient(transport=transport, base_url="http://seed", timeout=120) as c:
+    async with httpx.AsyncClient(transport=httpx.ASGITransport(app=app), base_url="http://seed", timeout=300) as c:
         r = await c.post("/api/auth/register", json=DEMO_USER)
         if r.status_code == 409:
             print("Demo user already exists. Re-run with --reset to recreate it.")
@@ -37,62 +58,53 @@ async def main(reset: bool) -> None:
         token = (await c.post("/api/auth/login", json={k: DEMO_USER[k] for k in ("email", "password")})).json()["access_token"]
         h = {"Authorization": f"Bearer {token}"}
 
+        # 1-2. resume -> reviewed profile
         (await c.post("/api/profile/resume", headers=h,
-                      files={"file": ("demo_resume.pdf", make_pdf(DEMO_RESUME), "application/pdf")})).raise_for_status()
+                      files={"file": ("maya_chen_resume.pdf", make_pdf(DEMO_RESUME), "application/pdf")})).raise_for_status()
         profile = (await c.get("/api/profile", headers=h)).json()
-        levels = {"Python": 4, "SQL": 4, "Pandas": 4, "Tableau": 4, "Excel": 4, "Statistics": 3, "Git": 2}
-        skills = [{"name": s["name"], "proficiency": levels.get(s["name"], 3)} for s in profile["skills"]]
+        skills = {s["name"]: LEVELS.get(s["name"], 3) for s in profile["skills"]} | {k: v for k, v in LEVELS.items()}
         (await c.put("/api/profile", headers=h, json={
-            "target_role": "Machine Learning Engineer", "experience_level": "mid", "weekly_hours": 8,
-            "skills": skills})).raise_for_status()
+            "current_role": "Mathematics Teacher", "target_role": "Data Analyst", "experience_level": "junior",
+            "weekly_hours": 8, "skills": [{"name": n, "proficiency": lv} for n, lv in skills.items()]})).raise_for_status()
 
-        job_ids = []
-        for job in DEMO_JOBS:
-            r = await c.post("/api/jobs", headers=h, json=job)
-            r.raise_for_status()
-            job_ids.append(r.json()["id"])
-
+        # 3. real(istic) postings -> skill-gap map
+        imported = (await import_roles(c, h, ["data_analyst"]))["data_analyst"]
         report = (await c.post("/api/skill-gap/analyze", headers=h, json={})).json()
+
+        # 4. plan (two weeks in) + projects
         plan = (await c.post("/api/plans/generate", headers=h, json={
             "max_weeks": 12, "start_date": (date.today() - timedelta(weeks=2)).isoformat()})).json()
         tasks = [t for w in plan["weeks"] for t in w["tasks"]]
-        if tasks:
-            await c.patch(f"/api/plans/{plan['id']}/tasks/{tasks[0]['id']}", headers=h,
+        for t in tasks[:3]:
+            await c.patch(f"/api/plans/{plan['id']}/tasks/{t['id']}", headers=h,
                           json={"status": "completed", "difficulty_rating": 2, "notes": "DEMO"})
-        if len(tasks) > 1:
-            await c.patch(f"/api/plans/{plan['id']}/tasks/{tasks[1]['id']}", headers=h,
-                          json={"status": "in_progress", "difficulty_rating": 4, "notes": "DEMO: finding this hard"})
-        await c.post("/api/projects/recommend", headers=h, json={"count": 3})
+        projects = (await c.post("/api/projects/recommend", headers=h, json={"count": 3})).json()
 
-        iv = (await c.post("/api/interviews", headers=h, json={"num_questions": 3, "interview_type": "mixed"})).json()
-        sample_answers = [
-            "Docker packages an app and its dependencies into an image that runs as a container. First I write a "
-            "Dockerfile, pin dependency versions, then build and test the image in CI. The trade-off versus VMs is "
-            "weaker isolation but much faster startup. (DEMO answer)",
-            "I would start by checking the data, then train a baseline model and compare metrics. (DEMO answer)",
-        ]
-        for q, a in zip(iv["questions"], sample_answers):
-            await c.post(f"/api/interviews/{iv['id']}/answer", headers=h, json={"question_id": q["id"], "answer_text": a})
-        await c.post(f"/api/interviews/{iv['id']}/evaluate", headers=h)
+        # 5. one past interview (a decent Excel answer) + a self-assessment
+        iv = (await c.post("/api/interviews", headers=h, json={
+            "num_questions": 2, "interview_type": "technical", "focus_skills": ["Excel"]})).json()
+        for q in iv["questions"]:
+            await c.post(f"/api/interviews/{iv['id']}/answer", headers=h, json={"question_id": q["id"], "answer_text": PAST_ANSWER})
+        evaluated = (await c.post(f"/api/interviews/{iv['id']}/evaluate", headers=h)).json()
+        await c.post("/api/progress/assessments", headers=h, json={"skill_name": "Tableau", "proficiency": 3, "notes": "DEMO: finished a course"})
 
-        await c.post("/api/progress/assessments", headers=h, json={"skill_name": "Docker", "proficiency": 2, "notes": "DEMO"})
+        # 6. the tracker's history
+        n_apps = await seed_applications(c, h, reset=False)
 
-        for company, role, status, reached, level, skills_h, days in DEMO_APPLICATIONS:
-            r = await c.post("/api/applications", headers=h, json={
-                "company_name": company, "role_title": role, "applied_date": (date.today() - timedelta(days=days)).isoformat(),
-                "status": status, "experience_level": level, "skills_highlighted": skills_h,
-                "notes": "DEMO DATA - fictional application"})
-            r.raise_for_status()
-            if reached and status == "rejected":
-                await c.patch(f"/api/applications/{r.json()['id']}", headers=h, json={
-                    "reached_interview": True, "interview_feedback": "DEMO: wanted more production ML experience"})
+        # 7. start the live demo from a clean slate: no pending proposal left over from seeding
+        for p in (await c.get("/api/plans?status=proposed", headers=h)).json():
+            await c.post(f"/api/plans/{p['id']}/reject", headers=h)
 
-        print("Demo data created (fictional).")
-        print(f"  login: {DEMO_USER['email']} / {DEMO_USER['password']}")
-        print(f"  skill-gap match score: {report['match_score']}%  |  plan weeks: {plan['total_weeks']}")
+        recs = (await c.get("/api/applications/recommendations", headers=h)).json()
+        print("Demo data created (all fictional).")
+        print(f"  login:        {DEMO_USER['email']} / {DEMO_USER['password']}")
+        print(f"  skill gap:    {report['based_on']}; match score {report['match_score']}% (imported {imported['imported']} postings)")
+        print(f"  plan:         {plan['total_weeks']} weeks, {len(tasks)} tasks, first 3 completed | projects: {len(projects)}")
+        print(f"  interview:    {evaluated['overall_score']}/10 (heuristic scoring unless an LLM key is set)")
+        print(f"  tracker:      {n_apps} applications; {len(recs['insights'])} insight(s), e.g. {recs['insights'][0]['text'] if recs['insights'] else 'none yet'}")
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--reset", action="store_true", help="delete and recreate the demo user")
     asyncio.run(main(parser.parse_args().reset))

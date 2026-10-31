@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, computed_field
 
 
 class AnalyzeRequest(BaseModel):
@@ -36,11 +36,21 @@ class SkillGapReportOut(BaseModel):
     id: int
     target_role: str | None
     job_description_ids: list[int]
+    job_count: int = Field(description="Number of job postings this report is based on")
+    job_sources: dict[str, int] = Field(description="Postings per source, e.g. {'seed': 20} or {'jsearch': 18, 'pasted': 2}")
+    role_family: str | None
     match_score: float
     summary: str | None
     generated_by: str | None
     created_at: datetime
     items: list[SkillGapItemOut]
+
+    @computed_field
+    @property
+    def based_on(self) -> str:
+        n = self.job_count or len(self.job_description_ids)
+        src = ", ".join(f"{v} {k}" for k, v in sorted(self.job_sources.items(), key=lambda kv: -kv[1]))
+        return f"Based on {n} job posting{'s' if n != 1 else ''}" + (f" ({src})" if src else "")
 
 
 class SkillGapSummaryOut(BaseModel):
@@ -49,5 +59,6 @@ class SkillGapSummaryOut(BaseModel):
     id: int
     target_role: str | None
     job_description_ids: list[int]
+    job_count: int = 0
     match_score: float
     created_at: datetime

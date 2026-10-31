@@ -11,6 +11,7 @@ from app.core.errors import NotFoundError, ValidationFailed
 from app.models import Resume, User, UserProfile, UserSkill
 from app.modules.profile.schemas import ProfileOut, ProfileUpdate, ResumeOut, UserSkillOut
 from app.modules.profile.skill_service import get_or_create_skill, list_user_skills
+from app.utils.docx_text import DOCX_MIME, extract_docx_text
 from app.utils.pdf import extract_pdf_text
 from app.utils.skills_taxonomy import normalize_skill
 
@@ -36,12 +37,16 @@ async def upload_resume(
     settings = get_settings()
     if len(data) > settings.max_resume_bytes:
         raise ValidationFailed(f"File too large. Maximum size is {settings.max_resume_size_mb} MB.")
-    if content_type not in {"application/pdf", "application/x-pdf", None, ""}:
-        raise ValidationFailed("Only PDF resumes are supported.")
-    if not _safe_filename(filename).lower().endswith(".pdf"):
-        raise ValidationFailed("Only .pdf files are supported.")
+    safe_name = _safe_filename(filename).lower()
+    is_docx = safe_name.endswith(".docx")
+    if not (is_docx or safe_name.endswith(".pdf")):
+        raise ValidationFailed("Only .pdf and .docx resumes are supported.")
+    allowed = {DOCX_MIME, "application/octet-stream"} if is_docx else {"application/pdf", "application/x-pdf"}
+    if content_type not in allowed | {None, ""}:
+        raise ValidationFailed("The file type does not match its extension. Upload a .pdf or .docx resume.")
 
-    text, pages = extract_pdf_text(data, max_pages=settings.max_resume_pages)
+    extract = extract_docx_text if is_docx else extract_pdf_text
+    text, pages = extract(data, max_pages=settings.max_resume_pages)
     text = text[: settings.max_document_chars]
 
     extraction, generated_by, warnings = await orchestrator.parse_resume(llm, text)

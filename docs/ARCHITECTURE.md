@@ -37,6 +37,41 @@ flowchart TB
 | Versioned learning plans | AI never edits the active plan. Adjustments create a `proposed` version with a `change_summary`; the user accepts or rejects. |
 | Tool calling via a JSON step protocol | Works identically for OpenAI and Gemini. The LLM can only call allow-listed, read-only tools over a pre-loaded snapshot of the current user's data, with Pydantic-validated arguments. |
 
+## The closed loop: evidence changes the plan
+
+```mermaid
+flowchart LR
+    E["Evidence<br/>evaluated interview answer ·<br/>self-assessment · skipped / hard task"] --> P["Proficiency<br/>moving average of the rubric score<br/>mapped to the 1-5 level"]
+    P --> G["Gaps recomputed<br/>same postings, deterministic"]
+    G --> R["Proposed plan version<br/>+ change_summary.reasons"]
+    R -->|"user accepts or rejects"| A["Active plan"]
+```
+
+`modules/progress/adaptation.py` runs after each of those events and never fails the request that triggered it.
+It only moves skills the user already has (inventing a level for a missing skill would make it look *less* urgent), drops
+skills that are now mastered, adds back skills that fell into the gap, and reuses an identical pending proposal instead of
+creating a new one. The active plan is never edited; the reasons are written next to the diff, e.g.
+`SQL: average mock-interview score 1.2/10 -> +5.5h (11.0h to 16.5h), starts week 1`.
+
+## Content lives in data files, not code
+
+| File | Used for | What the AI may do with it |
+|---|---|---|
+| `data/skills_taxonomy.json` | Skill names, synonyms, related skills, learning hours | Nothing: matching is deterministic |
+| `data/jds/*.json` | 20 sample postings per role (the fallback when no job-board key is set) | Nothing |
+| `data/resources.json` | Free learning resources per skill (URLs were checked when built) | Choose between the listed ids; unknown ids are ignored |
+| `data/projects.json` | 31 portfolio project templates tagged with skills | Reword title / description; skills, stack, difficulty and hours are fixed |
+| `data/rubric.json` | Interview rubric: 5 dimensions x 5 anchored levels | The prompt is built from it; quotes it returns must appear in the answer |
+
+Skill gaps are aggregated over *all* postings for the target role (importance = the share of postings that mention a skill,
+required counting fully, preferred half). Postings are tagged with a role family so that postings for other roles the user
+also saved do not dilute the result, and every report records how many postings it used and where they came from.
+
+The application tracker compares each group (channel, role family, seniority, industry, company size, resume version, work
+mode, highlighted skill) with all other applications using Wilson 95% intervals. Disjoint intervals are "reliable"; a large
+gap with overlapping intervals is an "early signal"; anything else is not mentioned. Applications younger than 14 days with no
+reply are left out rather than counted as failures.
+
 ## Database relationships
 
 ```mermaid

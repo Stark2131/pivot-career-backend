@@ -1,0 +1,2127 @@
+{
+ "version": 1,
+ "verified_on": "2026-10-31",
+ "note": "Curated free resources, one list per skill. Every URL was requested when this file was built; links can still move, so the app only ever shows links from this file and never lets the AI invent one. Hours are rough estimates for a motivated learner.",
+ "skills": {
+  "SQL": [
+   {
+    "id": "sql-1",
+    "title": "SQLBolt: interactive SQL lessons",
+    "url": "https://sqlbolt.com/",
+    "type": "interactive",
+    "hours": 6,
+    "provider": "SQLBolt"
+   },
+   {
+    "id": "sql-2",
+    "title": "Kaggle Learn: Intro to SQL",
+    "url": "https://www.kaggle.com/learn/intro-to-sql",
+    "type": "course",
+    "hours": 3,
+    "provider": "Kaggle"
+   },
+   {
+    "id": "sql-3",
+    "title": "Mode SQL Tutorial",
+    "url": "https://mode.com/sql-tutorial/",
+    "type": "course",
+    "hours": 8,
+    "provider": "Mode"
+   }
+  ],
+  "Python": [
+   {
+    "id": "python-1",
+    "title": "The Python Tutorial (official)",
+    "url": "https://docs.python.org/3/tutorial/",
+    "type": "docs",
+    "hours": 10,
+    "provider": "python.org"
+   },
+   {
+    "id": "python-2",
+    "title": "Kaggle Learn: Python",
+    "url": "https://www.kaggle.com/learn/python",
+    "type": "course",
+    "hours": 5,
+    "provider": "Kaggle"
+   },
+   {
+    "id": "python-3",
+    "title": "Automate the Boring Stuff with Python",
+    "url": "https://automatetheboringstuff.com/",
+    "type": "book",
+    "hours": 20,
+    "provider": "Al Sweigart"
+   }
+  ],
+  "Pandas": [
+   {
+    "id": "pandas-1",
+    "title": "10 minutes to pandas (official)",
+    "url": "https://pandas.pydata.org/docs/user_guide/10min.html",
+    "type": "docs",
+    "hours": 2,
+    "provider": "pandas.pydata.org"
+   },
+   {
+    "id": "pandas-2",
+    "title": "Kaggle Learn: Pandas",
+    "url": "https://www.kaggle.com/learn/pandas",
+    "type": "course",
+    "hours": 4,
+    "provider": "Kaggle"
+   },
+   {
+    "id": "pandas-3",
+    "title": "Python Data Science Handbook",
+    "url": "https://jakevdp.github.io/PythonDataScienceHandbook/",
+    "type": "book",
+    "hours": 12,
+    "provider": "Jake VanderPlas"
+   }
+  ],
+  "R": [
+   {
+    "id": "r-1",
+    "title": "R for Data Science (2e)",
+    "url": "https://r4ds.hadley.nz/",
+    "type": "book",
+    "hours": 20,
+    "provider": "Hadley Wickham"
+   },
+   {
+    "id": "r-2",
+    "title": "swirl: learn R in R",
+    "url": "https://swirlstats.com/",
+    "type": "interactive",
+    "hours": 8,
+    "provider": "swirlstats.com"
+   },
+   {
+    "id": "r-3",
+    "title": "Introduction to R (CRAN manual)",
+    "url": "https://cran.r-project.org/doc/manuals/r-release/R-intro.html",
+    "type": "docs",
+    "hours": 6,
+    "provider": "CRAN"
+   }
+  ],
+  "Excel": [
+   {
+    "id": "excel-1",
+    "title": "Exceljet: Excel formulas and functions",
+    "url": "https://exceljet.net/",
+    "type": "article",
+    "hours": 6,
+    "provider": "Exceljet"
+   },
+   {
+    "id": "excel-2",
+    "title": "Microsoft: Excel video training",
+    "url": "https://support.microsoft.com/en-us/office/excel-video-training-9bc05390-e94c-46af-a5b3-d7c22f6990bb",
+    "type": "course",
+    "hours": 5,
+    "provider": "Microsoft"
+   },
+   {
+    "id": "excel-3",
+    "title": "Chandoo: Excel basics",
+    "url": "https://chandoo.org/wp/excel-basics/",
+    "type": "article",
+    "hours": 4,
+    "provider": "Chandoo"
+   }
+  ],
+  "Statistics": [
+   {
+    "id": "statistics-1",
+    "title": "Khan Academy: Statistics and probability",
+    "url": "https://www.khanacademy.org/math/statistics-probability",
+    "type": "course",
+    "hours": 25,
+    "provider": "Khan Academy"
+   },
+   {
+    "id": "statistics-2",
+    "title": "OpenIntro Statistics (free textbook)",
+    "url": "https://www.openintro.org/book/os/",
+    "type": "book",
+    "hours": 25,
+    "provider": "OpenIntro"
+   },
+   {
+    "id": "statistics-3",
+    "title": "Seeing Theory: a visual intro to probability and statistics",
+    "url": "https://seeing-theory.brown.edu/",
+    "type": "interactive",
+    "hours": 4,
+    "provider": "Brown University"
+   }
+  ],
+  "Tableau": [
+   {
+    "id": "tableau-1",
+    "title": "Tableau free training videos",
+    "url": "https://www.tableau.com/learn/training",
+    "type": "course",
+    "hours": 8,
+    "provider": "Tableau"
+   },
+   {
+    "id": "tableau-2",
+    "title": "Tableau Public (practice and gallery)",
+    "url": "https://public.tableau.com/app/discover",
+    "type": "interactive",
+    "hours": 5,
+    "provider": "Tableau"
+   },
+   {
+    "id": "tableau-3",
+    "title": "Makeover Monday",
+    "url": "https://www.makeovermonday.co.uk/",
+    "type": "interactive",
+    "hours": 4,
+    "provider": "Makeover Monday"
+   }
+  ],
+  "Power BI": [
+   {
+    "id": "power-bi-1",
+    "title": "Microsoft Learn: Get started with Power BI",
+    "url": "https://learn.microsoft.com/en-us/training/powerplatform/power-bi",
+    "type": "course",
+    "hours": 8,
+    "provider": "Microsoft Learn"
+   },
+   {
+    "id": "power-bi-2",
+    "title": "Power BI documentation",
+    "url": "https://learn.microsoft.com/en-us/power-bi/",
+    "type": "docs",
+    "hours": 6,
+    "provider": "Microsoft"
+   },
+   {
+    "id": "power-bi-3",
+    "title": "Guy in a Cube (YouTube)",
+    "url": "https://www.youtube.com/@GuyInACube",
+    "type": "video",
+    "hours": 6,
+    "provider": "Guy in a Cube"
+   }
+  ],
+  "Looker": [
+   {
+    "id": "looker-1",
+    "title": "Looker Studio Help: get started",
+    "url": "https://support.google.com/looker-studio/answer/6283323",
+    "type": "docs",
+    "hours": 3,
+    "provider": "Google"
+   },
+   {
+    "id": "looker-2",
+    "title": "Looker Studio training",
+    "url": "https://support.google.com/looker-studio/",
+    "type": "docs",
+    "hours": 4,
+    "provider": "Google"
+   },
+   {
+    "id": "looker-3",
+    "title": "Google Cloud Skills Boost",
+    "url": "https://www.cloudskillsboost.google/",
+    "type": "course",
+    "hours": 6,
+    "provider": "Google Cloud"
+   }
+  ],
+  "Data Visualization": [
+   {
+    "id": "data-visualization-1",
+    "title": "From Data to Viz: choose the right chart",
+    "url": "https://www.data-to-viz.com/",
+    "type": "article",
+    "hours": 2,
+    "provider": "data-to-viz.com"
+   },
+   {
+    "id": "data-visualization-2",
+    "title": "Kaggle Learn: Data Visualization",
+    "url": "https://www.kaggle.com/learn/data-visualization",
+    "type": "course",
+    "hours": 4,
+    "provider": "Kaggle"
+   },
+   {
+    "id": "data-visualization-3",
+    "title": "Fundamentals of Data Visualization (book)",
+    "url": "https://clauswilke.com/dataviz/",
+    "type": "book",
+    "hours": 10,
+    "provider": "Claus Wilke"
+   }
+  ],
+  "Data Storytelling": [
+   {
+    "id": "data-storytelling-1",
+    "title": "storytelling with data blog",
+    "url": "https://www.storytellingwithdata.com/blog",
+    "type": "article",
+    "hours": 4,
+    "provider": "storytelling with data"
+   },
+   {
+    "id": "data-storytelling-2",
+    "title": "The Pudding: visual essays",
+    "url": "https://pudding.cool/",
+    "type": "article",
+    "hours": 3,
+    "provider": "The Pudding"
+   },
+   {
+    "id": "data-storytelling-3",
+    "title": "Edward Tufte: books and talks",
+    "url": "https://www.edwardtufte.com/",
+    "type": "article",
+    "hours": 3,
+    "provider": "Edward Tufte"
+   }
+  ],
+  "Data Analysis": [
+   {
+    "id": "data-analysis-1",
+    "title": "Kaggle Learn: Data Cleaning",
+    "url": "https://www.kaggle.com/learn/data-cleaning",
+    "type": "course",
+    "hours": 4,
+    "provider": "Kaggle"
+   },
+   {
+    "id": "data-analysis-2",
+    "title": "Google Data Analytics (course info)",
+    "url": "https://grow.google/certificates/data-analytics/",
+    "type": "course",
+    "hours": 20,
+    "provider": "Google"
+   }
+  ],
+  "Data Cleaning": [
+   {
+    "id": "data-cleaning-1",
+    "title": "Kaggle Learn: Data Cleaning",
+    "url": "https://www.kaggle.com/learn/data-cleaning",
+    "type": "course",
+    "hours": 4,
+    "provider": "Kaggle"
+   },
+   {
+    "id": "data-cleaning-2",
+    "title": "pandas: working with missing data",
+    "url": "https://pandas.pydata.org/docs/user_guide/missing_data.html",
+    "type": "docs",
+    "hours": 2,
+    "provider": "pandas.pydata.org"
+   },
+   {
+    "id": "data-cleaning-3",
+    "title": "Tidy Data (paper)",
+    "url": "https://vita.had.co.nz/papers/tidy-data.pdf",
+    "type": "article",
+    "hours": 2,
+    "provider": "Hadley Wickham"
+   }
+  ],
+  "A/B Testing": [
+   {
+    "id": "a-b-testing-1",
+    "title": "A/B Testing by Google (Udacity, free)",
+    "url": "https://www.udacity.com/course/ab-testing--ud257",
+    "type": "course",
+    "hours": 16,
+    "provider": "Udacity"
+   },
+   {
+    "id": "a-b-testing-2",
+    "title": "Evan Miller's A/B testing tools and guides",
+    "url": "https://www.evanmiller.org/ab-testing/",
+    "type": "article",
+    "hours": 2,
+    "provider": "Evan Miller"
+   },
+   {
+    "id": "a-b-testing-3",
+    "title": "Trustworthy Online Controlled Experiments (site)",
+    "url": "https://experimentguide.com/",
+    "type": "book",
+    "hours": 10,
+    "provider": "Kohavi, Tang, Xu"
+   }
+  ],
+  "Hypothesis Testing": [
+   {
+    "id": "hypothesis-testing-1",
+    "title": "Khan Academy: Significance tests",
+    "url": "https://www.khanacademy.org/math/statistics-probability/significance-tests-one-sample",
+    "type": "course",
+    "hours": 6,
+    "provider": "Khan Academy"
+   },
+   {
+    "id": "hypothesis-testing-2",
+    "title": "Seeing Theory: frequentist inference",
+    "url": "https://seeing-theory.brown.edu/frequentist-inference/index.html",
+    "type": "interactive",
+    "hours": 2,
+    "provider": "Brown University"
+   },
+   {
+    "id": "hypothesis-testing-3",
+    "title": "OpenIntro Statistics",
+    "url": "https://www.openintro.org/book/os/",
+    "type": "book",
+    "hours": 10,
+    "provider": "OpenIntro"
+   }
+  ],
+  "Regression Analysis": [
+   {
+    "id": "regression-analysis-1",
+    "title": "Khan Academy: Regression",
+    "url": "https://www.khanacademy.org/math/statistics-probability/describing-relationships-quantitative-data",
+    "type": "course",
+    "hours": 6,
+    "provider": "Khan Academy"
+   },
+   {
+    "id": "regression-analysis-2",
+    "title": "An Introduction to Statistical Learning (free book)",
+    "url": "https://www.statlearning.com/",
+    "type": "book",
+    "hours": 20,
+    "provider": "James, Witten, Hastie, Tibshirani"
+   },
+   {
+    "id": "regression-analysis-3",
+    "title": "scikit-learn: linear models",
+    "url": "https://scikit-learn.org/stable/modules/linear_model.html",
+    "type": "docs",
+    "hours": 3,
+    "provider": "scikit-learn"
+   }
+  ],
+  "Business Intelligence": [
+   {
+    "id": "business-intelligence-1",
+    "title": "Microsoft Learn: Data analytics",
+    "url": "https://learn.microsoft.com/en-us/training/browse/?products=power-bi",
+    "type": "course",
+    "hours": 8,
+    "provider": "Microsoft Learn"
+   },
+   {
+    "id": "business-intelligence-2",
+    "title": "Tableau: what is business intelligence",
+    "url": "https://www.tableau.com/business-intelligence/what-is-business-intelligence",
+    "type": "article",
+    "hours": 1,
+    "provider": "Tableau"
+   },
+   {
+    "id": "business-intelligence-3",
+    "title": "Kimball Group: dimensional modeling techniques",
+    "url": "https://www.kimballgroup.com/data-warehouse-business-intelligence-resources/kimball-techniques/dimensional-modeling-techniques/",
+    "type": "article",
+    "hours": 3,
+    "provider": "Kimball Group"
+   }
+  ],
+  "Data Warehousing": [
+   {
+    "id": "data-warehousing-1",
+    "title": "Kimball Group: dimensional modeling techniques",
+    "url": "https://www.kimballgroup.com/data-warehouse-business-intelligence-resources/kimball-techniques/dimensional-modeling-techniques/",
+    "type": "article",
+    "hours": 3,
+    "provider": "Kimball Group"
+   },
+   {
+    "id": "data-warehousing-2",
+    "title": "Snowflake: key concepts and architecture",
+    "url": "https://docs.snowflake.com/en/user-guide/intro-key-concepts",
+    "type": "docs",
+    "hours": 2,
+    "provider": "Snowflake"
+   },
+   {
+    "id": "data-warehousing-3",
+    "title": "BigQuery documentation",
+    "url": "https://cloud.google.com/bigquery/docs",
+    "type": "docs",
+    "hours": 4,
+    "provider": "Google Cloud"
+   }
+  ],
+  "Snowflake": [
+   {
+    "id": "snowflake-1",
+    "title": "Snowflake documentation: key concepts",
+    "url": "https://docs.snowflake.com/en/user-guide/intro-key-concepts",
+    "type": "docs",
+    "hours": 2,
+    "provider": "Snowflake"
+   },
+   {
+    "id": "snowflake-2",
+    "title": "Snowflake quickstarts",
+    "url": "https://quickstarts.snowflake.com/",
+    "type": "course",
+    "hours": 6,
+    "provider": "Snowflake"
+   },
+   {
+    "id": "snowflake-3",
+    "title": "Snowflake University",
+    "url": "https://learn.snowflake.com/",
+    "type": "course",
+    "hours": 8,
+    "provider": "Snowflake"
+   }
+  ],
+  "BigQuery": [
+   {
+    "id": "bigquery-1",
+    "title": "BigQuery documentation",
+    "url": "https://cloud.google.com/bigquery/docs",
+    "type": "docs",
+    "hours": 4,
+    "provider": "Google Cloud"
+   },
+   {
+    "id": "bigquery-2",
+    "title": "Kaggle Learn: Advanced SQL (BigQuery)",
+    "url": "https://www.kaggle.com/learn/advanced-sql",
+    "type": "course",
+    "hours": 4,
+    "provider": "Kaggle"
+   },
+   {
+    "id": "bigquery-3",
+    "title": "BigQuery sandbox",
+    "url": "https://cloud.google.com/bigquery/docs/sandbox",
+    "type": "docs",
+    "hours": 1,
+    "provider": "Google Cloud"
+   }
+  ],
+  "dbt": [
+   {
+    "id": "dbt-1",
+    "title": "dbt Learn: Fundamentals",
+    "url": "https://learn.getdbt.com/",
+    "type": "course",
+    "hours": 6,
+    "provider": "dbt Labs"
+   },
+   {
+    "id": "dbt-2",
+    "title": "dbt documentation",
+    "url": "https://docs.getdbt.com/",
+    "type": "docs",
+    "hours": 5,
+    "provider": "dbt Labs"
+   },
+   {
+    "id": "dbt-3",
+    "title": "dbt: quickstart guides",
+    "url": "https://docs.getdbt.com/guides",
+    "type": "docs",
+    "hours": 3,
+    "provider": "dbt Labs"
+   }
+  ],
+  "ETL": [
+   {
+    "id": "etl-1",
+    "title": "Apache Airflow tutorials",
+    "url": "https://airflow.apache.org/docs/apache-airflow/stable/tutorial/index.html",
+    "type": "docs",
+    "hours": 4,
+    "provider": "Apache Airflow"
+   },
+   {
+    "id": "etl-2",
+    "title": "Data Engineering Zoomcamp",
+    "url": "https://github.com/DataTalksClub/data-engineering-zoomcamp",
+    "type": "course",
+    "hours": 40,
+    "provider": "DataTalks.Club"
+   },
+   {
+    "id": "etl-3",
+    "title": "dbt documentation",
+    "url": "https://docs.getdbt.com/",
+    "type": "docs",
+    "hours": 5,
+    "provider": "dbt Labs"
+   }
+  ],
+  "Apache Airflow": [
+   {
+    "id": "apache-airflow-1",
+    "title": "Airflow tutorial (official)",
+    "url": "https://airflow.apache.org/docs/apache-airflow/stable/tutorial/index.html",
+    "type": "docs",
+    "hours": 3,
+    "provider": "Apache Airflow"
+   },
+   {
+    "id": "apache-airflow-2",
+    "title": "Airflow: core concepts",
+    "url": "https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/index.html",
+    "type": "docs",
+    "hours": 3,
+    "provider": "Apache Airflow"
+   },
+   {
+    "id": "apache-airflow-3",
+    "title": "Data Engineering Zoomcamp",
+    "url": "https://github.com/DataTalksClub/data-engineering-zoomcamp",
+    "type": "course",
+    "hours": 40,
+    "provider": "DataTalks.Club"
+   }
+  ],
+  "Apache Spark": [
+   {
+    "id": "apache-spark-1",
+    "title": "Spark quick start (official)",
+    "url": "https://spark.apache.org/docs/latest/quick-start.html",
+    "type": "docs",
+    "hours": 2,
+    "provider": "Apache Spark"
+   },
+   {
+    "id": "apache-spark-2",
+    "title": "PySpark getting started",
+    "url": "https://spark.apache.org/docs/latest/api/python/getting_started/index.html",
+    "type": "docs",
+    "hours": 4,
+    "provider": "Apache Spark"
+   },
+   {
+    "id": "apache-spark-3",
+    "title": "Spark SQL guide",
+    "url": "https://spark.apache.org/docs/latest/sql-programming-guide.html",
+    "type": "docs",
+    "hours": 4,
+    "provider": "Apache Spark"
+   }
+  ],
+  "Apache Kafka": [
+   {
+    "id": "apache-kafka-1",
+    "title": "Apache Kafka quickstart",
+    "url": "https://kafka.apache.org/quickstart",
+    "type": "docs",
+    "hours": 2,
+    "provider": "Apache Kafka"
+   },
+   {
+    "id": "apache-kafka-2",
+    "title": "Kafka documentation: introduction",
+    "url": "https://kafka.apache.org/intro",
+    "type": "docs",
+    "hours": 1,
+    "provider": "Apache Kafka"
+   },
+   {
+    "id": "apache-kafka-3",
+    "title": "Confluent Developer: Kafka 101",
+    "url": "https://developer.confluent.io/courses/apache-kafka/events/",
+    "type": "course",
+    "hours": 3,
+    "provider": "Confluent"
+   }
+  ],
+  "Google Analytics": [
+   {
+    "id": "google-analytics-1",
+    "title": "Google Analytics Academy / Skillshop",
+    "url": "https://skillshop.withgoogle.com/",
+    "type": "course",
+    "hours": 6,
+    "provider": "Google"
+   },
+   {
+    "id": "google-analytics-2",
+    "title": "GA4 help center",
+    "url": "https://support.google.com/analytics/",
+    "type": "docs",
+    "hours": 3,
+    "provider": "Google"
+   },
+   {
+    "id": "google-analytics-3",
+    "title": "Analytics Mania: GA4 tutorials",
+    "url": "https://www.analyticsmania.com/",
+    "type": "article",
+    "hours": 4,
+    "provider": "Analytics Mania"
+   }
+  ],
+  "Marketing Analytics": [
+   {
+    "id": "marketing-analytics-1",
+    "title": "Google Skillshop",
+    "url": "https://skillshop.withgoogle.com/",
+    "type": "course",
+    "hours": 6,
+    "provider": "Google"
+   },
+   {
+    "id": "marketing-analytics-2",
+    "title": "HubSpot Academy",
+    "url": "https://academy.hubspot.com/",
+    "type": "course",
+    "hours": 8,
+    "provider": "HubSpot"
+   },
+   {
+    "id": "marketing-analytics-3",
+    "title": "Think with Google",
+    "url": "https://www.thinkwithgoogle.com/",
+    "type": "article",
+    "hours": 3,
+    "provider": "Google"
+   }
+  ],
+  "KPI Analysis": [
+   {
+    "id": "kpi-analysis-1",
+    "title": "Atlassian: metrics and KPIs",
+    "url": "https://www.atlassian.com/agile/project-management/metrics",
+    "type": "article",
+    "hours": 1,
+    "provider": "Atlassian"
+   },
+   {
+    "id": "kpi-analysis-2",
+    "title": "Amplitude: product metrics guide",
+    "url": "https://amplitude.com/blog/product-metrics",
+    "type": "article",
+    "hours": 1,
+    "provider": "Amplitude"
+   },
+   {
+    "id": "kpi-analysis-3",
+    "title": "Mixpanel docs",
+    "url": "https://docs.mixpanel.com/",
+    "type": "docs",
+    "hours": 3,
+    "provider": "Mixpanel"
+   }
+  ],
+  "VBA": [
+   {
+    "id": "vba-1",
+    "title": "Microsoft: VBA language reference",
+    "url": "https://learn.microsoft.com/en-us/office/vba/api/overview/",
+    "type": "docs",
+    "hours": 6,
+    "provider": "Microsoft"
+   },
+   {
+    "id": "vba-2",
+    "title": "Excel VBA basics (Excel Easy)",
+    "url": "https://www.excel-easy.com/vba.html",
+    "type": "course",
+    "hours": 5,
+    "provider": "Excel Easy"
+   }
+  ],
+  "SAS": [
+   {
+    "id": "sas-1",
+    "title": "SAS Programming 1: Essentials (free e-learning)",
+    "url": "https://www.sas.com/en_us/training/offers/free-training.html",
+    "type": "course",
+    "hours": 14,
+    "provider": "SAS"
+   },
+   {
+    "id": "sas-2",
+    "title": "SAS Viya documentation",
+    "url": "https://documentation.sas.com/",
+    "type": "docs",
+    "hours": 6,
+    "provider": "SAS"
+   },
+   {
+    "id": "sas-3",
+    "title": "SAS Support Communities",
+    "url": "https://communities.sas.com/",
+    "type": "article",
+    "hours": 2,
+    "provider": "SAS"
+   }
+  ],
+  "Machine Learning": [
+   {
+    "id": "machine-learning-1",
+    "title": "Google Machine Learning Crash Course",
+    "url": "https://developers.google.com/machine-learning/crash-course",
+    "type": "course",
+    "hours": 15,
+    "provider": "Google"
+   },
+   {
+    "id": "machine-learning-2",
+    "title": "Kaggle Learn: Intro to Machine Learning",
+    "url": "https://www.kaggle.com/learn/intro-to-machine-learning",
+    "type": "course",
+    "hours": 4,
+    "provider": "Kaggle"
+   },
+   {
+    "id": "machine-learning-3",
+    "title": "An Introduction to Statistical Learning",
+    "url": "https://www.statlearning.com/",
+    "type": "book",
+    "hours": 25,
+    "provider": "James, Witten, Hastie, Tibshirani"
+   }
+  ],
+  "scikit-learn": [
+   {
+    "id": "scikit-learn-1",
+    "title": "scikit-learn user guide",
+    "url": "https://scikit-learn.org/stable/user_guide.html",
+    "type": "docs",
+    "hours": 8,
+    "provider": "scikit-learn"
+   },
+   {
+    "id": "scikit-learn-2",
+    "title": "Kaggle Learn: Intermediate Machine Learning",
+    "url": "https://www.kaggle.com/learn/intermediate-machine-learning",
+    "type": "course",
+    "hours": 4,
+    "provider": "Kaggle"
+   }
+  ],
+  "PyTorch": [
+   {
+    "id": "pytorch-1",
+    "title": "PyTorch tutorials (official)",
+    "url": "https://pytorch.org/tutorials/",
+    "type": "docs",
+    "hours": 10,
+    "provider": "PyTorch"
+   },
+   {
+    "id": "pytorch-2",
+    "title": "PyTorch: Learn the basics",
+    "url": "https://pytorch.org/tutorials/beginner/basics/intro.html",
+    "type": "course",
+    "hours": 4,
+    "provider": "PyTorch"
+   },
+   {
+    "id": "pytorch-3",
+    "title": "Dive into Deep Learning (PyTorch)",
+    "url": "https://d2l.ai/",
+    "type": "book",
+    "hours": 30,
+    "provider": "d2l.ai"
+   }
+  ],
+  "TensorFlow": [
+   {
+    "id": "tensorflow-1",
+    "title": "TensorFlow tutorials (official)",
+    "url": "https://www.tensorflow.org/tutorials",
+    "type": "docs",
+    "hours": 10,
+    "provider": "TensorFlow"
+   },
+   {
+    "id": "tensorflow-2",
+    "title": "Keras getting started",
+    "url": "https://keras.io/getting_started/",
+    "type": "docs",
+    "hours": 4,
+    "provider": "Keras"
+   },
+   {
+    "id": "tensorflow-3",
+    "title": "Machine Learning Crash Course",
+    "url": "https://developers.google.com/machine-learning/crash-course",
+    "type": "course",
+    "hours": 15,
+    "provider": "Google"
+   }
+  ],
+  "Deep Learning": [
+   {
+    "id": "deep-learning-1",
+    "title": "Dive into Deep Learning",
+    "url": "https://d2l.ai/",
+    "type": "book",
+    "hours": 30,
+    "provider": "d2l.ai"
+   },
+   {
+    "id": "deep-learning-2",
+    "title": "fast.ai: Practical Deep Learning",
+    "url": "https://course.fast.ai/",
+    "type": "course",
+    "hours": 30,
+    "provider": "fast.ai"
+   },
+   {
+    "id": "deep-learning-3",
+    "title": "Kaggle Learn: Intro to Deep Learning",
+    "url": "https://www.kaggle.com/learn/intro-to-deep-learning",
+    "type": "course",
+    "hours": 4,
+    "provider": "Kaggle"
+   }
+  ],
+  "Computer Vision": [
+   {
+    "id": "computer-vision-1",
+    "title": "Kaggle Learn: Computer Vision",
+    "url": "https://www.kaggle.com/learn/computer-vision",
+    "type": "course",
+    "hours": 4,
+    "provider": "Kaggle"
+   },
+   {
+    "id": "computer-vision-2",
+    "title": "Hugging Face: Computer Vision course",
+    "url": "https://huggingface.co/learn/computer-vision-course",
+    "type": "course",
+    "hours": 20,
+    "provider": "Hugging Face"
+   }
+  ],
+  "NLP": [
+   {
+    "id": "nlp-1",
+    "title": "Hugging Face NLP Course",
+    "url": "https://huggingface.co/learn/nlp-course",
+    "type": "course",
+    "hours": 20,
+    "provider": "Hugging Face"
+   },
+   {
+    "id": "nlp-2",
+    "title": "Kaggle Learn: Natural Language Processing",
+    "url": "https://www.kaggle.com/learn/natural-language-processing",
+    "type": "course",
+    "hours": 4,
+    "provider": "Kaggle"
+   },
+   {
+    "id": "nlp-3",
+    "title": "Speech and Language Processing (Jurafsky, Martin)",
+    "url": "https://web.stanford.edu/~jurafsky/slp3/",
+    "type": "book",
+    "hours": 30,
+    "provider": "Stanford"
+   }
+  ],
+  "LLMs": [
+   {
+    "id": "llms-1",
+    "title": "DeepLearning.AI short courses",
+    "url": "https://www.deeplearning.ai/short-courses/",
+    "type": "course",
+    "hours": 6,
+    "provider": "DeepLearning.AI"
+   },
+   {
+    "id": "llms-2",
+    "title": "Hugging Face LLM course",
+    "url": "https://huggingface.co/learn/llm-course",
+    "type": "course",
+    "hours": 15,
+    "provider": "Hugging Face"
+   },
+   {
+    "id": "llms-3",
+    "title": "Anthropic docs: prompt engineering overview",
+    "url": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview",
+    "type": "docs",
+    "hours": 3,
+    "provider": "Anthropic"
+   }
+  ],
+  "Embeddings": [
+   {
+    "id": "embeddings-1",
+    "title": "Hugging Face NLP Course",
+    "url": "https://huggingface.co/learn/nlp-course",
+    "type": "course",
+    "hours": 20,
+    "provider": "Hugging Face"
+   },
+   {
+    "id": "embeddings-2",
+    "title": "Google ML Crash Course: Embeddings",
+    "url": "https://developers.google.com/machine-learning/crash-course/embeddings",
+    "type": "course",
+    "hours": 2,
+    "provider": "Google"
+   },
+   {
+    "id": "embeddings-3",
+    "title": "Kaggle Learn: Natural Language Processing",
+    "url": "https://www.kaggle.com/learn/natural-language-processing",
+    "type": "course",
+    "hours": 4,
+    "provider": "Kaggle"
+   }
+  ],
+  "Hugging Face": [
+   {
+    "id": "hugging-face-1",
+    "title": "Hugging Face Learn",
+    "url": "https://huggingface.co/learn",
+    "type": "course",
+    "hours": 15,
+    "provider": "Hugging Face"
+   },
+   {
+    "id": "hugging-face-2",
+    "title": "Transformers documentation",
+    "url": "https://huggingface.co/docs/transformers/index",
+    "type": "docs",
+    "hours": 6,
+    "provider": "Hugging Face"
+   },
+   {
+    "id": "hugging-face-3",
+    "title": "Hugging Face NLP Course",
+    "url": "https://huggingface.co/learn/nlp-course",
+    "type": "course",
+    "hours": 20,
+    "provider": "Hugging Face"
+   }
+  ],
+  "Feature Engineering": [
+   {
+    "id": "feature-engineering-1",
+    "title": "Kaggle Learn: Feature Engineering",
+    "url": "https://www.kaggle.com/learn/feature-engineering",
+    "type": "course",
+    "hours": 5,
+    "provider": "Kaggle"
+   },
+   {
+    "id": "feature-engineering-2",
+    "title": "scikit-learn: preprocessing data",
+    "url": "https://scikit-learn.org/stable/modules/preprocessing.html",
+    "type": "docs",
+    "hours": 3,
+    "provider": "scikit-learn"
+   },
+   {
+    "id": "feature-engineering-3",
+    "title": "Feature Engineering for Machine Learning (Google)",
+    "url": "https://developers.google.com/machine-learning/crash-course/numerical-data",
+    "type": "course",
+    "hours": 3,
+    "provider": "Google"
+   }
+  ],
+  "Model Evaluation": [
+   {
+    "id": "model-evaluation-1",
+    "title": "scikit-learn: model evaluation",
+    "url": "https://scikit-learn.org/stable/modules/model_evaluation.html",
+    "type": "docs",
+    "hours": 3,
+    "provider": "scikit-learn"
+   },
+   {
+    "id": "model-evaluation-2",
+    "title": "scikit-learn: cross-validation",
+    "url": "https://scikit-learn.org/stable/modules/cross_validation.html",
+    "type": "docs",
+    "hours": 2,
+    "provider": "scikit-learn"
+   },
+   {
+    "id": "model-evaluation-3",
+    "title": "Google ML Crash Course: Classification metrics",
+    "url": "https://developers.google.com/machine-learning/crash-course/classification",
+    "type": "course",
+    "hours": 3,
+    "provider": "Google"
+   }
+  ],
+  "Time Series Forecasting": [
+   {
+    "id": "time-series-forecasting-1",
+    "title": "Forecasting: Principles and Practice",
+    "url": "https://otexts.com/fpp3/",
+    "type": "book",
+    "hours": 25,
+    "provider": "Hyndman & Athanasopoulos"
+   },
+   {
+    "id": "time-series-forecasting-2",
+    "title": "Kaggle Learn: Time Series",
+    "url": "https://www.kaggle.com/learn/time-series",
+    "type": "course",
+    "hours": 5,
+    "provider": "Kaggle"
+   },
+   {
+    "id": "time-series-forecasting-3",
+    "title": "statsmodels: time series analysis",
+    "url": "https://www.statsmodels.org/stable/tsa.html",
+    "type": "docs",
+    "hours": 4,
+    "provider": "statsmodels"
+   }
+  ],
+  "Recommender Systems": [
+   {
+    "id": "recommender-systems-1",
+    "title": "Google ML Crash Course: Recommendation systems",
+    "url": "https://developers.google.com/machine-learning/recommendation",
+    "type": "course",
+    "hours": 4,
+    "provider": "Google"
+   },
+   {
+    "id": "recommender-systems-2",
+    "title": "Surprise: a Python scikit for recommender systems",
+    "url": "https://surprise.readthedocs.io/en/stable/",
+    "type": "docs",
+    "hours": 3,
+    "provider": "Surprise"
+   }
+  ],
+  "XGBoost": [
+   {
+    "id": "xgboost-1",
+    "title": "XGBoost tutorials",
+    "url": "https://xgboost.readthedocs.io/en/stable/tutorials/index.html",
+    "type": "docs",
+    "hours": 4,
+    "provider": "XGBoost"
+   },
+   {
+    "id": "xgboost-2",
+    "title": "Kaggle Learn: Intermediate Machine Learning",
+    "url": "https://www.kaggle.com/learn/intermediate-machine-learning",
+    "type": "course",
+    "hours": 4,
+    "provider": "Kaggle"
+   },
+   {
+    "id": "xgboost-3",
+    "title": "LightGBM documentation",
+    "url": "https://lightgbm.readthedocs.io/en/stable/",
+    "type": "docs",
+    "hours": 3,
+    "provider": "LightGBM"
+   }
+  ],
+  "MLOps": [
+   {
+    "id": "mlops-1",
+    "title": "ml-ops.org: MLOps principles",
+    "url": "https://ml-ops.org/",
+    "type": "article",
+    "hours": 4,
+    "provider": "ml-ops.org"
+   },
+   {
+    "id": "mlops-2",
+    "title": "Made With ML: MLOps course",
+    "url": "https://madewithml.com/",
+    "type": "course",
+    "hours": 20,
+    "provider": "Goku Mohandas"
+   },
+   {
+    "id": "mlops-3",
+    "title": "Google: Rules of Machine Learning",
+    "url": "https://developers.google.com/machine-learning/guides/rules-of-ml",
+    "type": "article",
+    "hours": 2,
+    "provider": "Google"
+   }
+  ],
+  "MLflow": [
+   {
+    "id": "mlflow-1",
+    "title": "MLflow documentation",
+    "url": "https://mlflow.org/docs/latest/index.html",
+    "type": "docs",
+    "hours": 4,
+    "provider": "MLflow"
+   },
+   {
+    "id": "mlflow-2",
+    "title": "MLflow tutorials",
+    "url": "https://mlflow.org/docs/latest/tutorials-and-examples/index.html",
+    "type": "docs",
+    "hours": 4,
+    "provider": "MLflow"
+   },
+   {
+    "id": "mlflow-3",
+    "title": "Made With ML: experiment tracking",
+    "url": "https://madewithml.com/",
+    "type": "course",
+    "hours": 3,
+    "provider": "Goku Mohandas"
+   }
+  ],
+  "Model Deployment": [
+   {
+    "id": "model-deployment-1",
+    "title": "Made With ML: serving and MLOps",
+    "url": "https://madewithml.com/",
+    "type": "course",
+    "hours": 8,
+    "provider": "Goku Mohandas"
+   },
+   {
+    "id": "model-deployment-2",
+    "title": "FastAPI tutorial (official)",
+    "url": "https://fastapi.tiangolo.com/tutorial/",
+    "type": "docs",
+    "hours": 6,
+    "provider": "FastAPI"
+   },
+   {
+    "id": "model-deployment-3",
+    "title": "Google: Rules of Machine Learning",
+    "url": "https://developers.google.com/machine-learning/guides/rules-of-ml",
+    "type": "article",
+    "hours": 2,
+    "provider": "Google"
+   }
+  ],
+  "FastAPI": [
+   {
+    "id": "fastapi-1",
+    "title": "FastAPI tutorial (official)",
+    "url": "https://fastapi.tiangolo.com/tutorial/",
+    "type": "docs",
+    "hours": 6,
+    "provider": "FastAPI"
+   },
+   {
+    "id": "fastapi-2",
+    "title": "FastAPI: first steps",
+    "url": "https://fastapi.tiangolo.com/tutorial/first-steps/",
+    "type": "docs",
+    "hours": 1,
+    "provider": "FastAPI"
+   },
+   {
+    "id": "fastapi-3",
+    "title": "Full Stack FastAPI template",
+    "url": "https://github.com/fastapi/full-stack-fastapi-template",
+    "type": "article",
+    "hours": 3,
+    "provider": "FastAPI"
+   }
+  ],
+  "Flask": [
+   {
+    "id": "flask-1",
+    "title": "Flask quickstart (official)",
+    "url": "https://flask.palletsprojects.com/en/stable/quickstart/",
+    "type": "docs",
+    "hours": 2,
+    "provider": "Pallets"
+   },
+   {
+    "id": "flask-2",
+    "title": "Flask tutorial (official)",
+    "url": "https://flask.palletsprojects.com/en/stable/tutorial/",
+    "type": "docs",
+    "hours": 4,
+    "provider": "Pallets"
+   },
+   {
+    "id": "flask-3",
+    "title": "Flask documentation",
+    "url": "https://flask.palletsprojects.com/",
+    "type": "docs",
+    "hours": 4,
+    "provider": "Pallets"
+   }
+  ],
+  "REST APIs": [
+   {
+    "id": "rest-apis-1",
+    "title": "REST API Tutorial",
+    "url": "https://restfulapi.net/",
+    "type": "article",
+    "hours": 3,
+    "provider": "restfulapi.net"
+   },
+   {
+    "id": "rest-apis-2",
+    "title": "MDN: HTTP overview",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview",
+    "type": "docs",
+    "hours": 2,
+    "provider": "MDN"
+   },
+   {
+    "id": "rest-apis-3",
+    "title": "OpenAPI specification: getting started",
+    "url": "https://learn.openapis.org/",
+    "type": "docs",
+    "hours": 3,
+    "provider": "OpenAPI Initiative"
+   }
+  ],
+  "Docker": [
+   {
+    "id": "docker-1",
+    "title": "Docker: Get started (official)",
+    "url": "https://docs.docker.com/get-started/",
+    "type": "docs",
+    "hours": 4,
+    "provider": "Docker"
+   },
+   {
+    "id": "docker-2",
+    "title": "Docker curriculum",
+    "url": "https://docker-curriculum.com/",
+    "type": "course",
+    "hours": 5,
+    "provider": "Prakhar Srivastav"
+   },
+   {
+    "id": "docker-3",
+    "title": "Play with Docker classroom",
+    "url": "https://training.play-with-docker.com/",
+    "type": "interactive",
+    "hours": 4,
+    "provider": "Play with Docker"
+   }
+  ],
+  "Kubernetes": [
+   {
+    "id": "kubernetes-1",
+    "title": "Kubernetes Basics (official tutorial)",
+    "url": "https://kubernetes.io/docs/tutorials/kubernetes-basics/",
+    "type": "docs",
+    "hours": 4,
+    "provider": "Kubernetes"
+   },
+   {
+    "id": "kubernetes-2",
+    "title": "Kubernetes documentation: concepts",
+    "url": "https://kubernetes.io/docs/concepts/",
+    "type": "docs",
+    "hours": 8,
+    "provider": "Kubernetes"
+   },
+   {
+    "id": "kubernetes-3",
+    "title": "Kubernetes the Hard Way",
+    "url": "https://github.com/kelseyhightower/kubernetes-the-hard-way",
+    "type": "course",
+    "hours": 10,
+    "provider": "Kelsey Hightower"
+   }
+  ],
+  "Terraform": [
+   {
+    "id": "terraform-1",
+    "title": "HashiCorp Developer: Get started with Terraform",
+    "url": "https://developer.hashicorp.com/terraform/tutorials",
+    "type": "course",
+    "hours": 6,
+    "provider": "HashiCorp"
+   },
+   {
+    "id": "terraform-2",
+    "title": "Terraform documentation",
+    "url": "https://developer.hashicorp.com/terraform/docs",
+    "type": "docs",
+    "hours": 5,
+    "provider": "HashiCorp"
+   },
+   {
+    "id": "terraform-3",
+    "title": "Terraform: AWS get started",
+    "url": "https://developer.hashicorp.com/terraform/tutorials/aws-get-started",
+    "type": "course",
+    "hours": 3,
+    "provider": "HashiCorp"
+   }
+  ],
+  "AWS": [
+   {
+    "id": "aws-1",
+    "title": "AWS: Getting started resource center",
+    "url": "https://aws.amazon.com/getting-started/",
+    "type": "course",
+    "hours": 6,
+    "provider": "AWS"
+   },
+   {
+    "id": "aws-2",
+    "title": "AWS Skill Builder (free tier)",
+    "url": "https://skillbuilder.aws/",
+    "type": "course",
+    "hours": 10,
+    "provider": "AWS"
+   },
+   {
+    "id": "aws-3",
+    "title": "AWS documentation",
+    "url": "https://docs.aws.amazon.com/",
+    "type": "docs",
+    "hours": 6,
+    "provider": "AWS"
+   }
+  ],
+  "GCP": [
+   {
+    "id": "gcp-1",
+    "title": "Google Cloud Skills Boost",
+    "url": "https://www.cloudskillsboost.google/",
+    "type": "course",
+    "hours": 10,
+    "provider": "Google Cloud"
+   },
+   {
+    "id": "gcp-2",
+    "title": "Google Cloud: getting started",
+    "url": "https://cloud.google.com/docs",
+    "type": "docs",
+    "hours": 5,
+    "provider": "Google Cloud"
+   },
+   {
+    "id": "gcp-3",
+    "title": "Google Cloud Free Program",
+    "url": "https://cloud.google.com/free",
+    "type": "docs",
+    "hours": 1,
+    "provider": "Google Cloud"
+   }
+  ],
+  "Azure": [
+   {
+    "id": "azure-1",
+    "title": "Microsoft Learn: Azure fundamentals",
+    "url": "https://learn.microsoft.com/en-us/training/azure/",
+    "type": "course",
+    "hours": 10,
+    "provider": "Microsoft Learn"
+   },
+   {
+    "id": "azure-2",
+    "title": "Azure documentation",
+    "url": "https://learn.microsoft.com/en-us/azure/",
+    "type": "docs",
+    "hours": 6,
+    "provider": "Microsoft"
+   },
+   {
+    "id": "azure-3",
+    "title": "Azure free account",
+    "url": "https://azure.microsoft.com/en-us/free/",
+    "type": "docs",
+    "hours": 1,
+    "provider": "Microsoft"
+   }
+  ],
+  "CI/CD": [
+   {
+    "id": "ci-cd-1",
+    "title": "GitHub Actions documentation",
+    "url": "https://docs.github.com/en/actions",
+    "type": "docs",
+    "hours": 5,
+    "provider": "GitHub"
+   },
+   {
+    "id": "ci-cd-2",
+    "title": "GitHub Actions: quickstart",
+    "url": "https://docs.github.com/en/actions/quickstart",
+    "type": "docs",
+    "hours": 1,
+    "provider": "GitHub"
+   },
+   {
+    "id": "ci-cd-3",
+    "title": "Atlassian: continuous delivery guide",
+    "url": "https://www.atlassian.com/continuous-delivery",
+    "type": "article",
+    "hours": 2,
+    "provider": "Atlassian"
+   }
+  ],
+  "Git": [
+   {
+    "id": "git-1",
+    "title": "Pro Git (free book)",
+    "url": "https://git-scm.com/book/en/v2",
+    "type": "book",
+    "hours": 10,
+    "provider": "git-scm.com"
+   },
+   {
+    "id": "git-2",
+    "title": "Learn Git Branching",
+    "url": "https://learngitbranching.js.org/",
+    "type": "interactive",
+    "hours": 3,
+    "provider": "learngitbranching.js.org"
+   },
+   {
+    "id": "git-3",
+    "title": "GitHub Docs: Get started",
+    "url": "https://docs.github.com/en/get-started",
+    "type": "docs",
+    "hours": 3,
+    "provider": "GitHub"
+   }
+  ],
+  "Linux": [
+   {
+    "id": "linux-1",
+    "title": "Linux Journey",
+    "url": "https://linuxjourney.com/",
+    "type": "course",
+    "hours": 8,
+    "provider": "Linux Journey"
+   },
+   {
+    "id": "linux-2",
+    "title": "The Linux Command Line (free book)",
+    "url": "https://linuxcommand.org/tlcl.php",
+    "type": "book",
+    "hours": 15,
+    "provider": "William Shotts"
+   },
+   {
+    "id": "linux-3",
+    "title": "OverTheWire: Bandit (practice)",
+    "url": "https://overthewire.org/wargames/bandit/",
+    "type": "interactive",
+    "hours": 5,
+    "provider": "OverTheWire"
+   }
+  ],
+  "Monitoring": [
+   {
+    "id": "monitoring-1",
+    "title": "Prometheus: getting started",
+    "url": "https://prometheus.io/docs/prometheus/latest/getting_started/",
+    "type": "docs",
+    "hours": 2,
+    "provider": "Prometheus"
+   },
+   {
+    "id": "monitoring-2",
+    "title": "Grafana tutorials",
+    "url": "https://grafana.com/tutorials/",
+    "type": "course",
+    "hours": 4,
+    "provider": "Grafana"
+   },
+   {
+    "id": "monitoring-3",
+    "title": "Google SRE Book: Monitoring distributed systems",
+    "url": "https://sre.google/sre-book/monitoring-distributed-systems/",
+    "type": "book",
+    "hours": 2,
+    "provider": "Google"
+   }
+  ],
+  "System Design": [
+   {
+    "id": "system-design-1",
+    "title": "System Design Primer",
+    "url": "https://github.com/donnemartin/system-design-primer",
+    "type": "article",
+    "hours": 15,
+    "provider": "Donne Martin"
+   },
+   {
+    "id": "system-design-2",
+    "title": "Google SRE Book",
+    "url": "https://sre.google/sre-book/table-of-contents/",
+    "type": "book",
+    "hours": 12,
+    "provider": "Google"
+   },
+   {
+    "id": "system-design-3",
+    "title": "Designing Data-Intensive Applications (companion)",
+    "url": "https://dataintensive.net/",
+    "type": "book",
+    "hours": 20,
+    "provider": "Martin Kleppmann"
+   }
+  ],
+  "Data Structures & Algorithms": [
+   {
+    "id": "data-structures-algorithms-1",
+    "title": "CS50: Introduction to Computer Science",
+    "url": "https://cs50.harvard.edu/x/",
+    "type": "course",
+    "hours": 40,
+    "provider": "Harvard"
+   },
+   {
+    "id": "data-structures-algorithms-2",
+    "title": "NeetCode roadmap",
+    "url": "https://neetcode.io/roadmap",
+    "type": "interactive",
+    "hours": 20,
+    "provider": "NeetCode"
+   },
+   {
+    "id": "data-structures-algorithms-3",
+    "title": "Visualgo: algorithm visualisations",
+    "url": "https://visualgo.net/en",
+    "type": "interactive",
+    "hours": 4,
+    "provider": "VisuAlgo"
+   }
+  ],
+  "C++": [
+   {
+    "id": "c-1",
+    "title": "learncpp.com",
+    "url": "https://www.learncpp.com/",
+    "type": "course",
+    "hours": 40,
+    "provider": "learncpp.com"
+   },
+   {
+    "id": "c-2",
+    "title": "cppreference",
+    "url": "https://en.cppreference.com/",
+    "type": "docs",
+    "hours": 6,
+    "provider": "cppreference"
+   },
+   {
+    "id": "c-3",
+    "title": "A Tour of C++ (Stroustrup, site)",
+    "url": "https://isocpp.org/tour",
+    "type": "book",
+    "hours": 10,
+    "provider": "isocpp.org"
+   }
+  ],
+  "Product Management": [
+   {
+    "id": "product-management-1",
+    "title": "Atlassian: product management guide",
+    "url": "https://www.atlassian.com/agile/product-management",
+    "type": "article",
+    "hours": 4,
+    "provider": "Atlassian"
+   },
+   {
+    "id": "product-management-2",
+    "title": "ProductPlan: product management glossary and guides",
+    "url": "https://www.productplan.com/learn/",
+    "type": "article",
+    "hours": 6,
+    "provider": "ProductPlan"
+   },
+   {
+    "id": "product-management-3",
+    "title": "Silicon Valley Product Group articles",
+    "url": "https://www.svpg.com/articles/",
+    "type": "article",
+    "hours": 6,
+    "provider": "SVPG"
+   }
+  ],
+  "Product Roadmapping": [
+   {
+    "id": "product-roadmapping-1",
+    "title": "Atlassian: product roadmaps",
+    "url": "https://www.atlassian.com/agile/product-management/product-roadmaps",
+    "type": "article",
+    "hours": 1,
+    "provider": "Atlassian"
+   },
+   {
+    "id": "product-roadmapping-2",
+    "title": "ProductPlan: what is a product roadmap",
+    "url": "https://www.productplan.com/learn/what-is-a-product-roadmap/",
+    "type": "article",
+    "hours": 1,
+    "provider": "ProductPlan"
+   }
+  ],
+  "Product Strategy": [
+   {
+    "id": "product-strategy-1",
+    "title": "Atlassian: product strategy",
+    "url": "https://www.atlassian.com/agile/product-management/product-strategy",
+    "type": "article",
+    "hours": 1,
+    "provider": "Atlassian"
+   },
+   {
+    "id": "product-strategy-2",
+    "title": "SVPG: product vision",
+    "url": "https://www.svpg.com/product-vision/",
+    "type": "article",
+    "hours": 1,
+    "provider": "SVPG"
+   },
+   {
+    "id": "product-strategy-3",
+    "title": "ProductPlan: product strategy",
+    "url": "https://www.productplan.com/learn/product-strategy/",
+    "type": "article",
+    "hours": 1,
+    "provider": "ProductPlan"
+   }
+  ],
+  "Product Discovery": [
+   {
+    "id": "product-discovery-1",
+    "title": "SVPG: product discovery",
+    "url": "https://www.svpg.com/discovery-vs-delivery/",
+    "type": "article",
+    "hours": 1,
+    "provider": "SVPG"
+   },
+   {
+    "id": "product-discovery-2",
+    "title": "Teresa Torres: continuous discovery",
+    "url": "https://www.producttalk.org/continuous-discovery/",
+    "type": "article",
+    "hours": 2,
+    "provider": "Product Talk"
+   }
+  ],
+  "Prioritization Frameworks": [
+   {
+    "id": "prioritization-frameworks-1",
+    "title": "Atlassian: prioritization frameworks",
+    "url": "https://www.atlassian.com/agile/product-management/prioritization-framework",
+    "type": "article",
+    "hours": 1,
+    "provider": "Atlassian"
+   },
+   {
+    "id": "prioritization-frameworks-2",
+    "title": "ProductPlan: RICE scoring",
+    "url": "https://www.productplan.com/glossary/rice-scoring-model/",
+    "type": "article",
+    "hours": 1,
+    "provider": "ProductPlan"
+   },
+   {
+    "id": "prioritization-frameworks-3",
+    "title": "Intercom: RICE prioritization",
+    "url": "https://www.intercom.com/blog/rice-simple-prioritization-for-product-managers/",
+    "type": "article",
+    "hours": 1,
+    "provider": "Intercom"
+   }
+  ],
+  "User Stories": [
+   {
+    "id": "user-stories-1",
+    "title": "Atlassian: user stories",
+    "url": "https://www.atlassian.com/agile/project-management/user-stories",
+    "type": "article",
+    "hours": 1,
+    "provider": "Atlassian"
+   },
+   {
+    "id": "user-stories-2",
+    "title": "Mountain Goat Software: user stories",
+    "url": "https://www.mountaingoatsoftware.com/agile/user-stories",
+    "type": "article",
+    "hours": 2,
+    "provider": "Mountain Goat Software"
+   },
+   {
+    "id": "user-stories-3",
+    "title": "Scrum.org: writing user stories",
+    "url": "https://www.scrum.org/resources/blog/user-stories",
+    "type": "article",
+    "hours": 1,
+    "provider": "Scrum.org"
+   }
+  ],
+  "User Research": [
+   {
+    "id": "user-research-1",
+    "title": "Nielsen Norman Group: UX research",
+    "url": "https://www.nngroup.com/articles/which-ux-research-methods/",
+    "type": "article",
+    "hours": 1,
+    "provider": "NN/g"
+   },
+   {
+    "id": "user-research-2",
+    "title": "usability.gov: research methods",
+    "url": "https://www.usability.gov/how-to-and-tools/methods/index.html",
+    "type": "docs",
+    "hours": 3,
+    "provider": "usability.gov"
+   },
+   {
+    "id": "user-research-3",
+    "title": "IDEO Design Kit: methods",
+    "url": "https://www.designkit.org/methods.html",
+    "type": "article",
+    "hours": 3,
+    "provider": "IDEO.org"
+   }
+  ],
+  "Customer Interviews": [
+   {
+    "id": "customer-interviews-1",
+    "title": "The Mom Test (summary site)",
+    "url": "https://www.momtestbook.com/",
+    "type": "book",
+    "hours": 3,
+    "provider": "Rob Fitzpatrick"
+   },
+   {
+    "id": "customer-interviews-2",
+    "title": "NN/g: user interviews 101",
+    "url": "https://www.nngroup.com/articles/user-interviews/",
+    "type": "article",
+    "hours": 1,
+    "provider": "NN/g"
+   },
+   {
+    "id": "customer-interviews-3",
+    "title": "Teresa Torres: interviewing customers",
+    "url": "https://www.producttalk.org/2021/12/customer-interviews/",
+    "type": "article",
+    "hours": 1,
+    "provider": "Product Talk"
+   }
+  ],
+  "Product Analytics": [
+   {
+    "id": "product-analytics-1",
+    "title": "Amplitude Academy",
+    "url": "https://academy.amplitude.com/",
+    "type": "course",
+    "hours": 6,
+    "provider": "Amplitude"
+   },
+   {
+    "id": "product-analytics-2",
+    "title": "Mixpanel docs",
+    "url": "https://docs.mixpanel.com/",
+    "type": "docs",
+    "hours": 4,
+    "provider": "Mixpanel"
+   },
+   {
+    "id": "product-analytics-3",
+    "title": "Reforge: product analytics articles",
+    "url": "https://www.reforge.com/blog",
+    "type": "article",
+    "hours": 2,
+    "provider": "Reforge"
+   }
+  ],
+  "Market Research": [
+   {
+    "id": "market-research-1",
+    "title": "HubSpot: market research guide",
+    "url": "https://blog.hubspot.com/marketing/market-research-buyers-journey-guide",
+    "type": "article",
+    "hours": 1,
+    "provider": "HubSpot"
+   },
+   {
+    "id": "market-research-2",
+    "title": "Think with Google",
+    "url": "https://www.thinkwithgoogle.com/",
+    "type": "article",
+    "hours": 2,
+    "provider": "Google"
+   },
+   {
+    "id": "market-research-3",
+    "title": "SBA: market research and competitive analysis",
+    "url": "https://www.sba.gov/business-guide/plan-your-business/market-research-competitive-analysis",
+    "type": "docs",
+    "hours": 1,
+    "provider": "US SBA"
+   }
+  ],
+  "Go-to-Market": [
+   {
+    "id": "go-to-market-1",
+    "title": "ProductPlan: go-to-market strategy",
+    "url": "https://www.productplan.com/glossary/go-to-market-strategy/",
+    "type": "article",
+    "hours": 1,
+    "provider": "ProductPlan"
+   }
+  ],
+  "OKRs": [
+   {
+    "id": "okrs-1",
+    "title": "What matters: OKRs",
+    "url": "https://www.whatmatters.com/",
+    "type": "article",
+    "hours": 2,
+    "provider": "What Matters"
+   },
+   {
+    "id": "okrs-2",
+    "title": "Atlassian: OKRs",
+    "url": "https://www.atlassian.com/agile/agile-at-scale/okr",
+    "type": "article",
+    "hours": 1,
+    "provider": "Atlassian"
+   },
+   {
+    "id": "okrs-3",
+    "title": "Google re:Work: set goals with OKRs",
+    "url": "https://rework.withgoogle.com/guides/set-goals-with-okrs/steps/introduction/",
+    "type": "docs",
+    "hours": 1,
+    "provider": "Google re:Work"
+   }
+  ],
+  "Agile": [
+   {
+    "id": "agile-1",
+    "title": "Agile Manifesto",
+    "url": "https://agilemanifesto.org/",
+    "type": "article",
+    "hours": 1,
+    "provider": "agilemanifesto.org"
+   },
+   {
+    "id": "agile-2",
+    "title": "Atlassian Agile Coach",
+    "url": "https://www.atlassian.com/agile",
+    "type": "course",
+    "hours": 4,
+    "provider": "Atlassian"
+   },
+   {
+    "id": "agile-3",
+    "title": "Scrum Guide",
+    "url": "https://scrumguides.org/scrum-guide.html",
+    "type": "docs",
+    "hours": 1,
+    "provider": "scrumguides.org"
+   }
+  ],
+  "Scrum": [
+   {
+    "id": "scrum-1",
+    "title": "The Scrum Guide",
+    "url": "https://scrumguides.org/scrum-guide.html",
+    "type": "docs",
+    "hours": 1,
+    "provider": "scrumguides.org"
+   },
+   {
+    "id": "scrum-2",
+    "title": "Scrum.org: learning path",
+    "url": "https://www.scrum.org/learning-series/scrum-foundations",
+    "type": "course",
+    "hours": 3,
+    "provider": "Scrum.org"
+   },
+   {
+    "id": "scrum-3",
+    "title": "Atlassian: scrum",
+    "url": "https://www.atlassian.com/agile/scrum",
+    "type": "article",
+    "hours": 2,
+    "provider": "Atlassian"
+   }
+  ],
+  "Jira": [
+   {
+    "id": "jira-1",
+    "title": "Atlassian University: Jira",
+    "url": "https://university.atlassian.com/student/catalog/list?category=Jira",
+    "type": "course",
+    "hours": 4,
+    "provider": "Atlassian"
+   },
+   {
+    "id": "jira-2",
+    "title": "Jira documentation",
+    "url": "https://support.atlassian.com/jira-software-cloud/",
+    "type": "docs",
+    "hours": 3,
+    "provider": "Atlassian"
+   },
+   {
+    "id": "jira-3",
+    "title": "Atlassian: Jira guides",
+    "url": "https://www.atlassian.com/software/jira/guides",
+    "type": "docs",
+    "hours": 3,
+    "provider": "Atlassian"
+   }
+  ],
+  "Confluence": [
+   {
+    "id": "confluence-1",
+    "title": "Confluence documentation",
+    "url": "https://support.atlassian.com/confluence-cloud/",
+    "type": "docs",
+    "hours": 3,
+    "provider": "Atlassian"
+   },
+   {
+    "id": "confluence-2",
+    "title": "Atlassian University: Confluence",
+    "url": "https://university.atlassian.com/",
+    "type": "course",
+    "hours": 3,
+    "provider": "Atlassian"
+   },
+   {
+    "id": "confluence-3",
+    "title": "Atlassian: Confluence guides",
+    "url": "https://www.atlassian.com/software/confluence/guides",
+    "type": "docs",
+    "hours": 2,
+    "provider": "Atlassian"
+   }
+  ],
+  "Figma": [
+   {
+    "id": "figma-1",
+    "title": "Figma Learn",
+    "url": "https://help.figma.com/hc/en-us",
+    "type": "docs",
+    "hours": 4,
+    "provider": "Figma"
+   },
+   {
+    "id": "figma-2",
+    "title": "Figma resource library",
+    "url": "https://www.figma.com/resource-library/",
+    "type": "article",
+    "hours": 3,
+    "provider": "Figma"
+   }
+  ],
+  "Wireframing": [
+   {
+    "id": "wireframing-1",
+    "title": "Figma: what is wireframing",
+    "url": "https://www.figma.com/resource-library/what-is-wireframing/",
+    "type": "article",
+    "hours": 1,
+    "provider": "Figma"
+   },
+   {
+    "id": "wireframing-2",
+    "title": "Interaction Design Foundation: wireframing",
+    "url": "https://www.interaction-design.org/literature/topics/wireframing",
+    "type": "article",
+    "hours": 2,
+    "provider": "IxDF"
+   }
+  ],
+  "Stakeholder Management": [
+   {
+    "id": "stakeholder-management-1",
+    "title": "MindTools: stakeholder analysis",
+    "url": "https://www.mindtools.com/aol3o4s/stakeholder-analysis",
+    "type": "article",
+    "hours": 1,
+    "provider": "MindTools"
+   }
+  ],
+  "Communication": [
+   {
+    "id": "communication-1",
+    "title": "Toastmasters: resources",
+    "url": "https://www.toastmasters.org/resources",
+    "type": "article",
+    "hours": 3,
+    "provider": "Toastmasters"
+   }
+  ],
+  "Leadership": [
+   {
+    "id": "leadership-1",
+    "title": "Google re:Work: managers",
+    "url": "https://rework.withgoogle.com/guides/managers-identify-what-makes-a-great-manager/",
+    "type": "docs",
+    "hours": 2,
+    "provider": "Google re:Work"
+   }
+  ],
+  "Presentation Skills": [
+   {
+    "id": "presentation-skills-1",
+    "title": "Toastmasters: resources",
+    "url": "https://www.toastmasters.org/resources",
+    "type": "article",
+    "hours": 3,
+    "provider": "Toastmasters"
+   },
+   {
+    "id": "presentation-skills-2",
+    "title": "storytelling with data blog",
+    "url": "https://www.storytellingwithdata.com/blog",
+    "type": "article",
+    "hours": 3,
+    "provider": "storytelling with data"
+   }
+  ],
+  "Negotiation": [
+   {
+    "id": "negotiation-1",
+    "title": "Harvard PON: negotiation skills",
+    "url": "https://www.pon.harvard.edu/freemium/",
+    "type": "article",
+    "hours": 2,
+    "provider": "Harvard PON"
+   },
+   {
+    "id": "negotiation-2",
+    "title": "MindTools: negotiation skills",
+    "url": "https://www.mindtools.com/pages/article/newLDR_08.htm",
+    "type": "article",
+    "hours": 1,
+    "provider": "MindTools"
+   }
+  ],
+  "Problem Solving": [
+   {
+    "id": "problem-solving-1",
+    "title": "MindTools: problem solving",
+    "url": "https://www.mindtools.com/pages/main/newMN_TMC.htm",
+    "type": "article",
+    "hours": 2,
+    "provider": "MindTools"
+   }
+  ]
+ }
+}

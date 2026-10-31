@@ -23,6 +23,10 @@ class JobDescription(TimestampMixin, Base):
     extracted_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
     generated_by: Mapped[str | None] = mapped_column(String(30))
     extraction_warnings: Mapped[list] = mapped_column(JSONType, default=list, nullable=False)
+    # Which role family this posting belongs to (data_analyst | product_manager | ml_engineer | NULL = unknown)
+    role_family: Mapped[str | None] = mapped_column(String(40), index=True)
+    # Where a market-imported posting came from: seed | jsearch | adzuna (NULL for pasted/manual/url)
+    source_provider: Mapped[str | None] = mapped_column(String(20))
 
     requirements: Mapped[list["JobRequirement"]] = relationship(
         back_populates="job", cascade="all, delete-orphan", lazy="selectin", order_by="JobRequirement.id"
@@ -56,6 +60,10 @@ class SkillGapAnalysis(TimestampMixin, Base):
     match_score: Mapped[float] = mapped_column(Float, default=0.0, nullable=False)  # 0..100
     summary: Mapped[str | None] = mapped_column(Text)
     generated_by: Mapped[str | None] = mapped_column(String(30))
+    # Snapshot of the evidence base so the report can say "based on N job postings".
+    job_count: Mapped[int] = mapped_column(Integer, default=0, nullable=False)
+    role_family: Mapped[str | None] = mapped_column(String(40))
+    job_sources: Mapped[dict] = mapped_column(JSONType, default=dict, nullable=False)
 
     items: Mapped[list["SkillGapItem"]] = relationship(
         back_populates="analysis", cascade="all, delete-orphan", lazy="selectin", order_by="SkillGapItem.priority_rank"
@@ -130,6 +138,7 @@ class WeeklyTask(TimestampMixin, Base):
     topics: Mapped[list] = mapped_column(JSONType, default=list, nullable=False)
     activities: Mapped[list] = mapped_column(JSONType, default=list, nullable=False)
     exercises: Mapped[list] = mapped_column(JSONType, default=list, nullable=False)
+    resources: Mapped[list] = mapped_column(JSONType, default=list, nullable=False)  # curated links from data/resources.json
     estimated_hours: Mapped[float] = mapped_column(Float, nullable=False)
     expected_outcome: Mapped[str] = mapped_column(Text, nullable=False)
     status: Mapped[str] = mapped_column(String(20), default="pending", nullable=False)
@@ -155,8 +164,21 @@ class ProjectRecommendation(TimestampMixin, Base):
     difficulty: Mapped[str] = mapped_column(String(20), nullable=False)  # beginner|intermediate|advanced
     deliverables: Mapped[list] = mapped_column(JSONType, default=list, nullable=False)
     estimated_hours: Mapped[int | None] = mapped_column(Integer)
+    template_id: Mapped[str | None] = mapped_column(String(60))               # data/projects.json id
+    gaps_covered: Mapped[list] = mapped_column(JSONType, default=list, nullable=False)
     status: Mapped[str] = mapped_column(String(20), default="recommended", nullable=False)
     repo_url: Mapped[str | None] = mapped_column(String(2048))
     notes: Mapped[str | None] = mapped_column(Text)
     generated_by: Mapped[str | None] = mapped_column(String(30))
     completed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+
+
+class MarketJobCache(TimestampMixin, Base):
+    """Cached live job-board results so repeated imports do not burn API quota."""
+    __tablename__ = "market_job_cache"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    provider: Mapped[str] = mapped_column(String(20), nullable=False)
+    cache_key: Mapped[str] = mapped_column(String(300), unique=True, index=True, nullable=False)
+    payload: Mapped[list] = mapped_column(JSONType, default=list, nullable=False)  # normalised postings
+    fetched_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)

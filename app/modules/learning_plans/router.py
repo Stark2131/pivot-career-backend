@@ -5,6 +5,7 @@ from fastapi import APIRouter, Depends, status
 from app.core.deps import LLM, CurrentUser, DbSession
 from app.core.rate_limit import ai_rate_limit
 from app.modules.learning_plans import service
+from app.modules.progress import adaptation
 from app.modules.learning_plans.schemas import (
     AdjustPlanRequest,
     GeneratePlanRequest,
@@ -36,8 +37,14 @@ async def get_plan(plan_id: int, user: CurrentUser, db: DbSession):
 
 
 @router.patch("/{plan_id}/tasks/{task_id}", response_model=WeeklyTaskOut)
-async def update_task(plan_id: int, task_id: int, body: TaskUpdate, user: CurrentUser, db: DbSession):
-    return await service.update_task(db, user, plan_id, task_id, body)
+async def update_task(plan_id: int, task_id: int, body: TaskUpdate, user: CurrentUser, db: DbSession, llm: LLM):
+    task = await service.update_task(db, user, plan_id, task_id, body)
+    out = WeeklyTaskOut.model_validate(task)
+    plan = await service.get_plan(db, user, plan_id)
+    # Slipping tasks (skipped / rated hard / overdue) can trigger a proposal on the *active* plan.
+    if plan.status == "active" and (task.status == "skipped" or (task.difficulty_rating or 0) >= 4):
+        await adaptation.adapt(db, llm, user, trigger="task")
+    return out
 
 
 @router.post("/{plan_id}/adjust", response_model=PlanOut, status_code=status.HTTP_201_CREATED,

@@ -1,3 +1,5 @@
+from collections import Counter
+
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -6,6 +8,7 @@ from app.ai.client import LLMClient
 from app.ai.skill_analyzer import JobInput, Requirement, UserSkillInfo
 from app.core.errors import NotFoundError, ValidationFailed
 from app.models import SkillGapAnalysis, SkillGapItem, User, UserProfile
+from app.modules.jobs.market import role_family_of
 from app.modules.jobs.service import get_jobs_by_ids
 from app.modules.profile.skill_service import list_user_skills
 from app.modules.skill_gap.schemas import AnalyzeRequest
@@ -19,6 +22,13 @@ async def analyze(db: AsyncSession, llm: LLMClient, user: User, body: AnalyzeReq
 
     profile = await db.scalar(select(UserProfile).where(UserProfile.user_id == user.id))
     target_role = body.target_role or (profile.target_role if profile else None) or jobs[0].title
+    # Importance = share of *this role's* postings that mention a skill, so postings for other roles that the
+    # user also saved must not dilute it. Only applies when the user did not pick specific postings.
+    family = role_family_of(target_role)
+    if family and not body.job_description_ids:
+        same_role = [j for j in jobs if j.role_family == family]
+        if same_role:
+            jobs = same_role
 
     user_skills = {
         us.skill.name: UserSkillInfo(proficiency=us.proficiency, confirmed=us.confirmed, source=us.source)
@@ -37,6 +47,8 @@ async def analyze(db: AsyncSession, llm: LLMClient, user: User, body: AnalyzeReq
 
     analysis = SkillGapAnalysis(
         user_id=user.id, target_role=target_role, job_description_ids=[j.id for j in jobs],
+        job_count=len(jobs), role_family=family,
+        job_sources=dict(Counter(j.source_provider or j.source_type for j in jobs)),
         match_score=report.match_score, summary=report.summary, generated_by=generated_by,
         items=[
             SkillGapItem(

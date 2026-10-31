@@ -269,7 +269,7 @@
         "tags": [
           "Profile & Resume"
         ],
-        "summary": "Upload a PDF resume; text is extracted and parsed into structured data for review",
+        "summary": "Upload a PDF or DOCX resume; text is extracted and parsed into structured data for review",
         "operationId": "upload_resume_api_profile_resume_post",
         "requestBody": {
           "content": {
@@ -809,6 +809,109 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/JobOut"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing/invalid token or bad credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource not found (or owned by another user)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict with current state",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Upstream (job URL) failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/api/jobs/import-market": {
+      "post": {
+        "tags": [
+          "Job Descriptions"
+        ],
+        "summary": "Import real postings for your target role (live job board -> cache -> seed fallback)",
+        "operationId": "import_market_api_jobs_import_market_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "anyOf": [
+                  {
+                    "$ref": "#/components/schemas/MarketImportRequest"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Body"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MarketImportOut"
                 }
               }
             }
@@ -2654,6 +2757,82 @@
         ]
       }
     },
+    "/api/interviews/rubric": {
+      "get": {
+        "tags": [
+          "Mock Interviews"
+        ],
+        "summary": "The scoring rubric: dimensions, 1-5 levels and anchor descriptions",
+        "operationId": "get_rubric_api_interviews_rubric_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RubricOut"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing/invalid token or bad credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource not found (or owned by another user)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict with current state",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Upstream (job URL) failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
     "/api/interviews/{interview_id}": {
       "get": {
         "tags": [
@@ -3657,6 +3836,82 @@
         }
       }
     },
+    "/api/applications/recommendations": {
+      "get": {
+        "tags": [
+          "Application Tracker"
+        ],
+        "summary": "3-5 plain-English insights on which kinds of roles respond (reliable vs early signal)",
+        "operationId": "recommendations_api_applications_recommendations_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Recommendations"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing/invalid token or bad credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource not found (or owned by another user)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict with current state",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Upstream (job URL) failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
     "/api/applications/{application_id}": {
       "get": {
         "tags": [
@@ -3969,6 +4224,55 @@
   },
   "components": {
     "schemas": {
+      "AdaptationOut": {
+        "properties": {
+          "trigger": {
+            "type": "string",
+            "title": "Trigger"
+          },
+          "proficiency_updates": {
+            "items": {
+              "$ref": "#/components/schemas/ProficiencyUpdate"
+            },
+            "type": "array",
+            "title": "Proficiency Updates"
+          },
+          "gaps_recomputed": {
+            "type": "boolean",
+            "title": "Gaps Recomputed",
+            "default": false
+          },
+          "proposal_plan_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Proposal Plan Id"
+          },
+          "reasons": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Reasons"
+          },
+          "message": {
+            "type": "string",
+            "title": "Message"
+          }
+        },
+        "type": "object",
+        "required": [
+          "trigger",
+          "message"
+        ],
+        "title": "AdaptationOut",
+        "description": "What the closed loop did after new evidence arrived (interview, assessment or task update)."
+      },
       "AdjustPlanRequest": {
         "properties": {
           "reason": {
@@ -4186,6 +4490,124 @@
             "title": "Skills Highlighted",
             "description": "Skills you emphasised; defaults to your skills matching the linked JD"
           },
+          "posting_url": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 2083,
+                "minLength": 1,
+                "format": "uri"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Posting Url",
+            "description": "Link to the posting (stored, never fetched)"
+          },
+          "role_family": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 40
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Role Family",
+            "description": "Defaults to a family derived from role_title"
+          },
+          "industry": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 60
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Industry"
+          },
+          "company_size": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "1-10",
+                  "11-50",
+                  "51-200",
+                  "201-1000",
+                  "1001+"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Company Size"
+          },
+          "channel": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "referral",
+                  "direct",
+                  "job_board",
+                  "recruiter",
+                  "other"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Channel",
+            "description": "How you applied; the tracker compares channels"
+          },
+          "resume_version": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 60
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Resume Version",
+            "description": "Label of the resume you sent, e.g. 'v2-analytics'"
+          },
+          "work_mode": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "remote",
+                  "hybrid",
+                  "onsite"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Work Mode"
+          },
+          "location": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 120
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Location"
+          },
           "notes": {
             "anyOf": [
               {
@@ -4295,6 +4717,94 @@
             },
             "type": "array",
             "title": "Skills Highlighted"
+          },
+          "posting_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Posting Url"
+          },
+          "role_family": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Role Family"
+          },
+          "industry": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Industry"
+          },
+          "company_size": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Company Size"
+          },
+          "channel": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Channel"
+          },
+          "resume_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Resume Version"
+          },
+          "work_mode": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Work Mode"
+          },
+          "location": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Location"
           },
           "notes": {
             "anyOf": [
@@ -4476,6 +4986,120 @@
             ],
             "title": "Skills Highlighted"
           },
+          "posting_url": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 2083,
+                "minLength": 1,
+                "format": "uri"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Posting Url"
+          },
+          "role_family": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 40
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Role Family"
+          },
+          "industry": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 60
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Industry"
+          },
+          "company_size": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "1-10",
+                  "11-50",
+                  "51-200",
+                  "201-1000",
+                  "1001+"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Company Size"
+          },
+          "channel": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "referral",
+                  "direct",
+                  "job_board",
+                  "recruiter",
+                  "other"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Channel"
+          },
+          "resume_version": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 60
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Resume Version"
+          },
+          "work_mode": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "remote",
+                  "hybrid",
+                  "onsite"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Work Mode"
+          },
+          "location": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 120
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Location"
+          },
           "notes": {
             "anyOf": [
               {
@@ -4638,6 +5262,16 @@
             "type": "string",
             "format": "date-time",
             "title": "Created At"
+          },
+          "adaptation": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AdaptationOut"
+              },
+              {
+                "type": "null"
+              }
+            ]
           }
         },
         "type": "object",
@@ -4854,6 +5488,22 @@
             "type": "object",
             "title": "Scores"
           },
+          "levels": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "type": "object",
+            "title": "Levels",
+            "description": "1-5 level of each score, per the rubric bands"
+          },
+          "evidence": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Evidence",
+            "description": "criterion -> quote from the answer behind the score"
+          },
           "overall_score": {
             "type": "number",
             "title": "Overall Score"
@@ -4964,6 +5614,122 @@
         },
         "type": "object",
         "title": "HTTPValidationError"
+      },
+      "Insight": {
+        "properties": {
+          "dimension": {
+            "type": "string",
+            "title": "Dimension"
+          },
+          "dimension_label": {
+            "type": "string",
+            "title": "Dimension Label"
+          },
+          "group": {
+            "type": "string",
+            "title": "Group"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
+          "direction": {
+            "type": "string",
+            "enum": [
+              "higher",
+              "lower"
+            ],
+            "title": "Direction"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "reliable",
+              "early_signal"
+            ],
+            "title": "Confidence"
+          },
+          "n": {
+            "type": "integer",
+            "title": "N"
+          },
+          "responses": {
+            "type": "integer",
+            "title": "Responses"
+          },
+          "response_rate": {
+            "type": "number",
+            "title": "Response Rate"
+          },
+          "ci95": {
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "type": "array",
+            "maxItems": 2,
+            "minItems": 2,
+            "title": "Ci95"
+          },
+          "rest_n": {
+            "type": "integer",
+            "title": "Rest N"
+          },
+          "rest_response_rate": {
+            "type": "number",
+            "title": "Rest Response Rate"
+          },
+          "rest_ci95": {
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "type": "array",
+            "maxItems": 2,
+            "minItems": 2,
+            "title": "Rest Ci95"
+          },
+          "difference": {
+            "type": "number",
+            "title": "Difference"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "suggestion": {
+            "type": "string",
+            "title": "Suggestion"
+          }
+        },
+        "type": "object",
+        "required": [
+          "dimension",
+          "dimension_label",
+          "group",
+          "label",
+          "direction",
+          "confidence",
+          "n",
+          "responses",
+          "response_rate",
+          "ci95",
+          "rest_n",
+          "rest_response_rate",
+          "rest_ci95",
+          "difference",
+          "text",
+          "suggestion"
+        ],
+        "title": "Insight"
       },
       "InterviewCreate": {
         "properties": {
@@ -5078,6 +5844,17 @@
             },
             "type": "array",
             "title": "Questions"
+          },
+          "adaptation": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AdaptationOut"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Set on /evaluate: what the closed loop did with these scores"
           }
         },
         "type": "object",
@@ -5310,6 +6087,28 @@
             "type": "string",
             "title": "Source Type"
           },
+          "source_provider": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Source Provider"
+          },
+          "role_family": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Role Family"
+          },
           "source_url": {
             "anyOf": [
               {
@@ -5476,6 +6275,28 @@
             "type": "string",
             "title": "Source Type"
           },
+          "source_provider": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Source Provider"
+          },
+          "role_family": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Role Family"
+          },
           "source_url": {
             "anyOf": [
               {
@@ -5546,6 +6367,135 @@
           "password"
         ],
         "title": "LoginRequest"
+      },
+      "MarketImportOut": {
+        "properties": {
+          "source": {
+            "type": "string",
+            "enum": [
+              "seed",
+              "jsearch",
+              "adzuna"
+            ],
+            "title": "Source"
+          },
+          "requested_role": {
+            "type": "string",
+            "title": "Requested Role"
+          },
+          "role_family": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Role Family"
+          },
+          "imported": {
+            "type": "integer",
+            "title": "Imported"
+          },
+          "skipped_duplicates": {
+            "type": "integer",
+            "title": "Skipped Duplicates"
+          },
+          "job_ids": {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array",
+            "title": "Job Ids"
+          },
+          "cached": {
+            "type": "boolean",
+            "title": "Cached"
+          },
+          "fallback_reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Fallback Reason",
+            "description": "Why live data was not used (no key, API error, no results)"
+          },
+          "notes": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Notes"
+          }
+        },
+        "type": "object",
+        "required": [
+          "source",
+          "requested_role",
+          "role_family",
+          "imported",
+          "skipped_duplicates",
+          "job_ids",
+          "cached",
+          "fallback_reason",
+          "notes"
+        ],
+        "title": "MarketImportOut"
+      },
+      "MarketImportRequest": {
+        "properties": {
+          "target_role": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 200
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Target Role",
+            "description": "Defaults to your profile target role"
+          },
+          "limit": {
+            "type": "integer",
+            "maximum": 50.0,
+            "minimum": 1.0,
+            "title": "Limit",
+            "default": 20
+          },
+          "country": {
+            "type": "string",
+            "maxLength": 2,
+            "minLength": 2,
+            "title": "Country",
+            "description": "ISO country code for live job boards",
+            "default": "us"
+          },
+          "refresh": {
+            "type": "boolean",
+            "title": "Refresh",
+            "description": "Ignore the cache and call the job board again",
+            "default": false
+          },
+          "source": {
+            "type": "string",
+            "enum": [
+              "auto",
+              "seed"
+            ],
+            "title": "Source",
+            "description": "'seed' skips live job boards and uses the built-in sample postings (reproducible demos and tests)",
+            "default": "auto"
+          }
+        },
+        "type": "object",
+        "title": "MarketImportRequest"
       },
       "PlanOut": {
         "properties": {
@@ -5904,6 +6854,34 @@
           "tasks"
         ],
         "title": "PlanWeekOut"
+      },
+      "ProficiencyUpdate": {
+        "properties": {
+          "skill_name": {
+            "type": "string",
+            "title": "Skill Name"
+          },
+          "before": {
+            "type": "integer",
+            "title": "Before"
+          },
+          "after": {
+            "type": "integer",
+            "title": "After"
+          },
+          "evidence": {
+            "type": "string",
+            "title": "Evidence"
+          }
+        },
+        "type": "object",
+        "required": [
+          "skill_name",
+          "before",
+          "after",
+          "evidence"
+        ],
+        "title": "ProficiencyUpdate"
       },
       "ProfileOut": {
         "properties": {
@@ -6415,6 +7393,25 @@
             ],
             "title": "Estimated Hours"
           },
+          "template_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Template Id"
+          },
+          "gaps_covered": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Gaps Covered",
+            "default": []
+          },
           "status": {
             "type": "string",
             "title": "Status"
@@ -6713,6 +7710,86 @@
         "type": "object",
         "title": "RecommendRequest"
       },
+      "Recommendations": {
+        "properties": {
+          "n_applications": {
+            "type": "integer",
+            "title": "N Applications"
+          },
+          "n_counted": {
+            "type": "integer",
+            "title": "N Counted"
+          },
+          "excluded_recent_pending": {
+            "type": "integer",
+            "title": "Excluded Recent Pending"
+          },
+          "baseline_response_rate": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Baseline Response Rate"
+          },
+          "baseline_ci95": {
+            "anyOf": [
+              {
+                "prefixItems": [
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "number"
+                  }
+                ],
+                "type": "array",
+                "maxItems": 2,
+                "minItems": 2
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Baseline Ci95"
+          },
+          "sufficient_data": {
+            "type": "boolean",
+            "title": "Sufficient Data"
+          },
+          "message": {
+            "type": "string",
+            "title": "Message"
+          },
+          "insights": {
+            "items": {
+              "$ref": "#/components/schemas/Insight"
+            },
+            "type": "array",
+            "title": "Insights"
+          },
+          "disclaimer": {
+            "type": "string",
+            "title": "Disclaimer"
+          }
+        },
+        "type": "object",
+        "required": [
+          "n_applications",
+          "n_counted",
+          "excluded_recent_pending",
+          "baseline_response_rate",
+          "baseline_ci95",
+          "sufficient_data",
+          "message",
+          "insights",
+          "disclaimer"
+        ],
+        "title": "Recommendations"
+      },
       "RegisterRequest": {
         "properties": {
           "email": {
@@ -6745,6 +7822,57 @@
           "password"
         ],
         "title": "RegisterRequest"
+      },
+      "ResourceOut": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "url": {
+            "type": "string",
+            "title": "Url"
+          },
+          "type": {
+            "type": "string",
+            "title": "Type"
+          },
+          "hours": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Hours"
+          },
+          "provider": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Provider"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "url",
+          "type"
+        ],
+        "title": "ResourceOut",
+        "description": "A link from the curated list (data/resources.json), or a labelled search link when a skill has none."
       },
       "ResumeOut": {
         "properties": {
@@ -6841,6 +7969,128 @@
         },
         "type": "object",
         "title": "ResumeProject"
+      },
+      "RubricCriterionOut": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "question": {
+            "type": "string",
+            "title": "Question"
+          },
+          "anchors": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Anchors"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "question",
+          "anchors"
+        ],
+        "title": "RubricCriterionOut"
+      },
+      "RubricLevelOut": {
+        "properties": {
+          "level": {
+            "type": "integer",
+            "title": "Level"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
+          "min": {
+            "type": "integer",
+            "title": "Min"
+          },
+          "max": {
+            "type": "integer",
+            "title": "Max"
+          }
+        },
+        "type": "object",
+        "required": [
+          "level",
+          "label",
+          "min",
+          "max"
+        ],
+        "title": "RubricLevelOut"
+      },
+      "RubricOut": {
+        "properties": {
+          "version": {
+            "type": "string",
+            "title": "Version"
+          },
+          "title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "description": {
+            "type": "string",
+            "title": "Description"
+          },
+          "scale": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "type": "object",
+            "title": "Scale"
+          },
+          "levels": {
+            "items": {
+              "$ref": "#/components/schemas/RubricLevelOut"
+            },
+            "type": "array",
+            "title": "Levels"
+          },
+          "rules": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Rules"
+          },
+          "notes": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Notes"
+          },
+          "criteria": {
+            "items": {
+              "$ref": "#/components/schemas/RubricCriterionOut"
+            },
+            "type": "array",
+            "title": "Criteria"
+          }
+        },
+        "type": "object",
+        "required": [
+          "version",
+          "title",
+          "description",
+          "scale",
+          "levels",
+          "rules",
+          "notes",
+          "criteria"
+        ],
+        "title": "RubricOut"
       },
       "SkillGapItemOut": {
         "properties": {
@@ -6967,6 +8217,30 @@
             "type": "array",
             "title": "Job Description Ids"
           },
+          "job_count": {
+            "type": "integer",
+            "title": "Job Count",
+            "description": "Number of job postings this report is based on"
+          },
+          "job_sources": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "type": "object",
+            "title": "Job Sources",
+            "description": "Postings per source, e.g. {'seed': 20} or {'jsearch': 18, 'pasted': 2}"
+          },
+          "role_family": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Role Family"
+          },
           "match_score": {
             "type": "number",
             "title": "Match Score"
@@ -7004,6 +8278,11 @@
             },
             "type": "array",
             "title": "Items"
+          },
+          "based_on": {
+            "type": "string",
+            "title": "Based On",
+            "readOnly": true
           }
         },
         "type": "object",
@@ -7011,11 +8290,15 @@
           "id",
           "target_role",
           "job_description_ids",
+          "job_count",
+          "job_sources",
+          "role_family",
           "match_score",
           "summary",
           "generated_by",
           "created_at",
-          "items"
+          "items",
+          "based_on"
         ],
         "title": "SkillGapReportOut"
       },
@@ -7042,6 +8325,11 @@
             },
             "type": "array",
             "title": "Job Description Ids"
+          },
+          "job_count": {
+            "type": "integer",
+            "title": "Job Count",
+            "default": 0
           },
           "match_score": {
             "type": "number",
@@ -7466,6 +8754,14 @@
             },
             "type": "array",
             "title": "Exercises"
+          },
+          "resources": {
+            "items": {
+              "$ref": "#/components/schemas/ResourceOut"
+            },
+            "type": "array",
+            "title": "Resources",
+            "default": []
           },
           "estimated_hours": {
             "type": "number",

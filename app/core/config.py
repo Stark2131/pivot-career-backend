@@ -34,7 +34,7 @@ class Settings(BaseSettings):
     openai_model: str = "gpt-4o-mini"
     openai_base_url: str = "https://api.openai.com/v1"
     gemini_api_key: SecretStr | None = None
-    gemini_model: str = "gemini-2.0-flash"
+    gemini_model: str = "gemini-3.8-flash"
     llm_timeout_seconds: float = 45.0
     llm_max_retries: int = 1
 
@@ -45,6 +45,13 @@ class Settings(BaseSettings):
     url_fetch_enabled: bool = True
     url_fetch_timeout_seconds: float = 10.0
     url_fetch_max_bytes: int = 2_000_000
+
+    # --- Live job postings (all optional; without keys the curated seed postings are used) ---
+    jsearch_api_key: SecretStr | None = None      # RapidAPI key for JSearch
+    adzuna_app_id: str | None = None
+    adzuna_app_key: SecretStr | None = None
+    market_cache_hours: int = 24
+    market_timeout_seconds: float = 15.0
 
     # --- Rate limiting (in-memory, per client IP / user) --------------------
     rate_limit_enabled: bool = True

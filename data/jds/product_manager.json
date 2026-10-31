@@ -1,0 +1,228 @@
+{
+ "role_family": "product_manager",
+ "role": "Product Manager",
+ "source": "seed",
+ "note": "Synthetic postings written for the demo. Companies are fictional; this is NOT real job-market data.",
+ "postings": [
+  {
+   "id": "seed-product_manager-01",
+   "source": "seed",
+   "role_family": "product_manager",
+   "title": "Product Manager",
+   "company": "Brightleaf Retail",
+   "location": "Chicago, IL",
+   "seniority": "mid",
+   "url": null,
+   "text": "Product Manager\nBrightleaf Retail | Chicago, IL | Hybrid\n\nAbout the role:\nBrightleaf Retail is a (fictional) organisation building tools for checkout. As a Product Manager you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Own the roadmap for checkout and align it with company goals\n- Prioritise the backlog together with engineering and design\n- Coordinate launches with marketing, sales and support\n- Communicate progress and risks to executives\n\nRequirements:\n- 3+ years of relevant experience\n- Proven Product Management experience shipping software products\n- Owning the product roadmap and making trade-offs explicit\n- User research experience: interviews, surveys, usability studies\n- Stakeholder management across business, design and engineering\n- Agile delivery experience with engineering teams\n- Prioritization frameworks (RICE, MoSCoW) and backlog prioritization\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- Strong SQL skills: joins, window functions and CTEs on large tables\n- Experience designing and reading A/B tests"
+  },
+  {
+   "id": "seed-product_manager-02",
+   "source": "seed",
+   "role_family": "product_manager",
+   "title": "Associate Product Manager",
+   "company": "Lumen Apps",
+   "location": "San Francisco, CA",
+   "seniority": "junior",
+   "url": null,
+   "text": "Associate Product Manager\nLumen Apps | San Francisco, CA | Hybrid\n\nAbout the role:\nLumen Apps is a (fictional) organisation building tools for onboarding. As a Associate Product Manager you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Run discovery with customers and turn insights into specs\n- Define success metrics and review them after every launch\n- Write clear requirements and make trade-offs visible\n- Synthesize competitive and market signals into strategy\n\nRequirements:\n- 1+ years of relevant experience\n- Product management track record owning outcomes, not just features\n- Writing crisp product requirements and user stories\n- Experience working in Agile teams\n- Clear Communication of findings and recommendations\n- Comfort with data analysis to back decisions\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- Jira fluency\n- Working fluency in Figma with designers"
+  },
+  {
+   "id": "seed-product_manager-03",
+   "source": "seed",
+   "role_family": "product_manager",
+   "title": "Senior Product Manager",
+   "company": "Northwind Health",
+   "location": "Boston, MA",
+   "seniority": "senior",
+   "url": null,
+   "text": "Senior Product Manager\nNorthwind Health | Boston, MA | Remote\n\nAbout the role:\nNorthwind Health is a (fictional) organisation building tools for patient experience. As a Senior Product Manager you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Prioritise the backlog together with engineering and design\n- Coordinate launches with marketing, sales and support\n- Communicate progress and risks to executives\n- Own the roadmap for patient experience and align it with company goals\n\nRequirements:\n- 5+ years of relevant experience\n- Proven Product Management experience shipping software products\n- Product strategy: clear vision, positioning and bets\n- Owning the product roadmap and making trade-offs explicit\n- Stakeholder management across business, design and engineering\n- Product analytics: funnel analysis, cohort analysis and retention\n- Leadership: influencing without authority and mentoring others\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- Fluent in SQL and comfortable profiling messy tables\n- Go-to-market planning and product launches"
+  },
+  {
+   "id": "seed-product_manager-04",
+   "source": "seed",
+   "role_family": "product_manager",
+   "title": "Product Manager, Growth",
+   "company": "Sprout Commerce",
+   "location": "Remote",
+   "seniority": "mid",
+   "url": null,
+   "text": "Product Manager, Growth\nSprout Commerce | Remote | Remote\n\nAbout the role:\nSprout Commerce is a (fictional) organisation building tools for growth. As a Product Manager, Growth you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Define success metrics and review them after every launch\n- Write clear requirements and make trade-offs visible\n- Synthesize competitive and market signals into strategy\n- Run discovery with customers and turn insights into specs\n\nRequirements:\n- 3+ years of relevant experience\n- Product management track record owning outcomes, not just features\n- Familiarity with A/B testing and experiment analysis\n- Product analytics with tools such as Mixpanel or Amplitude\n- Strong SQL skills: joins, window functions and CTEs on large tables\n- Ruthless feature prioritization using explicit frameworks\n- Clear Communication of findings and recommendations\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- Pricing and packaging or monetization strategy"
+  },
+  {
+   "id": "seed-product_manager-05",
+   "source": "seed",
+   "role_family": "product_manager",
+   "title": "Technical Product Manager",
+   "company": "Slate Software",
+   "location": "Remote",
+   "seniority": "mid",
+   "url": null,
+   "text": "Technical Product Manager\nSlate Software | Remote | Remote\n\nAbout the role:\nSlate Software is a (fictional) organisation building tools for developer platform. As a Technical Product Manager you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Coordinate launches with marketing, sales and support\n- Communicate progress and risks to executives\n- Own the roadmap for developer platform and align it with company goals\n- Prioritise the backlog together with engineering and design\n\nRequirements:\n- 3+ years of relevant experience\n- Proven Product Management experience shipping software products\n- Agile delivery experience with engineering teams\n- Writing clear user stories and acceptance criteria\n- Stakeholder management across business, design and engineering\n- Jira for backlog and sprint management\n- System design for data- and ML-heavy services\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- Advanced SQL for querying and validating data\n- Product analytics: funnel analysis, cohort analysis and retention"
+  },
+  {
+   "id": "seed-product_manager-06",
+   "source": "seed",
+   "role_family": "product_manager",
+   "title": "Product Manager, Payments",
+   "company": "Pinecrest Capital",
+   "location": "New York, NY",
+   "seniority": "mid",
+   "url": null,
+   "text": "Product Manager, Payments\nPinecrest Capital | New York, NY | Hybrid\n\nAbout the role:\nPinecrest Capital is a (fictional) organisation building tools for payments. As a Product Manager, Payments you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Write clear requirements and make trade-offs visible\n- Synthesize competitive and market signals into strategy\n- Run discovery with customers and turn insights into specs\n- Define success metrics and review them after every launch\n\nRequirements:\n- 3+ years of relevant experience\n- Product management track record owning outcomes, not just features\n- Roadmapping that connects strategy to delivery\n- Track record of stakeholder communication and aligning teams\n- Comfort with data analysis to back decisions\n- Writing crisp product requirements and user stories\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- Fluent in SQL and comfortable profiling messy tables\n- Market analysis to size and position opportunities"
+  },
+  {
+   "id": "seed-product_manager-07",
+   "source": "seed",
+   "role_family": "product_manager",
+   "title": "Product Manager, Marketplace",
+   "company": "Willow & Co",
+   "location": "Portland, OR",
+   "seniority": "mid",
+   "url": null,
+   "text": "Product Manager, Marketplace\nWillow & Co | Portland, OR | Hybrid\n\nAbout the role:\nWillow & Co is a (fictional) organisation building tools for marketplace. As a Product Manager, Marketplace you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Communicate progress and risks to executives\n- Own the roadmap for marketplace and align it with company goals\n- Prioritise the backlog together with engineering and design\n- Coordinate launches with marketing, sales and support\n\nRequirements:\n- 3+ years of relevant experience\n- Proven Product Management experience shipping software products\n- User research experience: interviews, surveys, usability studies\n- Owning the product roadmap and making trade-offs explicit\n- Experience designing and reading A/B tests\n- Prioritization frameworks (RICE, MoSCoW) and backlog prioritization\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- Product analytics: funnel analysis, cohort analysis and retention\n- Working fluency in Figma with designers"
+  },
+  {
+   "id": "seed-product_manager-08",
+   "source": "seed",
+   "role_family": "product_manager",
+   "title": "Group Product Manager",
+   "company": "Arcadia Games",
+   "location": "Seattle, WA",
+   "seniority": "senior",
+   "url": null,
+   "text": "Group Product Manager\nArcadia Games | Seattle, WA | Hybrid\n\nAbout the role:\nArcadia Games is a (fictional) organisation building tools for player experience. As a Group Product Manager you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Synthesize competitive and market signals into strategy\n- Run discovery with customers and turn insights into specs\n- Define success metrics and review them after every launch\n- Write clear requirements and make trade-offs visible\n\nRequirements:\n- 5+ years of relevant experience\n- Ability to set product strategy and defend it\n- Team leadership and mentoring\n- Roadmapping that connects strategy to delivery\n- Track record of stakeholder communication and aligning teams\n- Setting and tracking OKRs\n- Product analytics with tools such as Mixpanel or Amplitude\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- Market analysis to size and position opportunities"
+  },
+  {
+   "id": "seed-product_manager-09",
+   "source": "seed",
+   "role_family": "product_manager",
+   "title": "Product Manager, Mobile",
+   "company": "Ember Telecom",
+   "location": "Denver, CO",
+   "seniority": "mid",
+   "url": null,
+   "text": "Product Manager, Mobile\nEmber Telecom | Denver, CO | Hybrid\n\nAbout the role:\nEmber Telecom is a (fictional) organisation building tools for mobile app. As a Product Manager, Mobile you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Own the roadmap for mobile app and align it with company goals\n- Prioritise the backlog together with engineering and design\n- Coordinate launches with marketing, sales and support\n- Communicate progress and risks to executives\n\nRequirements:\n- 3+ years of relevant experience\n- Proven Product Management experience shipping software products\n- Agile delivery experience with engineering teams\n- Scrum ceremonies and sprint planning\n- Writing clear user stories and acceptance criteria\n- Jira for backlog and sprint management\n- Excellent written and verbal Communication, including to non-technical audiences\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- Working fluency in Figma with designers\n- Wireframing to communicate ideas quickly"
+  },
+  {
+   "id": "seed-product_manager-10",
+   "source": "seed",
+   "role_family": "product_manager",
+   "title": "Product Manager, B2B SaaS",
+   "company": "Juniper Systems",
+   "location": "Remote",
+   "seniority": "mid",
+   "url": null,
+   "text": "Product Manager, B2B SaaS\nJuniper Systems | Remote | Remote\n\nAbout the role:\nJuniper Systems is a (fictional) organisation building tools for enterprise workflows. As a Product Manager, B2B SaaS you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Run discovery with customers and turn insights into specs\n- Define success metrics and review them after every launch\n- Write clear requirements and make trade-offs visible\n- Synthesize competitive and market signals into strategy\n\nRequirements:\n- 3+ years of relevant experience\n- Product management track record owning outcomes, not just features\n- Regularly run customer interviews\n- Roadmapping that connects strategy to delivery\n- Experience leading product launches and GTM strategy\n- Track record of stakeholder communication and aligning teams\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- Strong SQL skills: joins, window functions and CTEs on large tables\n- Confluence for specs and documentation"
+  },
+  {
+   "id": "seed-product_manager-11",
+   "source": "seed",
+   "role_family": "product_manager",
+   "title": "Product Owner",
+   "company": "Cobalt Insurance",
+   "location": "Hartford, CT",
+   "seniority": "mid",
+   "url": null,
+   "text": "Product Owner\nCobalt Insurance | Hartford, CT | Hybrid\n\nAbout the role:\nCobalt Insurance is a (fictional) organisation building tools for claims platform. As a Product Owner you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Prioritise the backlog together with engineering and design\n- Coordinate launches with marketing, sales and support\n- Communicate progress and risks to executives\n- Own the roadmap for claims platform and align it with company goals\n\nRequirements:\n- 3+ years of relevant experience\n- Agile delivery experience with engineering teams\n- Scrum ceremonies and sprint planning\n- Writing clear user stories and acceptance criteria\n- Prioritization frameworks (RICE, MoSCoW) and backlog prioritization\n- Stakeholder management across business, design and engineering\n- Jira for backlog and sprint management\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- Confluence for specs and documentation"
+  },
+  {
+   "id": "seed-product_manager-12",
+   "source": "seed",
+   "role_family": "product_manager",
+   "title": "Product Manager, Data Products",
+   "company": "Granite Bank",
+   "location": "Charlotte, NC",
+   "seniority": "mid",
+   "url": null,
+   "text": "Product Manager, Data Products\nGranite Bank | Charlotte, NC | Hybrid\n\nAbout the role:\nGranite Bank is a (fictional) organisation building tools for analytics products. As a Product Manager, Data Products you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Define success metrics and review them after every launch\n- Write clear requirements and make trade-offs visible\n- Synthesize competitive and market signals into strategy\n- Run discovery with customers and turn insights into specs\n\nRequirements:\n- 3+ years of relevant experience\n- Product management track record owning outcomes, not just features\n- Fluent in SQL and comfortable profiling messy tables\n- Comfort with data analysis to back decisions\n- Roadmapping that connects strategy to delivery\n- Track record of stakeholder communication and aligning teams\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- Tableau experience (calculated fields, LOD expressions, published dashboards)\n- Ability to set product strategy and defend it"
+  },
+  {
+   "id": "seed-product_manager-13",
+   "source": "seed",
+   "role_family": "product_manager",
+   "title": "Associate Product Manager",
+   "company": "Orchid Education",
+   "location": "Remote",
+   "seniority": "junior",
+   "url": null,
+   "text": "Associate Product Manager\nOrchid Education | Remote | Remote\n\nAbout the role:\nOrchid Education is a (fictional) organisation building tools for learning tools. As a Associate Product Manager you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Coordinate launches with marketing, sales and support\n- Communicate progress and risks to executives\n- Own the roadmap for learning tools and align it with company goals\n- Prioritise the backlog together with engineering and design\n\nRequirements:\n- 1+ years of relevant experience\n- Proven Product Management experience shipping software products\n- User research experience: interviews, surveys, usability studies\n- Writing clear user stories and acceptance criteria\n- Excellent written and verbal Communication, including to non-technical audiences\n- Agile delivery experience with engineering teams\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- Working fluency in Figma with designers\n- Product analytics: funnel analysis, cohort analysis and retention"
+  },
+  {
+   "id": "seed-product_manager-14",
+   "source": "seed",
+   "role_family": "product_manager",
+   "title": "Product Manager, AI Features",
+   "company": "Kestrel Foods",
+   "location": "Atlanta, GA",
+   "seniority": "mid",
+   "url": null,
+   "text": "Product Manager, AI Features\nKestrel Foods | Atlanta, GA | Hybrid\n\nAbout the role:\nKestrel Foods is a (fictional) organisation building tools for personalisation. As a Product Manager, AI Features you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Write clear requirements and make trade-offs visible\n- Synthesize competitive and market signals into strategy\n- Run discovery with customers and turn insights into specs\n- Define success metrics and review them after every launch\n\nRequirements:\n- 3+ years of relevant experience\n- Product management track record owning outcomes, not just features\n- Product discovery habits: continuous customer discovery\n- Comfort with data analysis to back decisions\n- Track record of stakeholder communication and aligning teams\n- Ruthless feature prioritization using explicit frameworks\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- Hands-on Machine Learning experience shipping models\n- Advanced SQL for querying and validating data"
+  },
+  {
+   "id": "seed-product_manager-15",
+   "source": "seed",
+   "role_family": "product_manager",
+   "title": "Senior Product Manager, Platform",
+   "company": "Vantage Energy",
+   "location": "Houston, TX",
+   "seniority": "senior",
+   "url": null,
+   "text": "Senior Product Manager, Platform\nVantage Energy | Houston, TX | Hybrid\n\nAbout the role:\nVantage Energy is a (fictional) organisation building tools for internal platform. As a Senior Product Manager, Platform you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Communicate progress and risks to executives\n- Own the roadmap for internal platform and align it with company goals\n- Prioritise the backlog together with engineering and design\n- Coordinate launches with marketing, sales and support\n\nRequirements:\n- 5+ years of relevant experience\n- Product strategy: clear vision, positioning and bets\n- Owning the product roadmap and making trade-offs explicit\n- Stakeholder management across business, design and engineering\n- Agile delivery experience with engineering teams\n- Leadership: influencing without authority and mentoring others\n- Setting and tracking OKRs\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- Fluent in SQL and comfortable profiling messy tables\n- Jira for backlog and sprint management"
+  },
+  {
+   "id": "seed-product_manager-16",
+   "source": "seed",
+   "role_family": "product_manager",
+   "title": "Product Manager, Retention",
+   "company": "Harbor Logistics",
+   "location": "Austin, TX",
+   "seniority": "mid",
+   "url": null,
+   "text": "Product Manager, Retention\nHarbor Logistics | Austin, TX | Hybrid\n\nAbout the role:\nHarbor Logistics is a (fictional) organisation building tools for customer retention. As a Product Manager, Retention you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Synthesize competitive and market signals into strategy\n- Run discovery with customers and turn insights into specs\n- Define success metrics and review them after every launch\n- Write clear requirements and make trade-offs visible\n\nRequirements:\n- 3+ years of relevant experience\n- Product management track record owning outcomes, not just features\n- Product analytics with tools such as Mixpanel or Amplitude\n- Familiarity with A/B testing and experiment analysis\n- Strong SQL skills: joins, window functions and CTEs on large tables\n- Comfortable running user research and synthesising it\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- Pricing and packaging or monetization strategy\n- Experience leading product launches and GTM strategy"
+  },
+  {
+   "id": "seed-product_manager-17",
+   "source": "seed",
+   "role_family": "product_manager",
+   "title": "Product Manager, Healthcare",
+   "company": "Clearwater Clinics",
+   "location": "Minneapolis, MN",
+   "seniority": "mid",
+   "url": null,
+   "text": "Product Manager, Healthcare\nClearwater Clinics | Minneapolis, MN | Hybrid\n\nAbout the role:\nClearwater Clinics is a (fictional) organisation building tools for care coordination. As a Product Manager, Healthcare you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Own the roadmap for care coordination and align it with company goals\n- Prioritise the backlog together with engineering and design\n- Coordinate launches with marketing, sales and support\n- Communicate progress and risks to executives\n\nRequirements:\n- 3+ years of relevant experience\n- Proven Product Management experience shipping software products\n- User research experience: interviews, surveys, usability studies\n- Stakeholder management across business, design and engineering\n- Owning the product roadmap and making trade-offs explicit\n- Market research and competitive analysis\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- Agile delivery experience with engineering teams\n- Confident presentation skills, including executive presentations"
+  },
+  {
+   "id": "seed-product_manager-18",
+   "source": "seed",
+   "role_family": "product_manager",
+   "title": "Product Marketing Manager",
+   "company": "Meridian Freight",
+   "location": "Dallas, TX",
+   "seniority": "mid",
+   "url": null,
+   "text": "Product Marketing Manager\nMeridian Freight | Dallas, TX | Hybrid\n\nAbout the role:\nMeridian Freight is a (fictional) organisation building tools for go-to-market. As a Product Marketing Manager you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Run discovery with customers and turn insights into specs\n- Define success metrics and review them after every launch\n- Write clear requirements and make trade-offs visible\n- Synthesize competitive and market signals into strategy\n\nRequirements:\n- 3+ years of relevant experience\n- Experience leading product launches and GTM strategy\n- Market analysis to size and position opportunities\n- Clear Communication of findings and recommendations\n- Confident presentation skills, including executive presentations\n- Track record of stakeholder communication and aligning teams\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- Product management track record owning outcomes, not just features\n- Pricing and packaging or monetization strategy"
+  },
+  {
+   "id": "seed-product_manager-19",
+   "source": "seed",
+   "role_family": "product_manager",
+   "title": "Product Manager",
+   "company": "Foxglove Nonprofit Network",
+   "location": "Remote",
+   "seniority": "junior",
+   "url": null,
+   "text": "Product Manager\nFoxglove Nonprofit Network | Remote | Remote\n\nAbout the role:\nFoxglove Nonprofit Network is a (fictional) organisation building tools for member tools. As a Product Manager you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Prioritise the backlog together with engineering and design\n- Coordinate launches with marketing, sales and support\n- Communicate progress and risks to executives\n- Own the roadmap for member tools and align it with company goals\n\nRequirements:\n- 1+ years of relevant experience\n- Proven Product Management experience shipping software products\n- Writing clear user stories and acceptance criteria\n- Prioritization frameworks (RICE, MoSCoW) and backlog prioritization\n- Excellent written and verbal Communication, including to non-technical audiences\n- Agile delivery experience with engineering teams\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- Jira for backlog and sprint management\n- Regularly run customer interviews"
+  },
+  {
+   "id": "seed-product_manager-20",
+   "source": "seed",
+   "role_family": "product_manager",
+   "title": "Principal Product Manager",
+   "company": "Civic Works Institute",
+   "location": "Washington, DC",
+   "seniority": "senior",
+   "url": null,
+   "text": "Principal Product Manager\nCivic Works Institute | Washington, DC | Hybrid\n\nAbout the role:\nCivic Works Institute is a (fictional) organisation building tools for digital services. As a Principal Product Manager you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Define success metrics and review them after every launch\n- Write clear requirements and make trade-offs visible\n- Synthesize competitive and market signals into strategy\n- Run discovery with customers and turn insights into specs\n\nRequirements:\n- 5+ years of relevant experience\n- Ability to set product strategy and defend it\n- Product management track record owning outcomes, not just features\n- Track record of stakeholder communication and aligning teams\n- Team leadership and mentoring\n- Roadmapping that connects strategy to delivery\n- Negotiation and conflict resolution skills\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- Comfort with data analysis to back decisions\n- Setting and tracking OKRs"
+  }
+ ]
+}

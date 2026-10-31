@@ -1,0 +1,1269 @@
+{
+ "version": 1,
+ "note": "Project templates. `skills` are taxonomy skills the project genuinely exercises; recommendations are ranked by how many of the user's top gaps they cover, and the AI may only rewrite the wording.",
+ "projects": [
+  {
+   "id": "retail-sales-dashboard",
+   "title": "Retail sales performance dashboard",
+   "problem_statement": "Regional managers review sales in static spreadsheets and miss problems until month end.",
+   "description": "Model a public retail dataset with SQL, then publish an interactive dashboard that answers five concrete business questions with clear KPIs.",
+   "skills": [
+    "SQL",
+    "Tableau",
+    "Data Visualization",
+    "KPI Analysis"
+   ],
+   "skill_ids": [
+    "sql",
+    "tableau",
+    "data-visualization",
+    "kpi-analysis"
+   ],
+   "tech_stack": [
+    "SQL",
+    "Tableau",
+    "Data Visualization",
+    "KPI Analysis",
+    "Excel"
+   ],
+   "core_features": [
+    "Cleaned and documented SQL views",
+    "Dashboard with filters and drill-downs",
+    "KPI definitions page",
+    "Annotated insights for each chart"
+   ],
+   "deliverables": [
+    "Published dashboard link or screenshots",
+    "SQL scripts in a repo",
+    "One-page summary of findings"
+   ],
+   "difficulty": "beginner",
+   "estimated_hours": 18,
+   "role_families": [
+    "data_analyst"
+   ]
+  },
+  {
+   "id": "budget-vs-actuals-excel",
+   "title": "Budget vs actuals Excel model with automated reporting",
+   "problem_statement": "Finance teams rebuild the same monthly variance report by hand.",
+   "description": "Build a structured Excel model with lookups and pivot tables, then automate the monthly refresh with a macro.",
+   "skills": [
+    "Excel",
+    "VBA",
+    "KPI Analysis"
+   ],
+   "skill_ids": [
+    "excel",
+    "vba",
+    "kpi-analysis"
+   ],
+   "tech_stack": [
+    "Excel",
+    "VBA",
+    "KPI Analysis",
+    "Power Query"
+   ],
+   "core_features": [
+    "Input, calculation and output sheets",
+    "Variance analysis with conditional formatting",
+    "One-click refresh macro"
+   ],
+   "deliverables": [
+    "Workbook with a README sheet",
+    "Short loom-style walkthrough"
+   ],
+   "difficulty": "beginner",
+   "estimated_hours": 14,
+   "role_families": [
+    "data_analyst"
+   ]
+  },
+  {
+   "id": "sql-cohort-retention",
+   "title": "SQL case study: customer cohorts and retention",
+   "problem_statement": "Leadership wants to know whether new customers stick around, and nobody can answer it from the raw tables.",
+   "description": "Use window functions and CTEs to build signup cohorts, retention curves and a short written recommendation.",
+   "skills": [
+    "SQL",
+    "Product Analytics",
+    "Data Analysis"
+   ],
+   "skill_ids": [
+    "sql",
+    "product-analytics",
+    "data-analysis"
+   ],
+   "tech_stack": [
+    "SQL",
+    "Product Analytics",
+    "Data Analysis",
+    "PostgreSQL"
+   ],
+   "core_features": [
+    "Cohort table built with CTEs",
+    "Retention curve by cohort",
+    "Segment comparison",
+    "Written recommendations"
+   ],
+   "deliverables": [
+    "Repo with SQL and a notebook or report",
+    "3-slide readout"
+   ],
+   "difficulty": "intermediate",
+   "estimated_hours": 20,
+   "role_families": [
+    "data_analyst",
+    "product_manager"
+   ]
+  },
+  {
+   "id": "ab-test-readout",
+   "title": "A/B test analysis and decision memo",
+   "problem_statement": "Teams ship changes on gut feeling because experiment results are hard to read.",
+   "description": "Analyse a public or simulated experiment: check sample ratio, test significance, quantify uncertainty and write the decision memo.",
+   "skills": [
+    "A/B Testing",
+    "Statistics",
+    "Hypothesis Testing",
+    "Python"
+   ],
+   "skill_ids": [
+    "a-b-testing",
+    "statistics",
+    "hypothesis-testing",
+    "python"
+   ],
+   "tech_stack": [
+    "A/B Testing",
+    "Statistics",
+    "Hypothesis Testing",
+    "Python",
+    "Pandas",
+    "Jupyter"
+   ],
+   "core_features": [
+    "Sample-ratio and data-quality checks",
+    "Significance test with confidence interval",
+    "Power / sample-size calculation",
+    "Decision memo"
+   ],
+   "deliverables": [
+    "Notebook",
+    "Two-page decision memo"
+   ],
+   "difficulty": "intermediate",
+   "estimated_hours": 16,
+   "role_families": [
+    "data_analyst",
+    "product_manager"
+   ]
+  },
+  {
+   "id": "powerbi-ops-report",
+   "title": "Operations KPI report in Power BI",
+   "problem_statement": "Operations leads track throughput and delays across several spreadsheets.",
+   "description": "Combine several tables into a data model, define measures and publish a self-serve operations report.",
+   "skills": [
+    "Power BI",
+    "Business Intelligence",
+    "KPI Analysis",
+    "Data Warehousing"
+   ],
+   "skill_ids": [
+    "power-bi",
+    "business-intelligence",
+    "kpi-analysis",
+    "data-warehousing"
+   ],
+   "tech_stack": [
+    "Power BI",
+    "Business Intelligence",
+    "KPI Analysis",
+    "Data Warehousing",
+    "Excel"
+   ],
+   "core_features": [
+    "Star-schema data model",
+    "DAX measures for core KPIs",
+    "Row-level filters",
+    "Refresh documentation"
+   ],
+   "deliverables": [
+    "PBIX file or screenshots",
+    "Data dictionary"
+   ],
+   "difficulty": "beginner",
+   "estimated_hours": 20,
+   "role_families": [
+    "data_analyst"
+   ]
+  },
+  {
+   "id": "reproducible-data-cleaning",
+   "title": "Clean a messy public dataset, reproducibly",
+   "problem_statement": "Analyses are hard to trust when the cleaning steps live in someone's head.",
+   "description": "Pick a messy public dataset, document every cleaning decision and make the whole pipeline rerunnable from one command.",
+   "skills": [
+    "Data Cleaning",
+    "Python",
+    "Pandas",
+    "Git"
+   ],
+   "skill_ids": [
+    "data-cleaning",
+    "python",
+    "pandas",
+    "git"
+   ],
+   "tech_stack": [
+    "Data Cleaning",
+    "Python",
+    "Pandas",
+    "Git",
+    "Jupyter"
+   ],
+   "core_features": [
+    "Profiling report of problems found",
+    "Cleaning script with tests",
+    "Before/after quality metrics"
+   ],
+   "deliverables": [
+    "GitHub repo with README",
+    "Data-quality summary"
+   ],
+   "difficulty": "beginner",
+   "estimated_hours": 14,
+   "role_families": [
+    "data_analyst",
+    "ml_engineer"
+   ]
+  },
+  {
+   "id": "satisfaction-driver-analysis",
+   "title": "Driver analysis: what moves customer satisfaction",
+   "problem_statement": "Teams collect survey scores but do not know which levers matter.",
+   "description": "Run a regression on survey data, check assumptions and turn the coefficients into three plain-language recommendations.",
+   "skills": [
+    "Regression Analysis",
+    "Statistics",
+    "Data Storytelling",
+    "R"
+   ],
+   "skill_ids": [
+    "regression-analysis",
+    "statistics",
+    "data-storytelling",
+    "r"
+   ],
+   "tech_stack": [
+    "Regression Analysis",
+    "Statistics",
+    "Data Storytelling",
+    "R",
+    "Python"
+   ],
+   "core_features": [
+    "Exploratory analysis",
+    "Regression with diagnostics",
+    "Effect sizes with uncertainty",
+    "Stakeholder-ready summary"
+   ],
+   "deliverables": [
+    "Notebook or R Markdown report",
+    "One-page executive summary"
+   ],
+   "difficulty": "intermediate",
+   "estimated_hours": 22,
+   "role_families": [
+    "data_analyst"
+   ]
+  },
+  {
+   "id": "marketing-funnel-dashboard",
+   "title": "Marketing funnel and attribution dashboard",
+   "problem_statement": "Marketing cannot tell which channels bring customers who actually convert.",
+   "description": "Combine web analytics events with order data to build a funnel and a simple attribution view in a BI tool.",
+   "skills": [
+    "Google Analytics",
+    "Marketing Analytics",
+    "Looker",
+    "SQL"
+   ],
+   "skill_ids": [
+    "google-analytics",
+    "marketing-analytics",
+    "looker",
+    "sql"
+   ],
+   "tech_stack": [
+    "Google Analytics",
+    "Marketing Analytics",
+    "Looker",
+    "SQL",
+    "BigQuery"
+   ],
+   "core_features": [
+    "Funnel with drop-off by step",
+    "Channel comparison",
+    "Campaign performance table",
+    "Caveats on attribution"
+   ],
+   "deliverables": [
+    "Dashboard link or screenshots",
+    "Metric definitions"
+   ],
+   "difficulty": "intermediate",
+   "estimated_hours": 22,
+   "role_families": [
+    "data_analyst"
+   ]
+  },
+  {
+   "id": "dbt-warehouse-models",
+   "title": "Analytics engineering: dbt models on a warehouse",
+   "problem_statement": "Business logic is copy-pasted across dashboards and drifts apart.",
+   "description": "Build layered dbt models with tests and documentation on a free warehouse tier so every dashboard reads one definition of each metric.",
+   "skills": [
+    "dbt",
+    "SQL",
+    "Data Warehousing",
+    "Snowflake"
+   ],
+   "skill_ids": [
+    "dbt",
+    "sql",
+    "data-warehousing",
+    "snowflake"
+   ],
+   "tech_stack": [
+    "dbt",
+    "SQL",
+    "Data Warehousing",
+    "Snowflake",
+    "Git"
+   ],
+   "core_features": [
+    "Staging, intermediate and mart layers",
+    "Schema and data tests",
+    "Generated documentation site",
+    "CI check on pull requests"
+   ],
+   "deliverables": [
+    "Repo with dbt project",
+    "Lineage graph screenshot"
+   ],
+   "difficulty": "advanced",
+   "estimated_hours": 30,
+   "role_families": [
+    "data_analyst"
+   ]
+  },
+  {
+   "id": "executive-data-story",
+   "title": "Executive data story: one question, one short deck",
+   "problem_statement": "Good analysis is ignored when it is not presented as a decision.",
+   "description": "Choose one business question, analyse it and present the answer in a five-slide deck with a clear recommendation.",
+   "skills": [
+    "Data Storytelling",
+    "Presentation Skills",
+    "Data Visualization",
+    "Excel"
+   ],
+   "skill_ids": [
+    "data-storytelling",
+    "presentation-skills",
+    "data-visualization",
+    "excel"
+   ],
+   "tech_stack": [
+    "Data Storytelling",
+    "Presentation Skills",
+    "Data Visualization",
+    "Excel",
+    "Communication"
+   ],
+   "core_features": [
+    "Question and decision framing",
+    "Three supporting charts",
+    "Recommendation with risks",
+    "Recorded 5-minute talk"
+   ],
+   "deliverables": [
+    "Slide deck",
+    "Recording or speaker notes"
+   ],
+   "difficulty": "beginner",
+   "estimated_hours": 12,
+   "role_families": [
+    "data_analyst",
+    "product_manager"
+   ]
+  },
+  {
+   "id": "prd-and-roadmap",
+   "title": "PRD and roadmap for a missing feature in a real app",
+   "problem_statement": "Portfolios rarely show how a product manager turns a problem into a plan.",
+   "description": "Pick an app you use, find a real gap, and write a PRD with user stories, success metrics and a prioritised roadmap.",
+   "skills": [
+    "Product Roadmapping",
+    "User Stories",
+    "Prioritization Frameworks",
+    "Product Management"
+   ],
+   "skill_ids": [
+    "product-roadmapping",
+    "user-stories",
+    "prioritization-frameworks",
+    "product-management"
+   ],
+   "tech_stack": [
+    "Product Roadmapping",
+    "User Stories",
+    "Prioritization Frameworks",
+    "Product Management",
+    "Jira"
+   ],
+   "core_features": [
+    "Problem statement with evidence",
+    "User stories with acceptance criteria",
+    "RICE-scored backlog",
+    "Three-quarter roadmap"
+   ],
+   "deliverables": [
+    "PRD document",
+    "Roadmap one-pager"
+   ],
+   "difficulty": "beginner",
+   "estimated_hours": 16,
+   "role_families": [
+    "product_manager"
+   ]
+  },
+  {
+   "id": "user-research-sprint",
+   "title": "User research sprint: five interviews, one synthesis",
+   "problem_statement": "Teams build features nobody asked for because discovery gets skipped.",
+   "description": "Recruit five users, run structured interviews, synthesise the findings and propose three opportunities.",
+   "skills": [
+    "User Research",
+    "Customer Interviews",
+    "Product Discovery"
+   ],
+   "skill_ids": [
+    "user-research",
+    "customer-interviews",
+    "product-discovery"
+   ],
+   "tech_stack": [
+    "User Research",
+    "Customer Interviews",
+    "Product Discovery",
+    "Figma"
+   ],
+   "core_features": [
+    "Interview guide",
+    "Affinity map of findings",
+    "Opportunity-solution tree",
+    "Readout deck"
+   ],
+   "deliverables": [
+    "Interview notes (anonymised)",
+    "Synthesis deck"
+   ],
+   "difficulty": "intermediate",
+   "estimated_hours": 20,
+   "role_families": [
+    "product_manager"
+   ]
+  },
+  {
+   "id": "product-teardown-metrics",
+   "title": "Product teardown with a metrics tree",
+   "problem_statement": "It is easy to describe a product and hard to say how it succeeds.",
+   "description": "Analyse a well-known product: its audience, strategy, North Star metric and the inputs that drive it.",
+   "skills": [
+    "Product Analytics",
+    "KPI Analysis",
+    "Product Strategy",
+    "Market Research"
+   ],
+   "skill_ids": [
+    "product-analytics",
+    "kpi-analysis",
+    "product-strategy",
+    "market-research"
+   ],
+   "tech_stack": [
+    "Product Analytics",
+    "KPI Analysis",
+    "Product Strategy",
+    "Market Research",
+    "Product Management"
+   ],
+   "core_features": [
+    "Audience and jobs-to-be-done",
+    "Metrics tree",
+    "Competitor comparison",
+    "Three product bets with rationale"
+   ],
+   "deliverables": [
+    "Written teardown",
+    "Metrics tree diagram"
+   ],
+   "difficulty": "beginner",
+   "estimated_hours": 14,
+   "role_families": [
+    "product_manager"
+   ]
+  },
+  {
+   "id": "gtm-launch-plan",
+   "title": "Go-to-market plan for a new feature",
+   "problem_statement": "Features ship without a plan for who hears about them and why they should care.",
+   "description": "Plan a launch: segments, positioning, pricing hypotheses, channels and success measures.",
+   "skills": [
+    "Go-to-Market",
+    "Market Research",
+    "Pricing Strategy",
+    "Presentation Skills"
+   ],
+   "skill_ids": [
+    "go-to-market",
+    "market-research",
+    "pricing-strategy",
+    "presentation-skills"
+   ],
+   "tech_stack": [
+    "Go-to-Market",
+    "Market Research",
+    "Pricing Strategy",
+    "Presentation Skills",
+    "Product Strategy"
+   ],
+   "core_features": [
+    "Segment and positioning statement",
+    "Pricing options with trade-offs",
+    "Launch timeline",
+    "Success metrics"
+   ],
+   "deliverables": [
+    "Launch plan document",
+    "Stakeholder pitch deck"
+   ],
+   "difficulty": "intermediate",
+   "estimated_hours": 18,
+   "role_families": [
+    "product_manager"
+   ]
+  },
+  {
+   "id": "experiment-design-doc",
+   "title": "Experiment design document and readout",
+   "problem_statement": "Teams run experiments without a hypothesis or a stopping rule.",
+   "description": "Write an experiment doc with hypothesis, metrics and sample size, then analyse simulated results with SQL.",
+   "skills": [
+    "A/B Testing",
+    "Product Analytics",
+    "Hypothesis Testing",
+    "SQL"
+   ],
+   "skill_ids": [
+    "a-b-testing",
+    "product-analytics",
+    "hypothesis-testing",
+    "sql"
+   ],
+   "tech_stack": [
+    "A/B Testing",
+    "Product Analytics",
+    "Hypothesis Testing",
+    "SQL",
+    "Statistics"
+   ],
+   "core_features": [
+    "Hypothesis and primary metric",
+    "Sample-size reasoning",
+    "SQL analysis of results",
+    "Ship / iterate / stop recommendation"
+   ],
+   "deliverables": [
+    "Experiment doc",
+    "Analysis notebook or SQL"
+   ],
+   "difficulty": "intermediate",
+   "estimated_hours": 18,
+   "role_families": [
+    "product_manager",
+    "data_analyst"
+   ]
+  },
+  {
+   "id": "clickable-prototype-usability",
+   "title": "Clickable prototype and usability test",
+   "problem_statement": "Ideas are hard to evaluate until people can click through them.",
+   "description": "Design a clickable prototype for one flow, test it with five people and revise it once.",
+   "skills": [
+    "Figma",
+    "Wireframing",
+    "Prototyping",
+    "User Research"
+   ],
+   "skill_ids": [
+    "figma",
+    "wireframing",
+    "prototyping",
+    "user-research"
+   ],
+   "tech_stack": [
+    "Figma",
+    "Wireframing",
+    "Prototyping",
+    "User Research",
+    "Usability testing"
+   ],
+   "core_features": [
+    "Low-fidelity wireframes",
+    "Interactive prototype",
+    "Usability test script and findings",
+    "Revised flow"
+   ],
+   "deliverables": [
+    "Prototype link",
+    "Findings summary"
+   ],
+   "difficulty": "beginner",
+   "estimated_hours": 16,
+   "role_families": [
+    "product_manager"
+   ]
+  },
+  {
+   "id": "nonprofit-okrs",
+   "title": "Team OKRs and a prioritisation model for a nonprofit",
+   "problem_statement": "Small teams have many requests and no shared way to say no.",
+   "description": "Help a small organisation set OKRs and a transparent prioritisation model, and document the stakeholder trade-offs.",
+   "skills": [
+    "OKRs",
+    "Prioritization Frameworks",
+    "Stakeholder Management",
+    "Agile"
+   ],
+   "skill_ids": [
+    "okrs",
+    "prioritization-frameworks",
+    "stakeholder-management",
+    "agile"
+   ],
+   "tech_stack": [
+    "OKRs",
+    "Prioritization Frameworks",
+    "Stakeholder Management",
+    "Agile",
+    "Communication"
+   ],
+   "core_features": [
+    "Stakeholder map",
+    "OKR set with measurable key results",
+    "Scored backlog",
+    "Quarterly review template"
+   ],
+   "deliverables": [
+    "OKR document",
+    "Prioritisation spreadsheet"
+   ],
+   "difficulty": "beginner",
+   "estimated_hours": 12,
+   "role_families": [
+    "product_manager"
+   ]
+  },
+  {
+   "id": "two-sprint-backlog-jira",
+   "title": "Run a two-sprint backlog in Jira",
+   "problem_statement": "Agile is hard to show without evidence of running it.",
+   "description": "Plan and run two small sprints for a side project in Jira, with a written retro after each.",
+   "skills": [
+    "Agile",
+    "Scrum",
+    "Jira",
+    "User Stories",
+    "Confluence"
+   ],
+   "skill_ids": [
+    "agile",
+    "scrum",
+    "jira",
+    "user-stories",
+    "confluence"
+   ],
+   "tech_stack": [
+    "Agile",
+    "Scrum",
+    "Jira",
+    "User Stories",
+    "Confluence",
+    "Git"
+   ],
+   "core_features": [
+    "Product backlog with estimates",
+    "Sprint plans and boards",
+    "Burndown or throughput chart",
+    "Retrospective notes"
+   ],
+   "deliverables": [
+    "Exported board screenshots",
+    "Retro write-ups"
+   ],
+   "difficulty": "beginner",
+   "estimated_hours": 14,
+   "role_families": [
+    "product_manager"
+   ]
+  },
+  {
+   "id": "competitive-positioning-memo",
+   "title": "Competitive analysis and positioning memo",
+   "problem_statement": "Strategy needs a clear view of where a product wins and loses.",
+   "description": "Compare four competitors on customer jobs, pricing and strengths, then recommend a positioning.",
+   "skills": [
+    "Market Research",
+    "Product Strategy",
+    "Presentation Skills"
+   ],
+   "skill_ids": [
+    "market-research",
+    "product-strategy",
+    "presentation-skills"
+   ],
+   "tech_stack": [
+    "Market Research",
+    "Product Strategy",
+    "Presentation Skills",
+    "Communication"
+   ],
+   "core_features": [
+    "Competitor matrix",
+    "Customer-job comparison",
+    "Positioning statement",
+    "Recommended differentiators"
+   ],
+   "deliverables": [
+    "Memo",
+    "Summary slide"
+   ],
+   "difficulty": "beginner",
+   "estimated_hours": 12,
+   "role_families": [
+    "product_manager"
+   ]
+  },
+  {
+   "id": "churn-model-api",
+   "title": "Churn prediction model served behind an API",
+   "problem_statement": "Predictions that live in a notebook never reach the people who need them.",
+   "description": "Train a churn model, track the experiment, and serve predictions through a validated, containerised API.",
+   "skills": [
+    "Machine Learning",
+    "scikit-learn",
+    "Model Deployment",
+    "FastAPI",
+    "Docker"
+   ],
+   "skill_ids": [
+    "machine-learning",
+    "scikit-learn",
+    "model-deployment",
+    "fastapi",
+    "docker"
+   ],
+   "tech_stack": [
+    "Machine Learning",
+    "scikit-learn",
+    "Model Deployment",
+    "FastAPI",
+    "Docker",
+    "Pandas",
+    "Git"
+   ],
+   "core_features": [
+    "Reproducible training script with metrics",
+    "Prediction endpoint with validation",
+    "Dockerfile",
+    "Basic latency and drift monitoring"
+   ],
+   "deliverables": [
+    "GitHub repo with README and architecture diagram",
+    "Evaluation report",
+    "Short demo recording"
+   ],
+   "difficulty": "intermediate",
+   "estimated_hours": 30,
+   "role_families": [
+    "ml_engineer"
+   ]
+  },
+  {
+   "id": "mlflow-experiment-tracking",
+   "title": "Experiment tracking and model registry with MLflow",
+   "problem_statement": "Nobody can reproduce last month's best model.",
+   "description": "Instrument training runs with MLflow, compare experiments and promote a model through a registry with a written model card.",
+   "skills": [
+    "MLflow",
+    "MLOps",
+    "Model Evaluation",
+    "Python"
+   ],
+   "skill_ids": [
+    "mlflow",
+    "mlops",
+    "model-evaluation",
+    "python"
+   ],
+   "tech_stack": [
+    "MLflow",
+    "MLOps",
+    "Model Evaluation",
+    "Python",
+    "scikit-learn"
+   ],
+   "core_features": [
+    "Parameterised training runs",
+    "Metric and artifact logging",
+    "Model registry stages",
+    "Model card"
+   ],
+   "deliverables": [
+    "Repo with tracked runs",
+    "Model card"
+   ],
+   "difficulty": "intermediate",
+   "estimated_hours": 20,
+   "role_families": [
+    "ml_engineer"
+   ]
+  },
+  {
+   "id": "airflow-feature-pipeline",
+   "title": "Reproducible feature pipeline with Airflow",
+   "problem_statement": "Features are computed differently in training and in production.",
+   "description": "Build a scheduled pipeline that computes features once, validates them and serves both training and inference.",
+   "skills": [
+    "Feature Engineering",
+    "Apache Airflow",
+    "Data Pipelines",
+    "SQL"
+   ],
+   "skill_ids": [
+    "feature-engineering",
+    "apache-airflow",
+    "data-pipelines",
+    "sql"
+   ],
+   "tech_stack": [
+    "Feature Engineering",
+    "Apache Airflow",
+    "Data Pipelines",
+    "SQL",
+    "Python",
+    "Docker"
+   ],
+   "core_features": [
+    "DAG with retries and alerts",
+    "Data validation step",
+    "Feature table with documentation",
+    "Backfill procedure"
+   ],
+   "deliverables": [
+    "Repo with DAGs",
+    "Runbook"
+   ],
+   "difficulty": "advanced",
+   "estimated_hours": 30,
+   "role_families": [
+    "ml_engineer",
+    "data_analyst"
+   ]
+  },
+  {
+   "id": "pytorch-image-classifier",
+   "title": "Image classifier with PyTorch and error analysis",
+   "problem_statement": "Accuracy numbers hide what a model gets wrong.",
+   "description": "Train an image classifier on a public dataset and dig into its errors, not just its accuracy.",
+   "skills": [
+    "PyTorch",
+    "Deep Learning",
+    "Computer Vision",
+    "Model Evaluation"
+   ],
+   "skill_ids": [
+    "pytorch",
+    "deep-learning",
+    "computer-vision",
+    "model-evaluation"
+   ],
+   "tech_stack": [
+    "PyTorch",
+    "Deep Learning",
+    "Computer Vision",
+    "Model Evaluation",
+    "Python"
+   ],
+   "core_features": [
+    "Training loop with augmentation",
+    "Confusion matrix and per-class metrics",
+    "Error-analysis gallery",
+    "Ablation of one change"
+   ],
+   "deliverables": [
+    "Repo and notebook",
+    "Error-analysis write-up"
+   ],
+   "difficulty": "intermediate",
+   "estimated_hours": 28,
+   "role_families": [
+    "ml_engineer"
+   ]
+  },
+  {
+   "id": "hf-text-classifier",
+   "title": "Text classification with Hugging Face",
+   "problem_statement": "Support teams drown in unstructured text that could be routed automatically.",
+   "description": "Fine-tune a small transformer on a public text dataset, evaluate it honestly and compare with a simple baseline.",
+   "skills": [
+    "NLP",
+    "Hugging Face",
+    "Deep Learning",
+    "Model Evaluation"
+   ],
+   "skill_ids": [
+    "nlp",
+    "hugging-face",
+    "deep-learning",
+    "model-evaluation"
+   ],
+   "tech_stack": [
+    "NLP",
+    "Hugging Face",
+    "Deep Learning",
+    "Model Evaluation",
+    "Python",
+    "PyTorch"
+   ],
+   "core_features": [
+    "Baseline model",
+    "Fine-tuned transformer",
+    "Per-class evaluation",
+    "Failure-case review"
+   ],
+   "deliverables": [
+    "Repo with model card",
+    "Comparison table"
+   ],
+   "difficulty": "intermediate",
+   "estimated_hours": 26,
+   "role_families": [
+    "ml_engineer"
+   ]
+  },
+  {
+   "id": "rag-question-answering",
+   "title": "Retrieval-augmented Q&A over your own documents",
+   "problem_statement": "LLMs confidently answer questions about documents they have not read.",
+   "description": "Index a document set with embeddings, retrieve relevant passages and answer with citations, then measure answer quality.",
+   "skills": [
+    "LLMs",
+    "Embeddings",
+    "RAG",
+    "REST APIs"
+   ],
+   "skill_ids": [
+    "llms",
+    "embeddings",
+    "rag",
+    "rest-apis"
+   ],
+   "tech_stack": [
+    "LLMs",
+    "Embeddings",
+    "RAG",
+    "REST APIs",
+    "Python",
+    "FastAPI"
+   ],
+   "core_features": [
+    "Chunking and embedding pipeline",
+    "Retrieval with citations",
+    "Small evaluation set with scoring",
+    "API endpoint"
+   ],
+   "deliverables": [
+    "Repo with README",
+    "Evaluation results",
+    "Demo recording"
+   ],
+   "difficulty": "intermediate",
+   "estimated_hours": 28,
+   "role_families": [
+    "ml_engineer"
+   ]
+  },
+  {
+   "id": "demand-forecasting-backtest",
+   "title": "Demand forecasting with backtesting",
+   "problem_statement": "Forecasts look good until they meet next month's data.",
+   "description": "Forecast demand for a public time series, compare simple baselines to a model and backtest honestly.",
+   "skills": [
+    "Time Series Forecasting",
+    "Python",
+    "Statistics",
+    "Model Evaluation"
+   ],
+   "skill_ids": [
+    "time-series-forecasting",
+    "python",
+    "statistics",
+    "model-evaluation"
+   ],
+   "tech_stack": [
+    "Time Series Forecasting",
+    "Python",
+    "Statistics",
+    "Model Evaluation",
+    "Pandas"
+   ],
+   "core_features": [
+    "Naive and seasonal baselines",
+    "Model with rolling-origin backtest",
+    "Error metrics by horizon",
+    "Forecast intervals"
+   ],
+   "deliverables": [
+    "Notebook",
+    "Short report on accuracy and limits"
+   ],
+   "difficulty": "intermediate",
+   "estimated_hours": 24,
+   "role_families": [
+    "ml_engineer",
+    "data_analyst"
+   ]
+  },
+  {
+   "id": "kubernetes-model-serving",
+   "title": "Deploy a model on Kubernetes with CI/CD",
+   "problem_statement": "Manual deployments make models slow and risky to update.",
+   "description": "Containerise a model service, deploy it to Kubernetes and automate build, test and rollout on every merge.",
+   "skills": [
+    "Kubernetes",
+    "Docker",
+    "CI/CD",
+    "MLOps",
+    "Model Deployment"
+   ],
+   "skill_ids": [
+    "kubernetes",
+    "docker",
+    "ci-cd",
+    "mlops",
+    "model-deployment"
+   ],
+   "tech_stack": [
+    "Kubernetes",
+    "Docker",
+    "CI/CD",
+    "MLOps",
+    "Model Deployment",
+    "Git"
+   ],
+   "core_features": [
+    "Container build",
+    "Kubernetes manifests",
+    "Pipeline with tests and rollout",
+    "Health checks and rollback"
+   ],
+   "deliverables": [
+    "Repo with pipeline",
+    "Architecture diagram",
+    "Deploy / rollback runbook"
+   ],
+   "difficulty": "advanced",
+   "estimated_hours": 36,
+   "role_families": [
+    "ml_engineer"
+   ]
+  },
+  {
+   "id": "recsys-offline-eval",
+   "title": "Recommender system baseline and offline evaluation",
+   "problem_statement": "Recommenders are easy to build and hard to evaluate.",
+   "description": "Build popularity and collaborative-filtering baselines on a public dataset and evaluate them offline.",
+   "skills": [
+    "Recommender Systems",
+    "Python",
+    "Pandas",
+    "Model Evaluation"
+   ],
+   "skill_ids": [
+    "recommender-systems",
+    "python",
+    "pandas",
+    "model-evaluation"
+   ],
+   "tech_stack": [
+    "Recommender Systems",
+    "Python",
+    "Pandas",
+    "Model Evaluation",
+    "Machine Learning"
+   ],
+   "core_features": [
+    "Popularity baseline",
+    "Collaborative-filtering model",
+    "Ranking metrics",
+    "Cold-start discussion"
+   ],
+   "deliverables": [
+    "Notebook",
+    "Evaluation summary"
+   ],
+   "difficulty": "intermediate",
+   "estimated_hours": 24,
+   "role_families": [
+    "ml_engineer"
+   ]
+  },
+  {
+   "id": "tested-rest-api",
+   "title": "Production-style REST API with tests and CI",
+   "problem_statement": "Many portfolios show toy CRUD apps; employers want tests, validation and automation.",
+   "description": "Design an API for a domain you care about with authentication, a database, automated tests and CI.",
+   "skills": [
+    "REST APIs",
+    "FastAPI",
+    "Unit Testing",
+    "CI/CD",
+    "Git"
+   ],
+   "skill_ids": [
+    "rest-apis",
+    "fastapi",
+    "unit-testing",
+    "ci-cd",
+    "git"
+   ],
+   "tech_stack": [
+    "REST APIs",
+    "FastAPI",
+    "Unit Testing",
+    "CI/CD",
+    "Git",
+    "PostgreSQL"
+   ],
+   "core_features": [
+    "Authentication and validation",
+    "Relational schema with migrations",
+    "Automated tests in CI",
+    "OpenAPI documentation"
+   ],
+   "deliverables": [
+    "Repo with OpenAPI docs",
+    "Test report",
+    "Deployed demo"
+   ],
+   "difficulty": "intermediate",
+   "estimated_hours": 26,
+   "role_families": [
+    "ml_engineer"
+   ]
+  },
+  {
+   "id": "cloud-iac-deployment",
+   "title": "Cloud deployment with infrastructure as code",
+   "problem_statement": "Hand-built environments cannot be reproduced or reviewed.",
+   "description": "Describe an app's infrastructure as code, deploy it on a cloud free tier and add monitoring.",
+   "skills": [
+    "AWS",
+    "Terraform",
+    "Docker",
+    "CI/CD",
+    "Monitoring"
+   ],
+   "skill_ids": [
+    "aws",
+    "terraform",
+    "docker",
+    "ci-cd",
+    "monitoring"
+   ],
+   "tech_stack": [
+    "AWS",
+    "Terraform",
+    "Docker",
+    "CI/CD",
+    "Monitoring",
+    "Linux"
+   ],
+   "core_features": [
+    "Infrastructure defined as code",
+    "Automated deploy pipeline",
+    "Dashboards and alerts",
+    "Cost notes"
+   ],
+   "deliverables": [
+    "Repo with IaC",
+    "Architecture diagram",
+    "Runbook"
+   ],
+   "difficulty": "advanced",
+   "estimated_hours": 32,
+   "role_families": [
+    "ml_engineer"
+   ]
+  },
+  {
+   "id": "spark-batch-etl",
+   "title": "Batch ETL with Apache Spark",
+   "problem_statement": "Pipelines that work on a laptop fall over on real volumes.",
+   "description": "Process a large public dataset with Spark, partition it well and load a modelled warehouse table.",
+   "skills": [
+    "Apache Spark",
+    "ETL",
+    "Python",
+    "SQL",
+    "Data Warehousing"
+   ],
+   "skill_ids": [
+    "apache-spark",
+    "etl",
+    "python",
+    "sql",
+    "data-warehousing"
+   ],
+   "tech_stack": [
+    "Apache Spark",
+    "ETL",
+    "Python",
+    "SQL",
+    "Data Warehousing",
+    "Git"
+   ],
+   "core_features": [
+    "Ingestion and schema enforcement",
+    "Transformations with tests",
+    "Partitioning and performance notes",
+    "Loaded fact table"
+   ],
+   "deliverables": [
+    "Repo with job code",
+    "Performance write-up"
+   ],
+   "difficulty": "advanced",
+   "estimated_hours": 28,
+   "role_families": [
+    "ml_engineer",
+    "data_analyst"
+   ]
+  }
+ ]
+}

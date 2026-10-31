@@ -93,6 +93,9 @@ class _NoLLM(LLMClient):
         return False
 
 
+NoLLM = _NoLLM  # public alias: run an AI-capable code path deterministically
+
+
 async def summarize_applications(llm: LLMClient | None, stats: dict) -> tuple[ApplicationNarrative, str]:
     return await application_analyst.summarize(llm or _NoLLM(), stats)
 

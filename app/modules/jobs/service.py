@@ -7,14 +7,25 @@ from app.ai.client import LLMClient
 from app.ai.schemas import JDSkill
 from app.core.config import get_settings
 from app.core.database import utcnow
-from app.core.errors import NotFoundError
-from app.models import JobDescription, JobRequirement, User
-from app.modules.jobs.schemas import JobCreate, JobOut, JobRequirementOut, JobSummaryOut
+from app.core.errors import NotFoundError, ValidationFailed
+from app.models import JobDescription, JobRequirement, User, UserProfile
+from app.modules.jobs.market import fetch_postings, role_family_of
+from app.modules.jobs.schemas import (
+    JobCreate,
+    JobOut,
+    JobRequirementOut,
+    JobSummaryOut,
+    MarketImportOut,
+    MarketImportRequest,
+)
 from app.modules.profile.skill_service import get_or_create_skill
 from app.utils.url_fetch import fetch_job_text
 
 
-async def create_job(db: AsyncSession, llm: LLMClient, user: User, body: JobCreate) -> JobDescription:
+async def create_job(
+    db: AsyncSession, llm: LLMClient, user: User, body: JobCreate, *,
+    source_type_override: str | None = None, source_provider: str | None = None, role_family: str | None = None,
+) -> JobDescription:
     settings = get_settings()
     source_url = str(body.source_url) if body.source_url else None
     if body.text:
@@ -23,6 +34,7 @@ async def create_job(db: AsyncSession, llm: LLMClient, user: User, body: JobCrea
         text, source_type = await fetch_job_text(source_url), "url"
     else:
         text, source_type = "", "manual"
+    source_type = source_type_override or source_type
     text = text[: settings.max_document_chars]
 
     warnings: list[str] = []
@@ -59,6 +71,8 @@ async def create_job(db: AsyncSession, llm: LLMClient, user: User, body: JobCrea
         company=body.company or structured.get("company"),
         source_type=source_type,
         source_url=source_url,
+        role_family=role_family or role_family_of(body.title),
+        source_provider=source_provider,
         raw_text=text or "(manual entry - no description text)",
         structured_data=structured,
         extracted_at=utcnow(),
@@ -69,6 +83,50 @@ async def create_job(db: AsyncSession, llm: LLMClient, user: User, body: JobCrea
     db.add(job)
     await db.commit()
     return await get_job(db, user, job.id)
+
+
+async def import_market_postings(db: AsyncSession, user: User, body: MarketImportRequest) -> MarketImportOut:
+    """Import postings for the target role (live API -> cache -> seed) as the user's saved job descriptions.
+
+    Extraction is rule-based on purpose: bulk imports must be fast and deterministic. Postings already imported
+    (same provider, title and company) are skipped, so the call is safe to repeat.
+    """
+    profile = await db.scalar(select(UserProfile).where(UserProfile.user_id == user.id))
+    role = (body.target_role or (profile.target_role if profile else None) or "").strip()
+    if not role:
+        raise ValidationFailed("Set a target role in your profile (or pass target_role) before importing postings.")
+    result = await fetch_postings(db, role, country=body.country, limit=body.limit, refresh=body.refresh, source=body.source)
+    if not result.postings:
+        raise ValidationFailed(
+            f"No postings available for '{role}'. Seed data covers: Data Analyst, Product Manager, Machine Learning "
+            "Engineer. Paste job descriptions manually or configure JSEARCH_API_KEY / ADZUNA_APP_ID.")
+    family = role_family_of(role)
+    existing = {(j.source_provider, j.title.lower(), (j.company or "").lower()) for j in await list_jobs(db, user)}
+    nollm = orchestrator.NoLLM()
+    ids: list[int] = []
+    skipped = 0
+    for p in result.postings:
+        sig = (result.source, p.title.lower(), (p.company or "").lower())
+        if sig in existing:
+            skipped += 1
+            continue
+        existing.add(sig)
+        job = await _create_imported(db, nollm, user, p, result.source, family)
+        ids.append(job.id)
+    return MarketImportOut(
+        source=result.source, requested_role=role, role_family=family, imported=len(ids), skipped_duplicates=skipped,
+        job_ids=ids, cached=result.cached, fallback_reason=result.fallback_reason, notes=result.notes)
+
+
+async def _create_imported(db, llm, user, p, source: str, family: str | None) -> JobDescription:
+    body = JobCreate(title=p.title[:200] if len(p.title) >= 2 else "Job posting", company=(p.company or None),
+                     text=(p.text if len(p.text) >= 50 else p.text.ljust(50, " "))[:50_000])
+    job = await create_job(db, llm, user, body, source_type_override="market", source_provider=source,
+                           role_family=family or role_family_of(p.title))
+    if p.url and p.url.startswith(("http://", "https://")):
+        job.source_url = p.url[:2048]  # stored as-is; never fetched
+        await db.commit()
+    return job
 
 
 async def get_job(db: AsyncSession, user: User, job_id: int) -> JobDescription:
@@ -107,7 +165,7 @@ async def delete_job(db: AsyncSession, user: User, job_id: int) -> None:
 def to_out(job: JobDescription) -> JobOut:
     return JobOut(
         id=job.id, title=job.title, company=job.company, source_type=job.source_type, source_url=job.source_url,
-        raw_text=job.raw_text, structured_data=job.structured_data, extracted_at=job.extracted_at,
+        source_provider=job.source_provider, role_family=job.role_family, raw_text=job.raw_text, structured_data=job.structured_data, extracted_at=job.extracted_at,
         generated_by=job.generated_by, extraction_warnings=job.extraction_warnings,
         requirements=[
             JobRequirementOut(skill_id=r.skill_id, skill_name=r.skill.name, category=r.skill.category,
@@ -122,7 +180,7 @@ def to_out(job: JobDescription) -> JobOut:
 def to_summary(job: JobDescription) -> JobSummaryOut:
     return JobSummaryOut(
         id=job.id, title=job.title, company=job.company, source_type=job.source_type, source_url=job.source_url,
-        generated_by=job.generated_by,
+        source_provider=job.source_provider, role_family=job.role_family, generated_by=job.generated_by,
         required_count=sum(1 for r in job.requirements if r.requirement_type == "required"),
         preferred_count=sum(1 for r in job.requirements if r.requirement_type == "preferred"),
         created_at=job.created_at,

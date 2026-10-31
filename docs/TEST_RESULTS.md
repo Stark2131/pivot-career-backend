@@ -1,15 +1,39 @@
 # Test results
 
-Run on 2026-10-31 with Python 3.13.18. LLM calls are mocked.
+Run on 2026-10-31 with Python 3.12.2 on Windows 11. LLM calls are mocked; no network is used.
 
 ## SQLite (default)
 ```
+tests/test_adaptation.py::test_score_mapping_and_ema PASSED
+tests/test_adaptation.py::test_bad_interview_on_planned_skill_adds_time_with_reason PASSED
+tests/test_adaptation.py::test_bad_interview_lowers_owned_skill_and_recomputes_gap PASSED
+tests/test_adaptation.py::test_skill_user_does_not_have_is_not_invented PASSED
+tests/test_adaptation.py::test_mastered_skill_is_removed_from_proposal PASSED
+tests/test_adaptation.py::test_same_evidence_does_not_spam_proposals PASSED
+tests/test_adaptation.py::test_skipping_a_task_proposes_a_plan PASSED
+tests/test_adaptation.py::test_no_active_plan_is_harmless PASSED
 tests/test_ai_client.py::test_openai_success_and_headers PASSED
 tests/test_ai_client.py::test_gemini_success PASSED
 tests/test_ai_client.py::test_invalid_output_retries_then_fails PASSED
 tests/test_ai_client.py::test_http_errors_and_timeouts_become_llm_errors PASSED
 tests/test_ai_client.py::test_unconfigured_provider_is_unavailable PASSED
 tests/test_ai_client.py::test_wrap_untrusted_neutralises_spoofed_markers PASSED
+tests/test_application_insights.py::test_not_enough_applications_gives_no_insights PASSED
+tests/test_application_insights.py::test_clear_referral_effect_is_reliable_and_worded_plainly PASSED
+tests/test_application_insights.py::test_three_groups_keep_both_the_best_and_the_worst PASSED
+tests/test_application_insights.py::test_overlapping_intervals_with_a_big_gap_are_only_an_early_signal PASSED
+tests/test_application_insights.py::test_no_difference_means_no_claim PASSED
+tests/test_application_insights.py::test_small_groups_are_never_reported PASSED
+tests/test_application_insights.py::test_recent_unanswered_applications_do_not_count_as_failures PASSED
+tests/test_application_insights.py::test_insights_are_capped_and_reliable_ones_come_first PASSED
+tests/test_application_insights.py::test_skill_insights_say_highlighting PASSED
+tests/test_application_insights.py::test_insights_about_the_same_applications_are_merged PASSED
+tests/test_application_insights.py::test_wilson_is_unchanged PASSED
+tests/test_application_insights.py::test_new_fields_are_stored_validated_and_posting_url_is_its_own_field PASSED
+tests/test_application_insights.py::test_analytics_breaks_results_down_by_the_new_dimensions PASSED
+tests/test_application_insights.py::test_recommendations_endpoint PASSED
+tests/test_application_insights.py::test_demo_seed_produces_the_intended_insights PASSED
+tests/test_application_insights.py::test_wording_reads_naturally_per_dimension PASSED
 tests/test_applications.py::test_wilson_interval PASSED
 tests/test_applications.py::test_analytics_flags_insufficient_data PASSED
 tests/test_applications.py::test_analytics_patterns_with_enough_data PASSED
@@ -21,6 +45,11 @@ tests/test_auth.py::test_weak_password_rejected PASSED
 tests/test_auth.py::test_wrong_password PASSED
 tests/test_auth.py::test_protected_routes_require_token PASSED
 tests/test_auth.py::test_rate_limiter_blocks_after_limit PASSED
+tests/test_docx_resume.py::test_docx_resume_is_parsed_like_a_pdf PASSED
+tests/test_docx_resume.py::test_text_inside_tables_is_read PASSED
+tests/test_docx_resume.py::test_pdf_still_works_and_octet_stream_is_accepted_for_docx PASSED
+tests/test_docx_resume.py::test_bad_docx_files_are_rejected_cleanly PASSED
+tests/test_docx_resume.py::test_zip_bomb_is_rejected_without_unpacking PASSED
 tests/test_e2e.py::test_full_user_journey PASSED
 tests/test_interviews.py::test_interview_flow_with_fallbacks PASSED
 tests/test_interviews.py::test_llm_evaluation_overall_computed_server_side PASSED
@@ -35,13 +64,31 @@ tests/test_jobs.py::test_job_requires_input PASSED
 tests/test_jobs.py::test_jobs_are_isolated_between_users PASSED
 tests/test_jobs.py::test_url_fetch_blocks_private_addresses PASSED
 tests/test_jobs.py::test_html_to_text_strips_scripts PASSED
+tests/test_llm_resilience.py::test_whole_journey_survives_a_broken_llm[outage] PASSED
+tests/test_llm_resilience.py::test_whole_journey_survives_a_broken_llm[garbage] PASSED
+tests/test_market.py::test_role_family_detection PASSED
+tests/test_market.py::test_seed_files_are_complete_and_labelled[data_analyst] PASSED
+tests/test_market.py::test_seed_files_are_complete_and_labelled[product_manager] PASSED
+tests/test_market.py::test_seed_files_are_complete_and_labelled[ml_engineer] PASSED
+tests/test_market.py::test_taxonomy_size_and_fuzzy_matching PASSED
+tests/test_market.py::test_import_seed_postings_then_gap_map_says_how_many PASSED
+tests/test_market.py::test_other_role_postings_do_not_dilute_the_target_role PASSED
+tests/test_market.py::test_unknown_role_without_keys_is_a_clear_error PASSED
+tests/test_market.py::test_jsearch_success_is_cached_and_key_is_sent_as_header PASSED
+tests/test_market.py::test_live_failure_falls_back_to_seed_without_leaking_the_key[http-500] PASSED
+tests/test_market.py::test_live_failure_falls_back_to_seed_without_leaking_the_key[no-results] PASSED
+tests/test_market.py::test_live_failure_falls_back_to_seed_without_leaking_the_key[timeout] PASSED
+tests/test_market.py::test_http_status_is_reported_so_a_bad_setup_can_be_diagnosed[404-True] PASSED
+tests/test_market.py::test_http_status_is_reported_so_a_bad_setup_can_be_diagnosed[403-True] PASSED
+tests/test_market.py::test_http_status_is_reported_so_a_bad_setup_can_be_diagnosed[401-True] PASSED
+tests/test_market.py::test_http_status_is_reported_so_a_bad_setup_can_be_diagnosed[500-False] PASSED
+tests/test_market.py::test_source_seed_never_goes_online_even_with_a_key_configured PASSED
 tests/test_plans.py::test_schedule_respects_weekly_hours PASSED
 tests/test_plans.py::test_generate_plan_and_complete_task PASSED
 tests/test_plans.py::test_plan_with_llm_content_validated PASSED
 tests/test_plans.py::test_adjust_creates_proposal_and_preserves_original PASSED
 tests/test_plans.py::test_regenerate_does_not_overwrite_active PASSED
 tests/test_plans.py::test_project_recommendations PASSED
-tests/test_plans.py::test_llm_projects_must_cover_gaps PASSED
 tests/test_profile.py::test_resume_upload_rule_based_fallback PASSED
 tests/test_profile.py::test_resume_upload_with_llm_drops_hallucinated_skills PASSED
 tests/test_profile.py::test_invalid_llm_json_falls_back PASSED
@@ -54,14 +101,42 @@ tests/test_progress.py::test_progress_overview_and_assessment PASSED
 tests/test_progress.py::test_progress_analyst_tool_calling PASSED
 tests/test_progress.py::test_recalculate_plan_proposes_without_overwriting PASSED
 tests/test_progress.py::test_recalculate_requires_active_plan PASSED
+tests/test_resources_projects.py::test_resources_file_is_well_formed PASSED
+tests/test_resources_projects.py::test_templates_are_tagged_with_real_taxonomy_skills PASSED
+tests/test_resources_projects.py::test_model_can_only_choose_listed_resources PASSED
+tests/test_resources_projects.py::test_unknown_skills_get_a_labelled_search_link_not_an_invented_course PASSED
+tests/test_resources_projects.py::test_every_plan_task_carries_curated_links PASSED
+tests/test_resources_projects.py::test_llm_cannot_inject_links_into_a_plan PASSED
+tests/test_resources_projects.py::test_ranking_prefers_templates_covering_the_top_gaps PASSED
+tests/test_resources_projects.py::test_ranking_is_varied_and_never_offers_irrelevant_templates PASSED
+tests/test_resources_projects.py::test_top_gap_outweighs_several_minor_gaps PASSED
+tests/test_resources_projects.py::test_recommendations_are_template_backed_and_ranked PASSED
+tests/test_resources_projects.py::test_llm_can_reword_a_project_but_not_change_what_it_covers PASSED
+tests/test_resources_projects.py::test_llm_failure_or_garbage_falls_back_to_template_wording PASSED
+tests/test_resources_projects.py::test_gaps_without_a_template_get_a_generic_project PASSED
+tests/test_rubric.py::test_rubric_endpoint_describes_dimensions_levels_and_anchors PASSED
+tests/test_rubric.py::test_prompt_is_built_from_the_same_rubric_file PASSED
+tests/test_rubric.py::test_level_bands PASSED
+tests/test_rubric.py::test_heuristic_evidence_is_always_a_real_quote_from_the_answer PASSED
+tests/test_rubric.py::test_no_evidence_for_empty_or_tiny_answers PASSED
+tests/test_rubric.py::test_fabricated_quotes_are_dropped PASSED
+tests/test_rubric.py::test_llm_evidence_is_grounded_and_levels_are_returned PASSED
 tests/test_skill_gap.py::test_compute_gaps_logic PASSED
 tests/test_skill_gap.py::test_analyze_endpoint PASSED
 tests/test_skill_gap.py::test_analyze_llm_cannot_change_facts PASSED
 tests/test_skill_gap.py::test_analyze_requires_jobs_and_isolation PASSED
-============================= 54 passed in 35.61s ==============================
+======================= 121 passed in 136s =======================
 ```
 
-## PostgreSQL 16
-```
-54 passed in 41.01s
-```
+## PostgreSQL
+
+Not re-run in this round: no PostgreSQL server was available in the environment (the earlier 54-test run on PostgreSQL 16 predates
+migrations 0002-0004 and the new tests). The migrations use `JSON` with a JSONB variant and were verified on SQLite only (up, down, up again,
+and no drift against the models). Run `TEST_DATABASE_URL=postgresql+asyncpg://... pytest -q` before relying on PostgreSQL.
+
+## Frontend
+
+- `npm run lint`: clean
+- `npx tsc --noEmit`: clean
+- `npm run build`: succeeds (13 routes)
+- `npm run test:e2e` (Playwright, Chromium): 1 passed, twice in a row (about 17 s)

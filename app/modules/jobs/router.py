@@ -3,7 +3,7 @@ from fastapi import APIRouter, Depends, Response, status
 from app.core.deps import LLM, CurrentUser, DbSession
 from app.core.rate_limit import ai_rate_limit
 from app.modules.jobs import service
-from app.modules.jobs.schemas import JobCreate, JobOut, JobSummaryOut
+from app.modules.jobs.schemas import JobCreate, JobOut, JobSummaryOut, MarketImportOut, MarketImportRequest
 
 router = APIRouter(prefix="/jobs", tags=["Job Descriptions"])
 
@@ -11,6 +11,12 @@ router = APIRouter(prefix="/jobs", tags=["Job Descriptions"])
 @router.post("", response_model=JobOut, status_code=status.HTTP_201_CREATED, dependencies=[Depends(ai_rate_limit)])
 async def create_job(body: JobCreate, user: CurrentUser, db: DbSession, llm: LLM):
     return service.to_out(await service.create_job(db, llm, user, body))
+
+
+@router.post("/import-market", response_model=MarketImportOut, status_code=status.HTTP_201_CREATED,
+             summary="Import real postings for your target role (live job board -> cache -> seed fallback)")
+async def import_market(user: CurrentUser, db: DbSession, body: MarketImportRequest | None = None):
+    return await service.import_market_postings(db, user, body or MarketImportRequest())
 
 
 @router.get("", response_model=list[JobSummaryOut])

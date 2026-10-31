@@ -29,6 +29,16 @@ class TaskUpdate(BaseModel):
     estimated_hours: float | None = Field(default=None, gt=0, le=60)
 
 
+class ResourceOut(BaseModel):
+    """A link from the curated list (data/resources.json), or a labelled search link when a skill has none."""
+    id: str
+    title: str
+    url: str
+    type: str
+    hours: float | None = None
+    provider: str | None = None
+
+
 class WeeklyTaskOut(BaseModel):
     model_config = ConfigDict(from_attributes=True)
 
@@ -39,6 +49,7 @@ class WeeklyTaskOut(BaseModel):
     topics: list[str]
     activities: list[str]
     exercises: list[str]
+    resources: list[ResourceOut] = []
     estimated_hours: float
     expected_outcome: str
     status: str

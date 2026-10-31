@@ -31,6 +31,8 @@ class ProjectOut(BaseModel):
     difficulty: str
     deliverables: list[str]
     estimated_hours: int | None
+    template_id: str | None = None
+    gaps_covered: list[str] = []
     status: str
     repo_url: str | None
     notes: str | None

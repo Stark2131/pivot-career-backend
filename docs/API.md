@@ -16,7 +16,7 @@ All `/api/*` endpoints except register/login require `Authorization: Bearer <tok
 
 | Method | Path | Summary | Responses |
 |---|---|---|---|
-| `POST` | `/api/profile/resume` | Upload a PDF resume; text is extracted and parsed into structured data for review | 201, 401, 404, 409, 422, 429, 502 |
+| `POST` | `/api/profile/resume` | Upload a PDF or DOCX resume; text is extracted and parsed into structured data for review | 201, 401, 404, 409, 422, 429, 502 |
 | `GET` | `/api/profile` | Get Profile | 200, 401, 404, 409, 429, 502 |
 | `PUT` | `/api/profile` | Update intake details and review/correct extracted data | 200, 401, 404, 409, 422, 429, 502 |
 | `GET` | `/api/profile/resumes` | List Resumes | 200, 401, 404, 409, 429, 502 |
@@ -28,6 +28,7 @@ All `/api/*` endpoints except register/login require `Authorization: Bearer <tok
 |---|---|---|---|
 | `GET` | `/api/jobs` | List Jobs | 200, 401, 404, 409, 429, 502 |
 | `POST` | `/api/jobs` | Create Job | 201, 401, 404, 409, 422, 429, 502 |
+| `POST` | `/api/jobs/import-market` | Import real postings for your target role (live job board -> cache -> seed fallback) | 201, 401, 404, 409, 422, 429, 502 |
 | `GET` | `/api/jobs/{job_id}` | Get Job | 200, 401, 404, 409, 422, 429, 502 |
 | `DELETE` | `/api/jobs/{job_id}` | Delete Job | 204, 401, 404, 409, 422, 429, 502 |
 
@@ -66,6 +67,7 @@ All `/api/*` endpoints except register/login require `Authorization: Bearer <tok
 |---|---|---|---|
 | `GET` | `/api/interviews` | List Interviews | 200, 401, 404, 409, 429, 502 |
 | `POST` | `/api/interviews` | Create Interview | 201, 401, 404, 409, 422, 429, 502 |
+| `GET` | `/api/interviews/rubric` | The scoring rubric: dimensions, 1-5 levels and anchor descriptions | 200, 401, 404, 409, 429, 502 |
 | `GET` | `/api/interviews/{interview_id}` | Get Interview | 200, 401, 404, 409, 422, 429, 502 |
 | `POST` | `/api/interviews/{interview_id}/answer` | Submit Answer | 200, 401, 404, 409, 422, 429, 502 |
 | `POST` | `/api/interviews/{interview_id}/evaluate` | Evaluate | 200, 401, 404, 409, 422, 429, 502 |
@@ -86,6 +88,7 @@ All `/api/*` endpoints except register/login require `Authorization: Bearer <tok
 | `POST` | `/api/applications` | Create | 201, 401, 404, 409, 422, 429, 502 |
 | `GET` | `/api/applications` | List Apps | 200, 401, 404, 409, 422, 429, 502 |
 | `GET` | `/api/applications/analytics` | Analytics | 200, 401, 404, 409, 422, 429, 502 |
+| `GET` | `/api/applications/recommendations` | 3-5 plain-English insights on which kinds of roles respond (reliable vs early signal) | 200, 401, 404, 409, 429, 502 |
 | `GET` | `/api/applications/{application_id}` | Get App | 200, 401, 404, 409, 422, 429, 502 |
 | `PATCH` | `/api/applications/{application_id}` | Update | 200, 401, 404, 409, 422, 429, 502 |
 | `DELETE` | `/api/applications/{application_id}` | Delete | 204, 401, 404, 409, 422, 429, 502 |

@@ -14,6 +14,23 @@ class AssessmentCreate(BaseModel):
     notes: str | None = Field(default=None, max_length=2000)
 
 
+class ProficiencyUpdate(BaseModel):
+    skill_name: str
+    before: int
+    after: int
+    evidence: str
+
+
+class AdaptationOut(BaseModel):
+    """What the closed loop did after new evidence arrived (interview, assessment or task update)."""
+    trigger: str
+    proficiency_updates: list[ProficiencyUpdate] = Field(default_factory=list)
+    gaps_recomputed: bool = False
+    proposal_plan_id: int | None = None
+    reasons: list[str] = Field(default_factory=list)
+    message: str
+
+
 class AssessmentOut(BaseModel):
     model_config = ConfigDict(from_attributes=True)
 
@@ -24,6 +41,7 @@ class AssessmentOut(BaseModel):
     assessment_method: str | None
     notes: str | None
     created_at: datetime
+    adaptation: AdaptationOut | None = None
 
 
 class StruggleOut(BaseModel):

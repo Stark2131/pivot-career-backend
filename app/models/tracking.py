@@ -82,6 +82,7 @@ class InterviewEvaluation(TimestampMixin, Base):
     improvements: Mapped[list] = mapped_column(JSONType, default=list, nullable=False)
     suggested_answer_improvements: Mapped[str] = mapped_column(Text, default="", nullable=False)
     topics_to_revise: Mapped[list] = mapped_column(JSONType, default=list, nullable=False)
+    evidence: Mapped[dict] = mapped_column(JSONType, default=dict, nullable=False)  # criterion -> quote from the answer
     evaluator: Mapped[str] = mapped_column(String(30), nullable=False)  # llm | heuristic_fallback
 
     question: Mapped[InterviewQuestion] = relationship(back_populates="evaluation")
@@ -119,6 +120,15 @@ class JobApplication(TimestampMixin, Base):
     reached_interview: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
     experience_level: Mapped[str | None] = mapped_column(String(20))
     skills_highlighted: Mapped[list] = mapped_column(JSONType, default=list, nullable=False)
+    # Role attributes the tracker learns from (all optional; analytics bucket missing ones as "unspecified").
+    posting_url: Mapped[str | None] = mapped_column(String(2048))
+    role_family: Mapped[str | None] = mapped_column(String(40), index=True)   # derived from role_title when known
+    industry: Mapped[str | None] = mapped_column(String(60))
+    company_size: Mapped[str | None] = mapped_column(String(20))              # 1-10 | 11-50 | 51-200 | 201-1000 | 1001+
+    channel: Mapped[str | None] = mapped_column(String(20))                   # referral | direct | job_board | recruiter | other
+    resume_version: Mapped[str | None] = mapped_column(String(60))
+    work_mode: Mapped[str | None] = mapped_column(String(20))                 # remote | hybrid | onsite
+    location: Mapped[str | None] = mapped_column(String(120))
     notes: Mapped[str | None] = mapped_column(Text)
     interview_feedback: Mapped[str | None] = mapped_column(Text)
     outcome: Mapped[str | None] = mapped_column(Text)

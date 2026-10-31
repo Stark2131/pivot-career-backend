@@ -14,6 +14,7 @@ import math
 from dataclasses import dataclass, field
 
 from app.ai.client import LLMClient, LLMError
+from app.ai import resources
 from app.ai.schemas import PlanContent
 from app.utils.skills_taxonomy import category_of, learning_hours, topics_for
 
@@ -44,6 +45,7 @@ class ScheduledTask:
     activities: list[str] = field(default_factory=list)
     exercises: list[str] = field(default_factory=list)
     expected_outcome: str = ""
+    resources: list[dict] = field(default_factory=list)
 
 
 def estimate_hours(skill_name: str, gap_level: str, experience_level: str | None) -> float:
@@ -130,18 +132,22 @@ async def fill_content(
     """Returns (generated_by, llm_summary). Every task ends up with content."""
     for t in tasks:
         template_content(t)  # baseline content for every task
+        t.resources = resources.default_for_part(t.skill_name, t.part, t.parts)  # curated links only
     if not llm.available or not tasks:
         return "rule_based", None
 
     skeleton: dict[int, list[dict]] = {}
     for t in tasks:
-        skeleton.setdefault(t.week_number, []).append({"skill_name": t.skill_name, "hours": t.hours,
-                                                       "part": f"{t.part}/{t.parts}"})
+        skeleton.setdefault(t.week_number, []).append({
+            "skill_name": t.skill_name, "hours": t.hours, "part": f"{t.part}/{t.parts}",
+            "available_resources": [{"id": r["id"], "title": r["title"], "hours": r["hours"]} for r in resources.resources_for(t.skill_name)],
+        })
     system = (
         "You are an expert learning designer. For the given weekly schedule, write concrete topics, learning "
         "activities, practical exercises and an expected outcome for EACH (week, skill) entry. Keep the exact same "
         "weeks and skill names; do not add or remove skills; scope content so it fits the given hours. "
-        "Prefer official docs and free resources; do not invent specific URLs."
+        "Never write URLs. For each task you may list `resource_ids`, choosing ONLY from that task's "
+        "`available_resources` (pick the ones that fit the week's hours and topics); leave it empty if none fit."
     )
     user = json.dumps({
         "target_role": target_role, "experience_level": experience_level, "already_known_skills": known_skills[:40],
@@ -162,6 +168,9 @@ async def fill_content(
                 continue  # LLM tried to add something outside the schedule -> ignore
             t.title, t.topics, t.activities = c.title, c.topics, c.activities
             t.exercises, t.expected_outcome = c.exercises, c.expected_outcome
+            chosen = resources.choose(t.skill_name, c.resource_ids)
+            if chosen:
+                t.resources = chosen
             matched += 1
     generated_by = "llm" if matched == len(tasks) else ("llm_partial" if matched else "rule_based")
     return generated_by, content.summary
@@ -169,17 +178,22 @@ async def fill_content(
 
 def adjust_needs(
     remaining: dict[str, float], order: list[str], *, struggling: set[str], focus: list[str],
-    experience_level: str | None,
+    experience_level: str | None, drop: set[str] | None = None,
 ) -> tuple[list[SkillNeed], dict[str, tuple[float, float]]]:
     """Compute the skill list for an adjusted plan.
 
     * remaining work per skill is carried over (completed work is not repeated),
     * struggling skills get +50% time (min +2h) and move to the front,
-    * explicitly requested focus skills come first (added if new).
+    * explicitly requested focus skills come first (added if new),
+    * `drop` skills (e.g. now mastered) are removed from the remaining work.
     Returns (needs, hours_changes {skill: (old, new)}).
     """
     changes: dict[str, tuple[float, float]] = {}
     hours = dict(remaining)
+    for s in (drop or set()):
+        if s in hours:
+            changes[s] = (hours.pop(s), 0.0)
+    struggling = {s for s in struggling if s not in (drop or set())}
     for s in struggling:
         if s in hours:
             new = round(max(hours[s] * 1.5, hours[s] + 2), 1)

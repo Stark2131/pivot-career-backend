@@ -6,7 +6,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.ai import orchestrator
 from app.ai.client import LLMClient
-from app.ai.evaluator import CRITERIA, RUBRIC_VERSION, QAInput, overall
+from app.ai.evaluator import CRITERIA, RUBRIC_DATA, RUBRIC_VERSION, QAInput, level_of, overall
 from app.ai.interviewer import InterviewContext
 from app.core.errors import ConflictError, NotFoundError, ValidationFailed
 from app.models import InterviewAnswer, InterviewEvaluation, InterviewQuestion, MockInterview, User, UserProfile
@@ -85,7 +85,9 @@ async def submit_answer(db: AsyncSession, user: User, interview_id: int, body: A
     return await get_interview(db, user, interview_id)
 
 
-async def evaluate(db: AsyncSession, llm: LLMClient, user: User, interview_id: int, body: EvaluateRequest) -> MockInterview:
+async def evaluate(db: AsyncSession, llm: LLMClient, user: User, interview_id: int,
+                   body: EvaluateRequest) -> tuple[MockInterview, dict[str, list[float]]]:
+    """Returns the interview and {skill: [scores]} for answers evaluated for the first time in this call."""
     interview = await get_interview(db, user, interview_id)
     profile = await db.scalar(select(UserProfile).where(UserProfile.user_id == user.id))
     targets = [q for q in interview.questions if q.answer is not None and q.evaluation is None]
@@ -97,6 +99,8 @@ async def evaluate(db: AsyncSession, llm: LLMClient, user: User, interview_id: i
     if not targets and not any(q.evaluation for q in interview.questions):
         raise ConflictError("Answer at least one question before requesting an evaluation.")
 
+    first_time = {q.id for q in targets if q.evaluation is None}
+    new_scores: dict[str, list[float]] = {}
     for q in targets:
         qa = QAInput(question=q.question_text, answer=q.answer.answer_text, category=q.category,
                      skill_name=q.skill_name, key_points=q.key_points or [], target_role=interview.target_role,
@@ -107,12 +111,14 @@ async def evaluate(db: AsyncSession, llm: LLMClient, user: User, interview_id: i
             **{c: getattr(ev.scores, c) for c in CRITERIA},
             overall_score=overall(ev.scores), strengths=ev.strengths, improvements=ev.improvements,
             suggested_answer_improvements=ev.suggested_answer_improvements,
-            topics_to_revise=ev.topics_to_revise, evaluator=evaluator,
+            topics_to_revise=ev.topics_to_revise, evidence=ev.evidence, evaluator=evaluator,
         )
+        if q.id in first_time and q.skill_name:
+            new_scores.setdefault(q.skill_name, []).append(q.evaluation.overall_score)
     await db.flush()
     _update_summary(interview)
     await db.commit()
-    return await get_interview(db, user, interview_id)
+    return await get_interview(db, user, interview_id), new_scores
 
 
 def _update_summary(interview: MockInterview) -> None:
@@ -148,6 +154,7 @@ def _q_out(q: InterviewQuestion) -> QuestionOut:
         answered_at=q.answer.updated_at if q.answer else None,
         evaluation=EvaluationOut(
             rubric_version=ev.rubric_version, scores={c: getattr(ev, c) for c in CRITERIA},
+            levels={c: level_of(getattr(ev, c)) for c in CRITERIA}, evidence=ev.evidence or {},
             overall_score=ev.overall_score, strengths=ev.strengths, improvements=ev.improvements,
             suggested_answer_improvements=ev.suggested_answer_improvements,
             topics_to_revise=ev.topics_to_revise, evaluator=ev.evaluator,
@@ -166,3 +173,8 @@ def to_summary(i: MockInterview) -> InterviewSummaryOut:
 
 def to_out(i: MockInterview) -> InterviewOut:
     return InterviewOut(**to_summary(i).model_dump(), summary=i.summary or {}, questions=[_q_out(q) for q in i.questions])
+
+
+def rubric() -> dict:
+    """The rubric shown to the user (same file the evaluator prompts from)."""
+    return RUBRIC_DATA

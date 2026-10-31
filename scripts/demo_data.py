@@ -31,82 +31,28 @@ def make_pdf(text: str) -> bytes:
     return bytes(out)
 
 
-DEMO_USER = {"email": "demo@careercoach.example", "password": "DemoPass123", "full_name": "Demo User (fictional)"}
+DEMO_USER = {"email": "demo@careercoach.example", "password": "DemoPass123", "full_name": "Maya Chen (DEMO - fictional)"}
 
-DEMO_RESUME = """Alex Rivera (DEMO - fictional person)
-Data Analyst
+# Persona: a secondary-school maths teacher moving into data analysis. Entirely fictional.
+DEMO_RESUME = """Maya Chen (DEMO - fictional person)
+Mathematics Teacher
 Summary
-Data analyst with 4 years of experience in retail analytics, moving into machine learning engineering.
+Mathematics teacher with 6 years of experience analysing student assessment data, now moving into data analysis.
 Experience
-Data Analyst - Demo Retail Co (2021 - Present)
-Built Tableau dashboards used by regional managers
-Wrote SQL queries on PostgreSQL to analyse sales and inventory
-Automated weekly reporting with Python and Pandas
-Junior Analyst - Example Logistics (2020 - 2021)
-Maintained Excel models and presented findings to stakeholders
+Mathematics Teacher - Demo Valley High School (2020 - Present)
+Built Excel gradebooks and pivot tables to track progress for 140 students
+Analysed test-score trends with statistics and presented findings to the leadership team
+Ran a department project to improve homework completion using weekly data reviews
+Head of Mathematics Department - Demo Valley High School (2023 - Present)
+Led a team of 6 teachers and presented results to parents and governors
 Education
-B.Sc. Statistics
-Example State University 2020
+B.Sc. Mathematics
+Example State University 2018
 Projects
-Customer churn analysis
-Used Python and scikit-learn logistic regression to predict churn
+Attendance dashboard
+Built a public Tableau dashboard of attendance patterns by week and year group
 Certifications
-Google Data Analytics Certificate
+Google Data Analytics Certificate (in progress)
 Skills
-SQL, Python, Pandas, Tableau, Excel, Statistics, Git, Communication
+Excel, Statistics, Tableau, SQL, Communication, Leadership, Problem Solving
 """
-
-DEMO_JOBS = [
-    {"title": "Machine Learning Engineer", "company": "[DEMO] Nimbus AI", "text": """Machine Learning Engineer (DEMO posting - fictional)
-Responsibilities:
-Build and deploy machine learning models to production
-Design REST APIs that serve model predictions
-Monitor model performance and data drift
-Requirements:
-3+ years of experience with Python
-Strong SQL skills
-Experience with Machine Learning and scikit-learn
-Experience with Docker and AWS
-Bachelor's degree in Computer Science, Statistics or related field
-Nice to have:
-PyTorch, Kubernetes, MLOps experience
-"""},
-    {"title": "Junior ML Engineer", "company": "[DEMO] Orbit Labs", "text": """Junior ML Engineer (DEMO posting - fictional)
-What you'll do:
-Train and evaluate machine learning models
-Build data pipelines with Python and SQL
-Requirements:
-Python, Machine Learning, Docker, Git
-Familiarity with PostgreSQL
-Preferred:
-AWS, FastAPI, PyTorch
-"""},
-    {"title": "ML Platform Engineer", "company": "[DEMO] Quanta Health", "text": """ML Platform Engineer (DEMO posting - fictional)
-Responsibilities:
-Own CI/CD for model training and deployment
-Build feature pipelines and model serving infrastructure
-Requirements:
-Python and SQL
-Docker and Kubernetes
-CI/CD with GitHub Actions
-Experience with AWS or GCP
-Nice to have:
-MLOps tooling such as MLflow, Terraform
-"""},
-]
-
-# (company, role, status, reached_interview, experience_level, skills_highlighted, days_ago)
-DEMO_APPLICATIONS = [
-    ("[DEMO] Nimbus AI", "Machine Learning Engineer", "interview", True, "mid", ["Python", "SQL", "Machine Learning"], 30),
-    ("[DEMO] Orbit Labs", "Junior ML Engineer", "offer", True, "junior", ["Python", "SQL", "Docker"], 28),
-    ("[DEMO] Quanta Health", "ML Platform Engineer", "rejected", False, "mid", ["Python", "SQL"], 27),
-    ("[DEMO] Helix Bank", "Data Scientist", "rejected", False, "mid", ["Python", "Statistics"], 25),
-    ("[DEMO] Lumen Retail", "Data Scientist", "applied", False, "mid", ["Python", "Statistics", "SQL"], 20),
-    ("[DEMO] Vector Labs", "Machine Learning Engineer", "rejected", True, "mid", ["Python", "Docker", "SQL"], 18),
-    ("[DEMO] Atlas Freight", "Junior ML Engineer", "interview", True, "junior", ["Python", "Docker", "SQL"], 15),
-    ("[DEMO] Pine Insurance", "Data Scientist", "rejected", False, "senior", ["Python", "SQL"], 12),
-    ("[DEMO] Nova Media", "Machine Learning Engineer", "applied", False, "mid", ["Python", "SQL"], 10),
-    ("[DEMO] Kite Travel", "Junior ML Engineer", "rejected", False, "junior", ["Python", "SQL"], 8),
-    ("[DEMO] Cedar Energy", "Machine Learning Engineer", "interview", True, "mid", ["Python", "Docker", "SQL"], 5),
-    ("[DEMO] Iris Analytics", "Data Scientist", "applied", False, "mid", ["Python", "Statistics"], 2),
-]

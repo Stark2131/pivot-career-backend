@@ -3,6 +3,8 @@ from typing import Literal
 
 from pydantic import BaseModel, Field
 
+from app.modules.progress.schemas import AdaptationOut
+
 
 class InterviewCreate(BaseModel):
     target_role: str | None = Field(default=None, max_length=200, description="Defaults to profile target role")
@@ -24,6 +26,8 @@ class EvaluateRequest(BaseModel):
 class EvaluationOut(BaseModel):
     rubric_version: str
     scores: dict[str, int]
+    levels: dict[str, int] = Field(default_factory=dict, description="1-5 level of each score, per the rubric bands")
+    evidence: dict[str, str] = Field(default_factory=dict, description="criterion -> quote from the answer behind the score")
     overall_score: float
     strengths: list[str]
     improvements: list[str]
@@ -61,3 +65,30 @@ class InterviewSummaryOut(BaseModel):
 class InterviewOut(InterviewSummaryOut):
     summary: dict
     questions: list[QuestionOut]
+    adaptation: AdaptationOut | None = Field(
+        default=None, description="Set on /evaluate: what the closed loop did with these scores")
+
+
+class RubricLevelOut(BaseModel):
+    level: int
+    label: str
+    min: int
+    max: int
+
+
+class RubricCriterionOut(BaseModel):
+    id: str
+    name: str
+    question: str
+    anchors: dict[str, str]
+
+
+class RubricOut(BaseModel):
+    version: str
+    title: str
+    description: str
+    scale: dict[str, int]
+    levels: list[RubricLevelOut]
+    rules: list[str]
+    notes: list[str]
+    criteria: list[RubricCriterionOut]

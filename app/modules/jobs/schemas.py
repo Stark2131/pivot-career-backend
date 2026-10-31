@@ -31,11 +31,34 @@ class JobRequirementOut(BaseModel):
     evidence: str | None
 
 
+class MarketImportRequest(BaseModel):
+    target_role: str | None = Field(default=None, max_length=200, description="Defaults to your profile target role")
+    limit: int = Field(default=20, ge=1, le=50)
+    country: str = Field(default="us", min_length=2, max_length=2, description="ISO country code for live job boards")
+    refresh: bool = Field(default=False, description="Ignore the cache and call the job board again")
+    source: Literal["auto", "seed"] = Field(
+        default="auto", description="'seed' skips live job boards and uses the built-in sample postings (reproducible demos and tests)")
+
+
+class MarketImportOut(BaseModel):
+    source: Literal["seed", "jsearch", "adzuna"]
+    requested_role: str
+    role_family: str | None
+    imported: int
+    skipped_duplicates: int
+    job_ids: list[int]
+    cached: bool
+    fallback_reason: str | None = Field(description="Why live data was not used (no key, API error, no results)")
+    notes: list[str]
+
+
 class JobSummaryOut(BaseModel):
     id: int
     title: str
     company: str | None
     source_type: str
+    source_provider: str | None = None
+    role_family: str | None = None
     source_url: str | None
     generated_by: str | None
     required_count: int
@@ -48,6 +71,8 @@ class JobOut(BaseModel):
     title: str
     company: str | None
     source_type: str
+    source_provider: str | None = None
+    role_family: str | None = None
     source_url: str | None
     raw_text: str
     structured_data: dict

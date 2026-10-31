@@ -14,7 +14,7 @@ router = APIRouter(prefix="/profile", tags=["Profile & Resume"])
     response_model=ResumeOut,
     status_code=status.HTTP_201_CREATED,
     dependencies=[Depends(ai_rate_limit)],
-    summary="Upload a PDF resume; text is extracted and parsed into structured data for review",
+    summary="Upload a PDF or DOCX resume; text is extracted and parsed into structured data for review",
 )
 async def upload_resume(user: CurrentUser, db: DbSession, llm: LLM, file: UploadFile = File(...)):
     # Read at most limit+1 bytes so huge uploads are rejected without loading them fully.

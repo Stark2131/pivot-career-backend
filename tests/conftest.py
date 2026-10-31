@@ -14,6 +14,8 @@ os.environ["DATABASE_URL"] = os.environ.get("TEST_DATABASE_URL", "sqlite+aiosqli
 os.environ["LLM_PROVIDER"] = "none"
 os.environ["ENVIRONMENT"] = "test"
 os.environ["RATE_LIMIT_ENABLED"] = "false"
+for _k in ("JSEARCH_API_KEY", "ADZUNA_APP_ID", "ADZUNA_APP_KEY"):  # tests never call live job boards
+    os.environ[_k] = ""
 os.environ["JWT_SECRET_KEY"] = "test-secret-key-that-is-long-enough-for-hs256-signing"
 
 import httpx  # noqa: E402

@@ -7,6 +7,7 @@ from app.ai.project_recommender import ProjectContext
 from app.core.database import utcnow
 from app.core.errors import NotFoundError, ValidationFailed
 from app.models import JobDescription, ProjectRecommendation, User, UserProfile
+from app.modules.jobs.market import role_family_of
 from app.modules.profile.skill_service import list_user_skills
 from app.modules.projects.schemas import ProjectUpdate, RecommendRequest
 from app.modules.skill_gap.service import get_analysis, latest_analysis
@@ -26,7 +27,7 @@ async def recommend(db: AsyncSession, llm: LLMClient, user: User, body: Recommen
     ctx = ProjectContext(
         target_role=analysis.target_role, experience_level=profile.experience_level if profile else None,
         gap_skills=gaps, known_skills=[us.skill.name for us in await list_user_skills(db, user.id)],
-        responsibilities=responsibilities,
+        responsibilities=responsibilities, role_family=analysis.role_family or role_family_of(analysis.target_role),
     )
     ideas, generated_by = await orchestrator.recommend_projects(llm, ctx, body.count)
     rows = [
@@ -34,7 +35,8 @@ async def recommend(db: AsyncSession, llm: LLMClient, user: User, body: Recommen
             user_id=user.id, analysis_id=analysis.id, title=i.title, problem_statement=i.problem_statement,
             description=i.description, skills_covered=i.skills_covered, tech_stack=i.tech_stack,
             core_features=i.core_features, difficulty=i.difficulty, deliverables=i.deliverables,
-            estimated_hours=i.estimated_hours, status="recommended", generated_by=generated_by,
+            estimated_hours=i.estimated_hours, template_id=i.template_id, gaps_covered=i.gaps_covered,
+            status="recommended", generated_by=generated_by,
         )
         for i in ideas
     ]

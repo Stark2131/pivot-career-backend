@@ -2,7 +2,7 @@
 from collections.abc import AsyncIterator
 from datetime import datetime, timezone
 
-from sqlalchemy import JSON, DateTime, MetaData
+from sqlalchemy import JSON, DateTime, MetaData, event
 from sqlalchemy.dialects.postgresql import JSONB
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
@@ -47,6 +47,12 @@ class TimestampMixin:
 _settings = get_settings()
 engine = create_async_engine(_settings.database_url, echo=_settings.db_echo, pool_pre_ping=True)
 SessionLocal = async_sessionmaker(engine, expire_on_commit=False, class_=AsyncSession)
+
+if engine.dialect.name == "sqlite":
+    # SQLite ignores foreign keys (and therefore ON DELETE CASCADE) unless asked on every connection.
+    @event.listens_for(engine.sync_engine, "connect")
+    def _enable_sqlite_foreign_keys(dbapi_connection, _record):
+        dbapi_connection.execute("PRAGMA foreign_keys=ON")
 
 
 async def get_db() -> AsyncIterator[AsyncSession]:

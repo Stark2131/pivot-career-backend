@@ -1,0 +1,228 @@
+{
+ "role_family": "ml_engineer",
+ "role": "Machine Learning Engineer",
+ "source": "seed",
+ "note": "Synthetic postings written for the demo. Companies are fictional; this is NOT real job-market data.",
+ "postings": [
+  {
+   "id": "seed-ml_engineer-01",
+   "source": "seed",
+   "role_family": "ml_engineer",
+   "title": "Machine Learning Engineer",
+   "company": "Brightleaf Retail",
+   "location": "Chicago, IL",
+   "seniority": "mid",
+   "url": null,
+   "text": "Machine Learning Engineer\nBrightleaf Retail | Chicago, IL | Hybrid\n\nAbout the role:\nBrightleaf Retail is a (fictional) organisation building tools for demand forecasting. As a Machine Learning Engineer you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Design, train and evaluate models for demand forecasting\n- Build data and feature pipelines that are reproducible\n- Improve latency, cost and reliability of inference services\n- Run experiments and report results honestly\n\nRequirements:\n- 3+ years of relevant experience\n- Python for data work (Pandas, notebooks, scripting)\n- Solid grounding in Machine Learning (supervised and unsupervised methods)\n- PyTorch for model development and training\n- Docker for packaging and shipping services\n- Strong SQL skills: joins, window functions and CTEs on large tables\n- Experience with model deployment and serving models in production\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- AWS experience (S3, EC2, IAM, managed ML services)\n- MLflow or similar experiment tracking\n- Kubernetes for orchestrating training and serving workloads"
+  },
+  {
+   "id": "seed-ml_engineer-02",
+   "source": "seed",
+   "role_family": "ml_engineer",
+   "title": "Junior ML Engineer",
+   "company": "Lumen Apps",
+   "location": "San Francisco, CA",
+   "seniority": "junior",
+   "url": null,
+   "text": "Junior ML Engineer\nLumen Apps | San Francisco, CA | Hybrid\n\nAbout the role:\nLumen Apps is a (fictional) organisation building tools for search ranking. As a Junior ML Engineer you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Deploy models to production and monitor their performance\n- Collaborate with product and data science to scope ML work\n- Write well-tested code and review others' work\n- Document models, data and known limitations\n\nRequirements:\n- 1+ years of relevant experience\n- Solid Python programming and clean, tested code\n- Hands-on Machine Learning experience shipping models\n- Experience with scikit-learn\n- Comfortable with Git workflows and code review\n- Advanced SQL for querying and validating data\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- Experience with Docker containers\n- Experience with PyTorch"
+  },
+  {
+   "id": "seed-ml_engineer-03",
+   "source": "seed",
+   "role_family": "ml_engineer",
+   "title": "Senior Machine Learning Engineer",
+   "company": "Northwind Health",
+   "location": "Boston, MA",
+   "seniority": "senior",
+   "url": null,
+   "text": "Senior Machine Learning Engineer\nNorthwind Health | Boston, MA | Remote\n\nAbout the role:\nNorthwind Health is a (fictional) organisation building tools for clinical risk models. As a Senior Machine Learning Engineer you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Build data and feature pipelines that are reproducible\n- Improve latency, cost and reliability of inference services\n- Run experiments and report results honestly\n- Design, train and evaluate models for clinical risk models\n\nRequirements:\n- 5+ years of relevant experience\n- Production-quality Python\n- Practical Machine Learning for prediction and ranking problems\n- PyTorch for model development and training\n- MLOps practices: model versioning, monitoring and retraining\n- Comfortable building Docker images and debugging containers\n- Working knowledge of AWS\n- System design for data- and ML-heavy services\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- Kubernetes for orchestrating training and serving workloads\n- Apache Spark for large-scale data processing"
+  },
+  {
+   "id": "seed-ml_engineer-04",
+   "source": "seed",
+   "role_family": "ml_engineer",
+   "title": "ML Engineer, Recommendations",
+   "company": "Sprout Commerce",
+   "location": "Remote",
+   "seniority": "mid",
+   "url": null,
+   "text": "ML Engineer, Recommendations\nSprout Commerce | Remote | Remote\n\nAbout the role:\nSprout Commerce is a (fictional) organisation building tools for recommendations. As a ML Engineer, Recommendations you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Collaborate with product and data science to scope ML work\n- Write well-tested code and review others' work\n- Document models, data and known limitations\n- Deploy models to production and monitor their performance\n\nRequirements:\n- 3+ years of relevant experience\n- Python for data work (Pandas, notebooks, scripting)\n- Solid grounding in Machine Learning (supervised and unsupervised methods)\n- Recommender systems experience\n- Strong SQL skills: joins, window functions and CTEs on large tables\n- Strong Feature Engineering instincts\n- Docker for packaging and shipping services\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- Apache Spark experience on distributed datasets\n- TensorFlow in production settings"
+  },
+  {
+   "id": "seed-ml_engineer-05",
+   "source": "seed",
+   "role_family": "ml_engineer",
+   "title": "Applied Scientist, NLP",
+   "company": "Slate Software",
+   "location": "Remote",
+   "seniority": "mid",
+   "url": null,
+   "text": "Applied Scientist, NLP\nSlate Software | Remote | Remote\n\nAbout the role:\nSlate Software is a (fictional) organisation building tools for language models. As a Applied Scientist, NLP you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Improve latency, cost and reliability of inference services\n- Run experiments and report results honestly\n- Design, train and evaluate models for language models\n- Build data and feature pipelines that are reproducible\n\nRequirements:\n- 3+ years of relevant experience\n- Solid Python programming and clean, tested code\n- NLP experience: text classification, embeddings, retrieval\n- PyTorch for model development and training\n- Experience building with LLMs (prompting, evaluation, fine-tuning)\n- Deep Learning experience (CNNs, transformers or sequence models)\n- Hugging Face ecosystem familiarity\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- Experience with Docker containers\n- MLflow or similar experiment tracking"
+  },
+  {
+   "id": "seed-ml_engineer-06",
+   "source": "seed",
+   "role_family": "ml_engineer",
+   "title": "MLOps Engineer",
+   "company": "Pinecrest Capital",
+   "location": "New York, NY",
+   "seniority": "mid",
+   "url": null,
+   "text": "MLOps Engineer\nPinecrest Capital | New York, NY | Hybrid\n\nAbout the role:\nPinecrest Capital is a (fictional) organisation building tools for model platform. As a MLOps Engineer you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Write well-tested code and review others' work\n- Document models, data and known limitations\n- Deploy models to production and monitor their performance\n- Collaborate with product and data science to scope ML work\n\nRequirements:\n- 3+ years of relevant experience\n- Understanding of MLOps and the model lifecycle\n- Production-quality Python\n- Comfortable building Docker images and debugging containers\n- Familiarity with Kubernetes\n- Experience with CI/CD (GitHub Actions or similar)\n- Working knowledge of AWS\n- Terraform for infrastructure as code\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- MLflow or similar experiment tracking\n- Airflow DAG authoring"
+  },
+  {
+   "id": "seed-ml_engineer-07",
+   "source": "seed",
+   "role_family": "ml_engineer",
+   "title": "Machine Learning Engineer, Vision",
+   "company": "Arcadia Games",
+   "location": "Seattle, WA",
+   "seniority": "mid",
+   "url": null,
+   "text": "Machine Learning Engineer, Vision\nArcadia Games | Seattle, WA | Hybrid\n\nAbout the role:\nArcadia Games is a (fictional) organisation building tools for computer vision. As a Machine Learning Engineer, Vision you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Run experiments and report results honestly\n- Design, train and evaluate models for computer vision\n- Build data and feature pipelines that are reproducible\n- Improve latency, cost and reliability of inference services\n\nRequirements:\n- 3+ years of relevant experience\n- Python for data work (Pandas, notebooks, scripting)\n- Computer Vision experience (detection, segmentation)\n- PyTorch for model development and training\n- Deep Learning experience (CNNs, transformers or sequence models)\n- Docker for packaging and shipping services\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- AWS experience (S3, EC2, IAM, managed ML services)\n- C++ experience"
+  },
+  {
+   "id": "seed-ml_engineer-08",
+   "source": "seed",
+   "role_family": "ml_engineer",
+   "title": "Machine Learning Engineer",
+   "company": "Ember Telecom",
+   "location": "Denver, CO",
+   "seniority": "mid",
+   "url": null,
+   "text": "Machine Learning Engineer\nEmber Telecom | Denver, CO | Hybrid\n\nAbout the role:\nEmber Telecom is a (fictional) organisation building tools for network anomaly detection. As a Machine Learning Engineer you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Document models, data and known limitations\n- Deploy models to production and monitor their performance\n- Collaborate with product and data science to scope ML work\n- Write well-tested code and review others' work\n\nRequirements:\n- 3+ years of relevant experience\n- Solid Python programming and clean, tested code\n- Hands-on Machine Learning experience shipping models\n- TensorFlow in production settings\n- Advanced SQL for querying and validating data\n- Apache Spark experience on distributed datasets\n- Experience with Docker containers\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- Familiarity with Kubernetes\n- GCP services such as Vertex AI and BigQuery"
+  },
+  {
+   "id": "seed-ml_engineer-09",
+   "source": "seed",
+   "role_family": "ml_engineer",
+   "title": "ML Platform Engineer",
+   "company": "Juniper Systems",
+   "location": "Remote",
+   "seniority": "senior",
+   "url": null,
+   "text": "ML Platform Engineer\nJuniper Systems | Remote | Remote\n\nAbout the role:\nJuniper Systems is a (fictional) organisation building tools for ML infrastructure. As a ML Platform Engineer you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Design, train and evaluate models for ML infrastructure\n- Build data and feature pipelines that are reproducible\n- Improve latency, cost and reliability of inference services\n- Run experiments and report results honestly\n\nRequirements:\n- 5+ years of relevant experience\n- Production-quality Python\n- Kubernetes for orchestrating training and serving workloads\n- Comfortable building Docker images and debugging containers\n- MLOps practices: model versioning, monitoring and retraining\n- CI/CD pipelines for training and deployment\n- System design for data- and ML-heavy services\n- Working knowledge of AWS\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- Terraform for infrastructure as code\n- Kafka for event streaming"
+  },
+  {
+   "id": "seed-ml_engineer-10",
+   "source": "seed",
+   "role_family": "ml_engineer",
+   "title": "Data Scientist, Machine Learning",
+   "company": "Cobalt Insurance",
+   "location": "Hartford, CT",
+   "seniority": "mid",
+   "url": null,
+   "text": "Data Scientist, Machine Learning\nCobalt Insurance | Hartford, CT | Hybrid\n\nAbout the role:\nCobalt Insurance is a (fictional) organisation building tools for pricing models. As a Data Scientist, Machine Learning you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Deploy models to production and monitor their performance\n- Collaborate with product and data science to scope ML work\n- Write well-tested code and review others' work\n- Document models, data and known limitations\n\nRequirements:\n- 3+ years of relevant experience\n- Python for data work (Pandas, notebooks, scripting)\n- Solid grounding in Machine Learning (supervised and unsupervised methods)\n- Experience with scikit-learn\n- Strong SQL skills: joins, window functions and CTEs on large tables\n- Solid grounding in Statistics: distributions, confidence intervals, significance\n- Strong Feature Engineering instincts\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- XGBoost experience\n- Experience with model deployment and serving models in production"
+  },
+  {
+   "id": "seed-ml_engineer-11",
+   "source": "seed",
+   "role_family": "ml_engineer",
+   "title": "Machine Learning Engineer, LLM Applications",
+   "company": "Orchid Education",
+   "location": "Remote",
+   "seniority": "mid",
+   "url": null,
+   "text": "Machine Learning Engineer, LLM Applications\nOrchid Education | Remote | Remote\n\nAbout the role:\nOrchid Education is a (fictional) organisation building tools for tutoring assistants. As a Machine Learning Engineer, LLM Applications you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Build data and feature pipelines that are reproducible\n- Improve latency, cost and reliability of inference services\n- Run experiments and report results honestly\n- Design, train and evaluate models for tutoring assistants\n\nRequirements:\n- 3+ years of relevant experience\n- Solid Python programming and clean, tested code\n- Experience building with LLMs (prompting, evaluation, fine-tuning)\n- NLP experience: text classification, embeddings, retrieval\n- Designing REST APIs that serve model predictions\n- Experience with Docker containers\n- Rigorous model evaluation: metrics, cross-validation and error analysis\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- FastAPI or Flask for serving models\n- Cloud experience on AWS"
+  },
+  {
+   "id": "seed-ml_engineer-12",
+   "source": "seed",
+   "role_family": "ml_engineer",
+   "title": "ML Engineer",
+   "company": "Granite Bank",
+   "location": "Charlotte, NC",
+   "seniority": "mid",
+   "url": null,
+   "text": "ML Engineer\nGranite Bank | Charlotte, NC | Hybrid\n\nAbout the role:\nGranite Bank is a (fictional) organisation building tools for fraud detection. As a ML Engineer you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Collaborate with product and data science to scope ML work\n- Write well-tested code and review others' work\n- Document models, data and known limitations\n- Deploy models to production and monitor their performance\n\nRequirements:\n- 3+ years of relevant experience\n- Production-quality Python\n- Practical Machine Learning for prediction and ranking problems\n- Fluent in SQL and comfortable profiling messy tables\n- Apache Spark experience on distributed datasets\n- Productionizing models end to end\n- Strong Statistics foundation\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- Familiarity with Kubernetes\n- Azure Machine Learning experience"
+  },
+  {
+   "id": "seed-ml_engineer-13",
+   "source": "seed",
+   "role_family": "ml_engineer",
+   "title": "Junior Machine Learning Engineer",
+   "company": "Kestrel Foods",
+   "location": "Atlanta, GA",
+   "seniority": "junior",
+   "url": null,
+   "text": "Junior Machine Learning Engineer\nKestrel Foods | Atlanta, GA | Hybrid\n\nAbout the role:\nKestrel Foods is a (fictional) organisation building tools for quality inspection. As a Junior Machine Learning Engineer you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Improve latency, cost and reliability of inference services\n- Run experiments and report results honestly\n- Design, train and evaluate models for quality inspection\n- Build data and feature pipelines that are reproducible\n\nRequirements:\n- 1+ years of relevant experience\n- Python for data work (Pandas, notebooks, scripting)\n- Solid grounding in Machine Learning (supervised and unsupervised methods)\n- TensorFlow or Keras experience\n- Git and version-control habits\n- Computer Vision experience (detection, segmentation)\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- Docker for packaging and shipping services\n- Cloud experience on GCP"
+  },
+  {
+   "id": "seed-ml_engineer-14",
+   "source": "seed",
+   "role_family": "ml_engineer",
+   "title": "Senior ML Engineer, Ranking",
+   "company": "Willow & Co",
+   "location": "Portland, OR",
+   "seniority": "senior",
+   "url": null,
+   "text": "Senior ML Engineer, Ranking\nWillow & Co | Portland, OR | Hybrid\n\nAbout the role:\nWillow & Co is a (fictional) organisation building tools for marketplace ranking. As a Senior ML Engineer, Ranking you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Write well-tested code and review others' work\n- Document models, data and known limitations\n- Deploy models to production and monitor their performance\n- Collaborate with product and data science to scope ML work\n\nRequirements:\n- 5+ years of relevant experience\n- Solid Python programming and clean, tested code\n- Hands-on Machine Learning experience shipping models\n- Experience with PyTorch\n- Strong Feature Engineering instincts\n- Deploying models behind APIs and batch jobs\n- Ability to reason about system design trade-offs\n- Advanced SQL for querying and validating data\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- Kafka for event streaming\n- Familiarity with Kubernetes"
+  },
+  {
+   "id": "seed-ml_engineer-15",
+   "source": "seed",
+   "role_family": "ml_engineer",
+   "title": "Machine Learning Engineer, Forecasting",
+   "company": "Vantage Energy",
+   "location": "Houston, TX",
+   "seniority": "mid",
+   "url": null,
+   "text": "Machine Learning Engineer, Forecasting\nVantage Energy | Houston, TX | Hybrid\n\nAbout the role:\nVantage Energy is a (fictional) organisation building tools for load forecasting. As a Machine Learning Engineer, Forecasting you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Run experiments and report results honestly\n- Design, train and evaluate models for load forecasting\n- Build data and feature pipelines that are reproducible\n- Improve latency, cost and reliability of inference services\n\nRequirements:\n- 3+ years of relevant experience\n- Production-quality Python\n- Time series forecasting for demand or capacity planning\n- Practical Machine Learning for prediction and ranking problems\n- Fluent in SQL and comfortable profiling messy tables\n- Comfortable building Docker images and debugging containers\n- Strong Statistics foundation\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- Cloud experience on GCP\n- Apache Airflow for orchestrating pipelines"
+  },
+  {
+   "id": "seed-ml_engineer-16",
+   "source": "seed",
+   "role_family": "ml_engineer",
+   "title": "AI Engineer",
+   "company": "Harbor Logistics",
+   "location": "Austin, TX",
+   "seniority": "mid",
+   "url": null,
+   "text": "AI Engineer\nHarbor Logistics | Austin, TX | Hybrid\n\nAbout the role:\nHarbor Logistics is a (fictional) organisation building tools for route optimisation. As a AI Engineer you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Document models, data and known limitations\n- Deploy models to production and monitor their performance\n- Collaborate with product and data science to scope ML work\n- Write well-tested code and review others' work\n\nRequirements:\n- 3+ years of relevant experience\n- Python for data work (Pandas, notebooks, scripting)\n- Solid grounding in Machine Learning (supervised and unsupervised methods)\n- Docker for packaging and shipping services\n- REST API design and integration\n- AWS experience (S3, EC2, IAM, managed ML services)\n- Experience with CI/CD (GitHub Actions or similar)\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- Experience with PyTorch\n- Familiarity with Kubernetes"
+  },
+  {
+   "id": "seed-ml_engineer-17",
+   "source": "seed",
+   "role_family": "ml_engineer",
+   "title": "Machine Learning Engineer, Health Imaging",
+   "company": "Clearwater Clinics",
+   "location": "Minneapolis, MN",
+   "seniority": "mid",
+   "url": null,
+   "text": "Machine Learning Engineer, Health Imaging\nClearwater Clinics | Minneapolis, MN | On-site\n\nAbout the role:\nClearwater Clinics is a (fictional) organisation building tools for medical imaging. As a Machine Learning Engineer, Health Imaging you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Design, train and evaluate models for medical imaging\n- Build data and feature pipelines that are reproducible\n- Improve latency, cost and reliability of inference services\n- Run experiments and report results honestly\n\nRequirements:\n- 3+ years of relevant experience\n- Solid Python programming and clean, tested code\n- Deep Learning experience (CNNs, transformers or sequence models)\n- Computer Vision experience (detection, segmentation)\n- PyTorch for model development and training\n- Experience with Docker containers\n- Comfortable in Linux environments\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- Azure cloud experience\n- MLOps practices: model versioning, monitoring and retraining"
+  },
+  {
+   "id": "seed-ml_engineer-18",
+   "source": "seed",
+   "role_family": "ml_engineer",
+   "title": "Research Engineer",
+   "company": "Meridian Freight",
+   "location": "Dallas, TX",
+   "seniority": "mid",
+   "url": null,
+   "text": "Research Engineer\nMeridian Freight | Dallas, TX | Hybrid\n\nAbout the role:\nMeridian Freight is a (fictional) organisation building tools for logistics optimisation. As a Research Engineer you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Deploy models to production and monitor their performance\n- Collaborate with product and data science to scope ML work\n- Write well-tested code and review others' work\n- Document models, data and known limitations\n\nRequirements:\n- 3+ years of relevant experience\n- Production-quality Python\n- Practical Machine Learning for prediction and ranking problems\n- Deep Learning fundamentals and training at scale\n- Strong data structures and algorithms fundamentals\n- Experience with PyTorch\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- C++ experience\n- Comfortable building Docker images and debugging containers"
+  },
+  {
+   "id": "seed-ml_engineer-19",
+   "source": "seed",
+   "role_family": "ml_engineer",
+   "title": "Machine Learning Engineer",
+   "company": "Foxglove Nonprofit Network",
+   "location": "Remote",
+   "seniority": "junior",
+   "url": null,
+   "text": "Machine Learning Engineer\nFoxglove Nonprofit Network | Remote | Remote\n\nAbout the role:\nFoxglove Nonprofit Network is a (fictional) organisation building tools for donor modelling. As a Machine Learning Engineer you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Build data and feature pipelines that are reproducible\n- Improve latency, cost and reliability of inference services\n- Run experiments and report results honestly\n- Design, train and evaluate models for donor modelling\n\nRequirements:\n- 1+ years of relevant experience\n- Python for data work (Pandas, notebooks, scripting)\n- Solid grounding in Machine Learning (supervised and unsupervised methods)\n- scikit-learn for baselines, pipelines and evaluation\n- Strong SQL skills: joins, window functions and CTEs on large tables\n- Git and version-control habits\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- Docker for packaging and shipping services\n- AWS experience (S3, EC2, IAM, managed ML services)"
+  },
+  {
+   "id": "seed-ml_engineer-20",
+   "source": "seed",
+   "role_family": "ml_engineer",
+   "title": "Staff Machine Learning Engineer",
+   "company": "Civic Works Institute",
+   "location": "Washington, DC",
+   "seniority": "senior",
+   "url": null,
+   "text": "Staff Machine Learning Engineer\nCivic Works Institute | Washington, DC | Hybrid\n\nAbout the role:\nCivic Works Institute is a (fictional) organisation building tools for public-benefit models. As a Staff Machine Learning Engineer you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Collaborate with product and data science to scope ML work\n- Write well-tested code and review others' work\n- Document models, data and known limitations\n- Deploy models to production and monitor their performance\n\nRequirements:\n- 5+ years of relevant experience\n- Solid Python programming and clean, tested code\n- Hands-on Machine Learning experience shipping models\n- Understanding of MLOps and the model lifecycle\n- Ability to reason about system design trade-offs\n- Deploying models behind APIs and batch jobs\n- Experience with Docker containers\n- Azure Machine Learning experience\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- Familiarity with Kubernetes\n- Team leadership and mentoring"
+  }
+ ]
+}

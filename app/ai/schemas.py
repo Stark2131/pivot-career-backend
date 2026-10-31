@@ -94,6 +94,8 @@ class PlanTaskContent(BaseModel):
     activities: list[str] = Field(min_length=1, max_length=8)
     exercises: list[str] = Field(min_length=1, max_length=6)
     expected_outcome: str = Field(max_length=500)
+    # Ids from the curated list offered in the prompt. Anything else is ignored; the model cannot add links.
+    resource_ids: list[str] = Field(default_factory=list, max_length=6)
 
 
 class PlanWeekContent(BaseModel):
@@ -117,10 +119,26 @@ class ProjectIdea(BaseModel):
     difficulty: Literal["beginner", "intermediate", "advanced"]
     deliverables: list[str] = Field(min_length=1, max_length=8)
     estimated_hours: int | None = Field(default=None, ge=1, le=300)
+    template_id: str | None = Field(default=None, description="Id in data/projects.json this idea was built from")
+    gaps_covered: list[str] = Field(default_factory=list, description="Which of the user's gaps it addresses, in priority order")
 
 
 class ProjectList(BaseModel):
     projects: list[ProjectIdea] = Field(min_length=1, max_length=6)
+
+
+class PersonalisedProject(BaseModel):
+    """The only things the model may change about a template: its wording."""
+    template_id: str
+    title: str = Field(max_length=200)
+    problem_statement: str = Field(max_length=1000)
+    description: str = Field(max_length=2000)
+    core_features: list[str] = Field(default_factory=list, max_length=10)
+    deliverables: list[str] = Field(default_factory=list, max_length=8)
+
+
+class PersonalisedProjects(BaseModel):
+    projects: list[PersonalisedProject] = Field(min_length=1, max_length=6)
 
 
 # --- Interviewer & evaluator ---------------------------------------------------------
@@ -150,6 +168,9 @@ class AnswerEvaluation(BaseModel):
     improvements: list[str] = Field(default_factory=list, max_length=6)
     suggested_answer_improvements: str = Field(default="", max_length=2000)
     topics_to_revise: list[str] = Field(default_factory=list, max_length=8)
+    # criterion -> short verbatim quote from the candidate's answer that supports the score.
+    # The evaluator discards any quote that is not actually in the answer.
+    evidence: dict[str, str] = Field(default_factory=dict)
 
 
 # --- Progress analyst (tool-calling) ---------------------------------------------------

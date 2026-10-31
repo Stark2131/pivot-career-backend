@@ -1,0 +1,228 @@
+{
+ "role_family": "data_analyst",
+ "role": "Data Analyst",
+ "source": "seed",
+ "note": "Synthetic postings written for the demo. Companies are fictional; this is NOT real job-market data.",
+ "postings": [
+  {
+   "id": "seed-data_analyst-01",
+   "source": "seed",
+   "role_family": "data_analyst",
+   "title": "Data Analyst",
+   "company": "Brightleaf Retail",
+   "location": "Chicago, IL",
+   "seniority": "mid",
+   "url": null,
+   "text": "Data Analyst\nBrightleaf Retail | Chicago, IL | Hybrid\n\nAbout the role:\nBrightleaf Retail is a (fictional) organisation building tools for merchandising. As a Data Analyst you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Turn business questions into analyses and recommendations\n- Write and optimise queries to answer ad-hoc questions\n- Partner with merchandising to define success metrics\n- Automate recurring reporting\n\nRequirements:\n- 3+ years of relevant experience\n- Strong SQL skills: joins, window functions and CTEs on large tables\n- Advanced Excel (pivot tables, lookups, financial-style models)\n- Hands-on experience building Tableau dashboards\n- Solid grounding in Statistics: distributions, confidence intervals, significance\n- Excellent written and verbal Communication, including to non-technical audiences\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- Python for data work (Pandas, notebooks, scripting)\n- Snowflake experience"
+  },
+  {
+   "id": "seed-data_analyst-02",
+   "source": "seed",
+   "role_family": "data_analyst",
+   "title": "Junior Data Analyst",
+   "company": "Harbor Logistics",
+   "location": "Austin, TX",
+   "seniority": "junior",
+   "url": null,
+   "text": "Junior Data Analyst\nHarbor Logistics | Austin, TX | On-site\n\nAbout the role:\nHarbor Logistics is a (fictional) organisation building tools for operations. As a Junior Data Analyst you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Build and maintain dashboards used by weekly operating reviews\n- Check numbers for accuracy and document metric definitions\n- Present findings to non-technical stakeholders\n- Support experiment design and measure impact of launches\n\nRequirements:\n- 1+ years of relevant experience\n- Advanced SQL for querying and validating data\n- Proficiency in Excel for ad-hoc analysis and reporting\n- Data Visualization skills and good chart design taste\n- Strong problem-solving and analytical thinking\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- Tableau experience (calculated fields, LOD expressions, published dashboards)\n- Solid Python programming and clean, tested code"
+  },
+  {
+   "id": "seed-data_analyst-03",
+   "source": "seed",
+   "role_family": "data_analyst",
+   "title": "Senior Data Analyst",
+   "company": "Northwind Health",
+   "location": "Boston, MA",
+   "seniority": "senior",
+   "url": null,
+   "text": "Senior Data Analyst\nNorthwind Health | Boston, MA | Remote\n\nAbout the role:\nNorthwind Health is a (fictional) organisation building tools for clinical operations. As a Senior Data Analyst you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Write and optimise queries to answer ad-hoc questions\n- Partner with clinical operations to define success metrics\n- Automate recurring reporting\n- Turn business questions into analyses and recommendations\n\nRequirements:\n- 5+ years of relevant experience\n- Fluent in SQL and comfortable profiling messy tables\n- Production-quality Python\n- Strong Statistics foundation\n- Hands-on experience building Tableau dashboards\n- Stakeholder management across business, design and engineering\n- Data storytelling: turning analysis into a narrative leaders act on\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- dbt for transformations and documented models\n- Snowflake experience\n- Experience designing and reading A/B tests"
+  },
+  {
+   "id": "seed-data_analyst-04",
+   "source": "seed",
+   "role_family": "data_analyst",
+   "title": "Business Intelligence Analyst",
+   "company": "Cobalt Insurance",
+   "location": "Hartford, CT",
+   "seniority": "mid",
+   "url": null,
+   "text": "Business Intelligence Analyst\nCobalt Insurance | Hartford, CT | Hybrid\n\nAbout the role:\nCobalt Insurance is a (fictional) organisation building tools for claims. As a Business Intelligence Analyst you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Check numbers for accuracy and document metric definitions\n- Present findings to non-technical stakeholders\n- Support experiment design and measure impact of launches\n- Build and maintain dashboards used by weekly operating reviews\n\nRequirements:\n- 3+ years of relevant experience\n- Strong SQL skills: joins, window functions and CTEs on large tables\n- Power BI for self-serve dashboards\n- Experience with a Data Warehousing platform\n- ETL experience or willingness to learn\n- Clear Communication of findings and recommendations\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- Advanced Excel (pivot tables, lookups, financial-style models)\n- Python for data work (Pandas, notebooks, scripting)"
+  },
+  {
+   "id": "seed-data_analyst-05",
+   "source": "seed",
+   "role_family": "data_analyst",
+   "title": "Marketing Analyst",
+   "company": "Sprout Commerce",
+   "location": "Remote",
+   "seniority": "mid",
+   "url": null,
+   "text": "Marketing Analyst\nSprout Commerce | Remote | Remote\n\nAbout the role:\nSprout Commerce is a (fictional) organisation building tools for growth marketing. As a Marketing Analyst you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Partner with growth marketing to define success metrics\n- Automate recurring reporting\n- Turn business questions into analyses and recommendations\n- Write and optimise queries to answer ad-hoc questions\n\nRequirements:\n- 3+ years of relevant experience\n- Advanced SQL for querying and validating data\n- Experience with Google Analytics for web and campaign reporting\n- Proficiency in Excel for ad-hoc analysis and reporting\n- Experience designing and reading A/B tests\n- Marketing Analytics: campaign analytics, attribution and funnel reporting\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- Looker or Looker Studio dashboard experience\n- Solid Python programming and clean, tested code\n- Hands-on experience building Tableau dashboards"
+  },
+  {
+   "id": "seed-data_analyst-06",
+   "source": "seed",
+   "role_family": "data_analyst",
+   "title": "Product Analyst",
+   "company": "Lumen Apps",
+   "location": "San Francisco, CA",
+   "seniority": "mid",
+   "url": null,
+   "text": "Product Analyst\nLumen Apps | San Francisco, CA | Hybrid\n\nAbout the role:\nLumen Apps is a (fictional) organisation building tools for product. As a Product Analyst you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Present findings to non-technical stakeholders\n- Support experiment design and measure impact of launches\n- Build and maintain dashboards used by weekly operating reviews\n- Check numbers for accuracy and document metric definitions\n\nRequirements:\n- 3+ years of relevant experience\n- Fluent in SQL and comfortable profiling messy tables\n- Production-quality Python\n- Familiarity with A/B testing and experiment analysis\n- Strong Statistics foundation\n- Data Visualization skills and good chart design taste\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- Looker or Looker Studio dashboard experience\n- dbt for transformations and documented models"
+  },
+  {
+   "id": "seed-data_analyst-07",
+   "source": "seed",
+   "role_family": "data_analyst",
+   "title": "Operations Analyst",
+   "company": "Meridian Freight",
+   "location": "Dallas, TX",
+   "seniority": "mid",
+   "url": null,
+   "text": "Operations Analyst\nMeridian Freight | Dallas, TX | On-site\n\nAbout the role:\nMeridian Freight is a (fictional) organisation building tools for supply chain. As a Operations Analyst you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Automate recurring reporting\n- Turn business questions into analyses and recommendations\n- Write and optimise queries to answer ad-hoc questions\n- Partner with supply chain to define success metrics\n\nRequirements:\n- 3+ years of relevant experience\n- Advanced Excel (pivot tables, lookups, financial-style models)\n- Strong SQL skills: joins, window functions and CTEs on large tables\n- Experience building Power BI reports and DAX measures\n- KPI reporting and metrics analysis for business teams\n- Excellent written and verbal Communication, including to non-technical audiences\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- Excel VBA for automating repetitive reporting\n- Python for data work (Pandas, notebooks, scripting)"
+  },
+  {
+   "id": "seed-data_analyst-08",
+   "source": "seed",
+   "role_family": "data_analyst",
+   "title": "Data Analyst",
+   "company": "Orchid Education",
+   "location": "Remote",
+   "seniority": "junior",
+   "url": null,
+   "text": "Data Analyst\nOrchid Education | Remote | Remote\n\nAbout the role:\nOrchid Education is a (fictional) organisation building tools for learner outcomes. As a Data Analyst you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Support experiment design and measure impact of launches\n- Build and maintain dashboards used by weekly operating reviews\n- Check numbers for accuracy and document metric definitions\n- Present findings to non-technical stakeholders\n\nRequirements:\n- 1+ years of relevant experience\n- Advanced SQL for querying and validating data\n- Proficiency in Excel for ad-hoc analysis and reporting\n- Tableau experience (calculated fields, LOD expressions, published dashboards)\n- Experience with data wrangling and reconciling multiple sources\n- Clear Communication of findings and recommendations\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- Working knowledge of R programming\n- Statistics fundamentals and sound reasoning about uncertainty"
+  },
+  {
+   "id": "seed-data_analyst-09",
+   "source": "seed",
+   "role_family": "data_analyst",
+   "title": "Financial Data Analyst",
+   "company": "Pinecrest Capital",
+   "location": "New York, NY",
+   "seniority": "mid",
+   "url": null,
+   "text": "Financial Data Analyst\nPinecrest Capital | New York, NY | Hybrid\n\nAbout the role:\nPinecrest Capital is a (fictional) organisation building tools for finance. As a Financial Data Analyst you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Turn business questions into analyses and recommendations\n- Write and optimise queries to answer ad-hoc questions\n- Partner with finance to define success metrics\n- Automate recurring reporting\n\nRequirements:\n- 3+ years of relevant experience\n- Excel power-user: pivot tables, XLOOKUP and clean model structure\n- Fluent in SQL and comfortable profiling messy tables\n- Data analysis to size opportunities and measure impact\n- Applied regression analysis for forecasting and driver analysis\n- Confident presentation skills, including executive presentations\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- Production-quality Python\n- Experience building Power BI reports and DAX measures\n- Excel VBA for automating repetitive reporting"
+  },
+  {
+   "id": "seed-data_analyst-10",
+   "source": "seed",
+   "role_family": "data_analyst",
+   "title": "Analytics Associate",
+   "company": "Kestrel Foods",
+   "location": "Atlanta, GA",
+   "seniority": "junior",
+   "url": null,
+   "text": "Analytics Associate\nKestrel Foods | Atlanta, GA | Hybrid\n\nAbout the role:\nKestrel Foods is a (fictional) organisation building tools for sales. As a Analytics Associate you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Build and maintain dashboards used by weekly operating reviews\n- Check numbers for accuracy and document metric definitions\n- Present findings to non-technical stakeholders\n- Support experiment design and measure impact of launches\n\nRequirements:\n- 1+ years of relevant experience\n- Advanced Excel (pivot tables, lookups, financial-style models)\n- Strong SQL skills: joins, window functions and CTEs on large tables\n- Tableau experience (calculated fields, LOD expressions, published dashboards)\n- Define and track KPIs and performance metrics\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- Python for data work (Pandas, notebooks, scripting)\n- Solid grounding in Statistics: distributions, confidence intervals, significance"
+  },
+  {
+   "id": "seed-data_analyst-11",
+   "source": "seed",
+   "role_family": "data_analyst",
+   "title": "Senior Business Analyst",
+   "company": "Vantage Energy",
+   "location": "Houston, TX",
+   "seniority": "senior",
+   "url": null,
+   "text": "Senior Business Analyst\nVantage Energy | Houston, TX | Hybrid\n\nAbout the role:\nVantage Energy is a (fictional) organisation building tools for operations. As a Senior Business Analyst you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Write and optimise queries to answer ad-hoc questions\n- Partner with operations to define success metrics\n- Automate recurring reporting\n- Turn business questions into analyses and recommendations\n\nRequirements:\n- 5+ years of relevant experience\n- Advanced SQL for querying and validating data\n- Proficiency in Excel for ad-hoc analysis and reporting\n- Experience building Power BI reports and DAX measures\n- Stakeholder management across business, design and engineering\n- Data storytelling: turning analysis into a narrative leaders act on\n- Statistics fundamentals and sound reasoning about uncertainty\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- Solid Python programming and clean, tested code\n- Familiarity with ETL processes and data flows"
+  },
+  {
+   "id": "seed-data_analyst-12",
+   "source": "seed",
+   "role_family": "data_analyst",
+   "title": "Data Analyst, People Analytics",
+   "company": "Juniper Systems",
+   "location": "Remote",
+   "seniority": "mid",
+   "url": null,
+   "text": "Data Analyst, People Analytics\nJuniper Systems | Remote | Remote\n\nAbout the role:\nJuniper Systems is a (fictional) organisation building tools for HR. As a Data Analyst, People Analytics you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Check numbers for accuracy and document metric definitions\n- Present findings to non-technical stakeholders\n- Support experiment design and measure impact of launches\n- Build and maintain dashboards used by weekly operating reviews\n\nRequirements:\n- 3+ years of relevant experience\n- Fluent in SQL and comfortable profiling messy tables\n- Excel power-user: pivot tables, XLOOKUP and clean model structure\n- Strong Statistics foundation\n- Data Visualization skills and good chart design taste\n- Clear Communication of findings and recommendations\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- Production-quality Python\n- Working knowledge of R programming\n- Tableau experience (calculated fields, LOD expressions, published dashboards)"
+  },
+  {
+   "id": "seed-data_analyst-13",
+   "source": "seed",
+   "role_family": "data_analyst",
+   "title": "Healthcare Data Analyst",
+   "company": "Clearwater Clinics",
+   "location": "Minneapolis, MN",
+   "seniority": "mid",
+   "url": null,
+   "text": "Healthcare Data Analyst\nClearwater Clinics | Minneapolis, MN | On-site\n\nAbout the role:\nClearwater Clinics is a (fictional) organisation building tools for patient access. As a Healthcare Data Analyst you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Partner with patient access to define success metrics\n- Automate recurring reporting\n- Turn business questions into analyses and recommendations\n- Write and optimise queries to answer ad-hoc questions\n\nRequirements:\n- 3+ years of relevant experience\n- Strong SQL skills: joins, window functions and CTEs on large tables\n- Advanced Excel (pivot tables, lookups, financial-style models)\n- Hands-on experience building Tableau dashboards\n- Data Cleaning and validation of messy, real-world datasets\n- Solid grounding in Statistics: distributions, confidence intervals, significance\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- R programming for statistical analysis and reporting\n- SAS experience"
+  },
+  {
+   "id": "seed-data_analyst-14",
+   "source": "seed",
+   "role_family": "data_analyst",
+   "title": "Reporting Analyst",
+   "company": "Granite Bank",
+   "location": "Charlotte, NC",
+   "seniority": "junior",
+   "url": null,
+   "text": "Reporting Analyst\nGranite Bank | Charlotte, NC | On-site\n\nAbout the role:\nGranite Bank is a (fictional) organisation building tools for retail banking. As a Reporting Analyst you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Present findings to non-technical stakeholders\n- Support experiment design and measure impact of launches\n- Build and maintain dashboards used by weekly operating reviews\n- Check numbers for accuracy and document metric definitions\n\nRequirements:\n- 1+ years of relevant experience\n- Advanced SQL for querying and validating data\n- Proficiency in Excel for ad-hoc analysis and reporting\n- Power BI for self-serve dashboards\n- Define and track KPIs and performance metrics\n- Business Intelligence experience across reporting and self-serve analytics\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- Excel VBA for automating repetitive reporting"
+  },
+  {
+   "id": "seed-data_analyst-15",
+   "source": "seed",
+   "role_family": "data_analyst",
+   "title": "Data Analyst, Customer Insights",
+   "company": "Ember Telecom",
+   "location": "Denver, CO",
+   "seniority": "mid",
+   "url": null,
+   "text": "Data Analyst, Customer Insights\nEmber Telecom | Denver, CO | Hybrid\n\nAbout the role:\nEmber Telecom is a (fictional) organisation building tools for customer experience. As a Data Analyst, Customer Insights you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Automate recurring reporting\n- Turn business questions into analyses and recommendations\n- Write and optimise queries to answer ad-hoc questions\n- Partner with customer experience to define success metrics\n\nRequirements:\n- 3+ years of relevant experience\n- Fluent in SQL and comfortable profiling messy tables\n- Production-quality Python\n- Hands-on experience building Tableau dashboards\n- Strong Statistics foundation\n- Data storytelling: turning analysis into a narrative leaders act on\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- Experience with Google Analytics for web and campaign reporting\n- Experience designing and reading A/B tests"
+  },
+  {
+   "id": "seed-data_analyst-16",
+   "source": "seed",
+   "role_family": "data_analyst",
+   "title": "Analytics Engineer",
+   "company": "Slate Software",
+   "location": "Remote",
+   "seniority": "mid",
+   "url": null,
+   "text": "Analytics Engineer\nSlate Software | Remote | Remote\n\nAbout the role:\nSlate Software is a (fictional) organisation building tools for data platform. As a Analytics Engineer you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Support experiment design and measure impact of launches\n- Build and maintain dashboards used by weekly operating reviews\n- Check numbers for accuracy and document metric definitions\n- Present findings to non-technical stakeholders\n\nRequirements:\n- 3+ years of relevant experience\n- Strong SQL skills: joins, window functions and CTEs on large tables\n- dbt for transformations and documented models\n- Python for data work (Pandas, notebooks, scripting)\n- Experience with a Data Warehousing platform\n- Comfortable with Git workflows and code review\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- Snowflake experience\n- Airflow DAG authoring\n- Looker or Looker Studio dashboard experience"
+  },
+  {
+   "id": "seed-data_analyst-17",
+   "source": "seed",
+   "role_family": "data_analyst",
+   "title": "E-commerce Data Analyst",
+   "company": "Willow & Co",
+   "location": "Portland, OR",
+   "seniority": "mid",
+   "url": null,
+   "text": "E-commerce Data Analyst\nWillow & Co | Portland, OR | Remote\n\nAbout the role:\nWillow & Co is a (fictional) organisation building tools for e-commerce. As a E-commerce Data Analyst you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Turn business questions into analyses and recommendations\n- Write and optimise queries to answer ad-hoc questions\n- Partner with e-commerce to define success metrics\n- Automate recurring reporting\n\nRequirements:\n- 3+ years of relevant experience\n- Advanced SQL for querying and validating data\n- Proficiency in Excel for ad-hoc analysis and reporting\n- Experience with Google Analytics for web and campaign reporting\n- Experience designing and reading A/B tests\n- Strong Data Visualization instincts: clear charts that drive decisions\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- Solid Python programming and clean, tested code\n- Looker or Looker Studio dashboard experience"
+  },
+  {
+   "id": "seed-data_analyst-18",
+   "source": "seed",
+   "role_family": "data_analyst",
+   "title": "Data Analyst, Public Sector",
+   "company": "Civic Works Institute",
+   "location": "Washington, DC",
+   "seniority": "mid",
+   "url": null,
+   "text": "Data Analyst, Public Sector\nCivic Works Institute | Washington, DC | Hybrid\n\nAbout the role:\nCivic Works Institute is a (fictional) organisation building tools for program evaluation. As a Data Analyst, Public Sector you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Build and maintain dashboards used by weekly operating reviews\n- Check numbers for accuracy and document metric definitions\n- Present findings to non-technical stakeholders\n- Support experiment design and measure impact of launches\n\nRequirements:\n- 3+ years of relevant experience\n- Fluent in SQL and comfortable profiling messy tables\n- Excel power-user: pivot tables, XLOOKUP and clean model structure\n- Strong Statistics foundation\n- Working knowledge of R programming\n- Clear Communication of findings and recommendations\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- Tableau experience (calculated fields, LOD expressions, published dashboards)\n- Production-quality Python"
+  },
+  {
+   "id": "seed-data_analyst-19",
+   "source": "seed",
+   "role_family": "data_analyst",
+   "title": "Senior Product Analyst",
+   "company": "Arcadia Games",
+   "location": "Seattle, WA",
+   "seniority": "senior",
+   "url": null,
+   "text": "Senior Product Analyst\nArcadia Games | Seattle, WA | Hybrid\n\nAbout the role:\nArcadia Games is a (fictional) organisation building tools for live games. As a Senior Product Analyst you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Write and optimise queries to answer ad-hoc questions\n- Partner with live games to define success metrics\n- Automate recurring reporting\n- Turn business questions into analyses and recommendations\n\nRequirements:\n- 5+ years of relevant experience\n- Strong SQL skills: joins, window functions and CTEs on large tables\n- Python for data work (Pandas, notebooks, scripting)\n- Experience designing and reading A/B tests\n- Solid grounding in Statistics: distributions, confidence intervals, significance\n- Product analytics: funnel analysis, cohort analysis and retention\n- Stakeholder management across business, design and engineering\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- BigQuery experience\n- Looker or Looker Studio dashboard experience"
+  },
+  {
+   "id": "seed-data_analyst-20",
+   "source": "seed",
+   "role_family": "data_analyst",
+   "title": "Data Analyst",
+   "company": "Foxglove Nonprofit Network",
+   "location": "Remote",
+   "seniority": "junior",
+   "url": null,
+   "text": "Data Analyst\nFoxglove Nonprofit Network | Remote | Remote\n\nAbout the role:\nFoxglove Nonprofit Network is a (fictional) organisation building tools for fundraising. As a Data Analyst you will work with a small cross-functional team and see your work used in decisions every week.\n\nResponsibilities:\n- Check numbers for accuracy and document metric definitions\n- Present findings to non-technical stakeholders\n- Support experiment design and measure impact of launches\n- Build and maintain dashboards used by weekly operating reviews\n\nRequirements:\n- 1+ years of relevant experience\n- Proficiency in Excel for ad-hoc analysis and reporting\n- Advanced SQL for querying and validating data\n- Data Visualization skills and good chart design taste\n- Clear Communication of findings and recommendations\n- Experience with data wrangling and reconciling multiple sources\n- Bachelor's degree in a quantitative or related field, or equivalent experience\n\nNice to have:\n- Tableau experience (calculated fields, LOD expressions, published dashboards)\n- Power BI for self-serve dashboards"
+  }
+ ]
+}

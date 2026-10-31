@@ -6,8 +6,9 @@ from app.ai.client import LLMClient
 from app.core.database import utcnow
 from app.core.errors import NotFoundError
 from app.models import JobApplication, User
-from app.modules.applications.analytics import AppFact, compute_analytics
+from app.modules.applications.analytics import AppFact, build_recommendations, compute_analytics
 from app.modules.applications.schemas import ApplicationAnalytics, ApplicationCreate, ApplicationUpdate
+from app.modules.jobs.market import role_family_of
 from app.modules.jobs.service import get_job
 from app.modules.profile.skill_service import list_user_skills
 from app.utils.skills_taxonomy import normalize_skill
@@ -34,6 +35,10 @@ async def create_application(db: AsyncSession, user: User, body: ApplicationCrea
         job_description_id=body.job_description_id, job_description_text=jd_text, applied_date=body.applied_date,
         status=body.status, reached_interview=body.status in INTERVIEW_STATUSES,
         experience_level=body.experience_level, skills_highlighted=skills, notes=body.notes,
+        posting_url=str(body.posting_url) if body.posting_url else None,
+        role_family=body.role_family or role_family_of(body.role_title),
+        industry=body.industry, company_size=body.company_size, channel=body.channel,
+        resume_version=body.resume_version, work_mode=body.work_mode, location=body.location,
         status_changed_at=utcnow(),
     )
     db.add(app)
@@ -69,6 +74,10 @@ async def update_application(db: AsyncSession, user: User, app_id: int, body: Ap
     data.pop("reached_interview", None)
     if data.get("skills_highlighted") is not None:
         data["skills_highlighted"] = _norm_skills(data["skills_highlighted"])
+    if "posting_url" in data:
+        data["posting_url"] = str(data["posting_url"]) if data["posting_url"] else None
+    if data.get("role_title") and "role_family" not in data:
+        data["role_family"] = role_family_of(data["role_title"]) or app.role_family
     for field, value in data.items():
         if value is None and field in {"company_name", "role_title", "skills_highlighted"}:
             continue
@@ -82,11 +91,20 @@ async def delete_application(db: AsyncSession, user: User, app_id: int) -> None:
     await db.commit()
 
 
+def _facts(apps: list[JobApplication]) -> list[AppFact]:
+    return [AppFact(role_title=a.role_title, status=a.status, reached_interview=a.reached_interview,
+                    experience_level=a.experience_level, skills=a.skills_highlighted or [], role_family=a.role_family,
+                    industry=a.industry, company_size=a.company_size, channel=a.channel,
+                    resume_version=a.resume_version, work_mode=a.work_mode, applied_date=a.applied_date) for a in apps]
+
+
+async def recommendations(db: AsyncSession, user: User) -> dict:
+    return build_recommendations(_facts(await list_applications(db, user)))
+
+
 async def analytics(db: AsyncSession, llm: LLMClient, user: User, include_ai_summary: bool) -> ApplicationAnalytics:
     apps = await list_applications(db, user)
-    facts = [AppFact(role_title=a.role_title, status=a.status, reached_interview=a.reached_interview,
-                     experience_level=a.experience_level, skills=a.skills_highlighted or []) for a in apps]
-    stats = compute_analytics(facts)
+    stats = compute_analytics(_facts(apps))
     narrative, generated_by = await orchestrator.summarize_applications(
         llm if include_ai_summary else None, stats)
     return ApplicationAnalytics(stats=stats, narrative=narrative, generated_by=generated_by)

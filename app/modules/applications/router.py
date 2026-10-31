@@ -10,6 +10,7 @@ from app.modules.applications.schemas import (
     ApplicationCreate,
     ApplicationOut,
     ApplicationUpdate,
+    Recommendations,
 )
 
 router = APIRouter(prefix="/applications", tags=["Application Tracker"])
@@ -31,6 +32,12 @@ async def list_apps(user: CurrentUser, db: DbSession,
 async def analytics(user: CurrentUser, db: DbSession, llm: LLM,
                     include_ai_summary: bool = Query(True, description="Use the AI Application Analyst for the narrative")):
     return await service.analytics(db, llm, user, include_ai_summary)
+
+
+@router.get("/recommendations", response_model=Recommendations,
+            summary="3-5 plain-English insights on which kinds of roles respond (reliable vs early signal)")
+async def recommendations(user: CurrentUser, db: DbSession):
+    return await service.recommendations(db, user)
 
 
 @router.get("/{application_id}", response_model=ApplicationOut)
