@@ -1,0 +1,14 @@
+# Runtime dependencies (tested with Python 3.12 / 3.13)
+fastapi==0.162.0
+uvicorn[standard]==0.54.0
+pydantic==2.13.5
+pydantic-settings==2.16.2
+email-validator==2.3.0
+SQLAlchemy[asyncio]==2.1.6
+asyncpg==0.32.0
+alembic==1.20.1
+bcrypt==5.0.0
+PyJWT==2.15.0
+pypdf==6.17.0
+httpx==0.28.1
+python-multipart==0.0.32
